@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CroscoStopCardModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="StopCards">
+          <Key>
+            <PropertyRef Name="StopCardID" />
+          </Key>
+          <Property Name="StopCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="SigNesigPostupak" Type="bit" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="varchar" MaxLength="100" />
+          <Property Name="ElementProm" Type="nvarchar" MaxLength="255" />
+          <Property Name="PodelementProm" Type="nvarchar(max)" />
+          <Property Name="DatumOtvaranja" Type="date" />
+          <Property Name="OpisSukNesuk" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="KorektivneRadnje" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AnalizaUzorka" Type="nvarchar" MaxLength="255" />
+          <Property Name="RokZaRjes" Type="date" />
+          <Property Name="OdgovornaOsoba" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardStatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Komentar" Type="nvarchar" MaxLength="255" />
+          <Property Name="DatumZatvaranja" Type="date" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="MaticniBroj" Type="int" Nullable="false" />
+          <Property Name="OJ" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SubOJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="UserRole" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__StopCards__UserI__173876EA">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="StopCards" Type="Self.StopCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StopCards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CroscoStopCardModel1StoreContainer">
+          <EntitySet Name="StopCards" EntityType="Self.StopCards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__StopCards__UserI__173876EA" Association="Self.FK__StopCards__UserI__173876EA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="StopCards" EntitySet="StopCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CroscoStopCardModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="StopCard">
+          <Key>
+            <PropertyRef Name="StopCardID" />
+          </Key>
+          <Property Name="StopCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="SigNesigPostupak" Type="Boolean" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ElementProm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PodelementProm" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DatumOtvaranja" Type="DateTime" Precision="0" />
+          <Property Name="OpisSukNesuk" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KorektivneRadnje" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AnalizaUzorka" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RokZaRjes" Type="DateTime" Precision="0" />
+          <Property Name="OdgovornaOsoba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Komentar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DatumZatvaranja" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK__StopCards__UserI__173876EA" FromRole="StopCards" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaticniBroj" Type="Int32" Nullable="false" />
+          <Property Name="OJ" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubOJ" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UserRole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="StopCards" Relationship="Self.FK__StopCards__UserI__173876EA" FromRole="Users" ToRole="StopCards" />
+        </EntityType>
+        <Association Name="FK__StopCards__UserI__173876EA">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="StopCards" Type="Self.StopCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StopCards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CroscoStopCardEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StopCards" EntityType="Self.StopCard" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__StopCards__UserI__173876EA" Association="Self.FK__StopCards__UserI__173876EA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="StopCards" EntitySet="StopCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CroscoStopCardModel1StoreContainer" CdmEntityContainer="CroscoStopCardEntities1">
+          <EntitySetMapping Name="StopCards">
+            <EntityTypeMapping TypeName="CroscoStopCardModel1.StopCard">
+              <MappingFragment StoreEntitySet="StopCards">
+                <ScalarProperty Name="StopCardID" ColumnName="StopCardID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="SigNesigPostupak" ColumnName="SigNesigPostupak" />
+                <ScalarProperty Name="NesigRadnjaUvijet" ColumnName="NesigRadnjaUvijet" />
+                <ScalarProperty Name="ElementProm" ColumnName="ElementProm" />
+                <ScalarProperty Name="PodelementProm" ColumnName="PodelementProm" />
+                <ScalarProperty Name="DatumOtvaranja" ColumnName="DatumOtvaranja" />
+                <ScalarProperty Name="OpisSukNesuk" ColumnName="OpisSukNesuk" />
+                <ScalarProperty Name="KorektivneRadnje" ColumnName="KorektivneRadnje" />
+                <ScalarProperty Name="AnalizaUzorka" ColumnName="AnalizaUzorka" />
+                <ScalarProperty Name="RokZaRjes" ColumnName="RokZaRjes" />
+                <ScalarProperty Name="OdgovornaOsoba" ColumnName="OdgovornaOsoba" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+                <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+                <ScalarProperty Name="DatumZatvaranja" ColumnName="DatumZatvaranja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CroscoStopCardModel1.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="MaticniBroj" ColumnName="MaticniBroj" />
+                <ScalarProperty Name="OJ" ColumnName="OJ" />
+                <ScalarProperty Name="SubOJ" ColumnName="SubOJ" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

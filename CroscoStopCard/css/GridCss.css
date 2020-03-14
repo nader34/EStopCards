@@ -1,0 +1,355 @@
+/*adminPage*/
+.btnEdit {
+    display: table-cell;
+}
+
+.mydatagrid
+{
+	width: 70%;
+    border: thick 2px black;
+	min-width: 70%;
+    float: left;
+    display:flex;
+    flex-wrap:wrap;
+    text-align:left;
+}
+.addUserID {
+    /*width:auto;
+    border:2px solid black;
+    background-color:aqua;
+    float: left;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    padding:0.5em;
+    font-size:large;
+    text-decoration-color:brown;
+    font-weight:bold;
+    text-decoration: wavy;
+    text-align: center;*/
+    
+}
+.pokazi {
+    display:flex;
+}
+.sakri{
+    display:none;
+}
+.container1 {
+    width:70%;
+    display:flex;  
+    overflow-x:auto;
+}
+.header
+{
+	background-color: #646464;
+	font-family: Arial;
+	color: White;
+	border: none 0px transparent;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.rows
+{
+	background-color: #fff;
+	font-family: Arial;
+	font-size: 14px;
+	color: #000;
+	min-height: 25px;
+	text-align: left;
+	border: none 0px transparent;
+}
+.rows:hover
+{
+	background-color: #ff8000;
+	font-family: Arial;
+	color: #fff;
+	text-align: left;
+}
+.selectedrow
+{
+	background-color: #ff8000;
+	font-family: Arial;
+	color: #fff;
+	font-weight: bold;
+	text-align: left;
+}
+.mydatagrid input {
+    float: left;
+    text-align:left;
+}
+.mydatagrid select {
+    float: left;
+    text-align:left;
+}
+.pokazi a /** FOR THE PAGING ICONS  **/
+{
+	background-color: Transparent;
+	padding: 5px 5px 5px 5px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.mydatagrid a:hover /** FOR THE PAGING ICONS  HOVER STYLES**/
+{
+	background-color: #8a6d3b;
+	color: #fff;
+}
+.mydatagrid span /** FOR THE PAGING ICONS CURRENT PAGE INDICATOR **/
+{
+	/*background-color: #c9c9c9;*/
+	color: #000;
+	padding: 5px 5px 5px 5px;
+}
+.pager
+{
+	background-color: #646464;
+	font-family: Arial;
+	color: White;
+	height: 30px;
+	text-align: left;
+}
+
+.mydatagrid td
+{
+	padding: 5px;
+}
+.mydatagrid th
+{
+	border: 2px White solid;
+    padding: 5px;
+}
+
+/*CSS STOP*/
+
+#StopKartica{
+    position:relative;
+    width: 100%;
+    border: thick 2px black;
+    text-align:left;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#tb1{
+    position:absolute;
+    top:0px;
+    margin-left:0.5em; 
+}
+#tb2{
+    position:absolute;
+    top:0px;
+    margin-right:1.5em;
+}
+#ContentPlaceHolder1_tablicaSTOP{
+    position:absolute;
+    top:0px;
+    margin-left:1.5em;
+}
+
+.mojunos label{
+    padding-top:0.5em;
+}
+
+img#ReportList, img#StopCycl, #tablicaSTOP{
+    width:100%;
+}
+
+#tb2 label{
+    margin-top:1.5em;
+    margin-bottom:0.5em;
+}    
+.SPUP {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+width:96%;
+    font-weight:700;
+    font-size:large;
+    display:inline-block;
+    margin-top:1em;
+    padding:2px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+.SPUP input {
+    width:5%;
+    border:medium;
+    display:inline;
+}
+.UAUC {
+    width:100%;
+    font-weight:300;
+    font-size:large;
+    border:medium;
+    margin:0.5em;
+    display:inline-block;
+}
+/*#listaPromatranje{
+    width:100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}*/
+.elementi {
+    width:90%;
+    display:inline-block;
+    font-weight:300;
+    font-size:large;
+    margin:0.5em;
+    border:hidden 5px;
+    padding:0.5em;
+}
+.elementi input {
+    width:10%;
+    float:right;
+}
+.podelementi {
+    width:100%;
+    border:medium;
+    display: flex;
+    font-size:medium;
+    margin:0.5em;
+}
+.podelementi input {
+    display:inline;
+    width:5%;
+    padding:2px;
+    float:left;
+}
+#el1, #el2, #el3, #el4, #el5 {
+    width:151%;
+}
+/*Drop down menu styling UAUC*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/*CSS za checkboxes i radio buttons*/
+/* The container */
+.podElement {
+  display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ 
+/* Hide the browser's default checkbox */
+.podElement input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+ 
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+ 
+/* On mouse-over, add a grey background color */
+.podElement:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+ 
+/* When the checkbox is checked, add a blue background */
+.podElement input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+ 
+/* Create the checkmark/indicator (hidden when not checked) */
+.podElement:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+ 
+/* Show the checkmark when checked */
+.podElement input:checked ~ .checkmark:after {
+  display: inline-block;
+}
+
+/* Show the indicator (dot/circle) when checked */
+/*.container input:checked ~ .checkmark:after {
+    display: block;
+}*/
+
+/* Style the checkmark/indicator */
+.podElement .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+

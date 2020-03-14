@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMaster.master.cs" Inherits="CroscoStopCard.MyMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Crosco Stop Card</title>
+    <meta name="description" content="" />
+    <link rel="shortcut icon" type="image/ico" href="Resources/Logo.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//resources/demos/style.css">
+    <style>
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    h1 { font-size: 1.2em; margin: .6em 0; }
+    div#users-contain { width: 350px; margin: 20px 0; }
+    div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+    .ui-dialog .ui-state-error { padding: .3em; }
+    .validateTips { border: 1px solid transparent; padding: 0.3em; }
+  </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/datatables.bootstrap4.min.css"/>
+    <script src="Scripts/jquery-3.2.1.slim.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/MasterStyle.css" rel="stylesheet" /> 
+    <link href="css/LoginStyle.css" rel="stylesheet" />
+    <script src="js/scrip_1.0.js"></script>
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/Lobster_Two.css" rel="stylesheet" />
+    <link href="css/Lobster.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.leanModal.min_.js"></script>
+    <link href="css/GridCss.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+           <nav  id="top_nav" class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;">
+    <div class="navbar-header">
+      <button style="border-color:#ed1c24; background-color:#f0ce11;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_sec3">
+        <span style="color:#ed1c24">Menu</span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="nav_sec3">
+      <ul class="nav lista1 navbar-nav">
+          <li><a href="Home.aspx" style="height: 100px; margin-top:-10px;"><img src="Resources/CROSCO3.png" width="200" draggable="false" /></a></li>
+         </ul>
+      <ul class="nav lista2 navbar-nav">
+          <li><h4 id="usr" style="font-family: Calibri; font-weight: bold; color: #ed1c24;" runat="server"></h4></li>
+          <li><a href="" class="glyphicon glyphicon-search" style="color: #ed1c24;"></a></li>
+          <li><a href="" style="color: #ed1c24;">Contact</a></li>
+          <li><a id="adminLink" href="AdminPage.aspx" style="color:  #ed1c24;" runat="server">Admin Page</a></li>
+          <li><a id="modal_trigger" href="#modal" style="color: #ed1c24;" runat="server">Login</a></li>
+          <li><a href="#" id="btnLogout" style="color:  #ed1c24;" CausesValidation="False" runat="server" onserverclick="BtnLogout_Click">Logout</a>
+    </ul>  
+
+    </div>
+  </div>
+</nav>
+
+            <div id="modal" class="popupContainer" style="display:none">
+				<header class="popupHeader">
+						<span style="color: #ed1c24;" class="header_title">Login</span>
+						<span class="modal_close"><i class="fa fa-times"></i></span>
+				</header>
+
+				<section class="popupBody">
+						<div class="main_menu">
+
+								<div class="action_btns">
+										<div><a href="#" id="login_form" class="btn" style="background-color: #f0ce11; border-color:#f0ce11;">Login</a></div>
+								</div>
+						</div>
+
+                        <!-- Username & Password Login form -->
+						<div class="user_login">
+										<label>Username</label>
+										<input type="text" id="tbxUsername" runat="server" />
+										<br />
+
+										<label>Password</label>
+										<input type="password" id="tbxPassword" runat="server" />
+										<br />
+
+                            <asp:Label ID="lblError" runat="server" Visible="False" ForeColor="#ed1c24"></asp:Label>
+                            <br />
+										<div class="action_btns">
+                                            <div class="one_half"><a href="#" class="btn back_btn" style="background-color: #f0ce11; border-color:#f0ce11;"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                                            <div class="one_half last"><a class="btn btn_red" style="background-color: #f0ce11; border-color:#f0ce11;"><asp:Button ID="btnLogin" runat="server" style="cursor:pointer; margin-top: 0px; text-align:center;" Text="Login" BorderStyle="None" BackColor="Transparent"  Height="100%" Width="100%" CausesValidation="False" OnClick="btnLogin_Click" /></a></div>
+										</div>
+
+								<a href="#" class="forgot_password">Forgot password?</a>
+						</div>
+				</section>
+		</div>
+
+        <%--<div id="modal1" class="popupContainer" style="display:none">
+				<header class="popupHeader">
+						<span style="color: #ed1c24;" class="header_title">New Password</span>
+						<span class="modal_close1"><i class="fa fa-times"></i></span>
+				</header>
+
+				<section class="popupBody">
+						<div class="user_new_password">
+										<label>Password</label><br />
+										<input type="password" id="tbxNewPass" runat="server" />
+										<br />
+
+										<label>Password Confirmation</label><br />
+										<input type="password" id="tbxConfirmNewPass" runat="server" />
+										<br />
+
+                            <asp:Label ID="lblNewPassError" runat="server" Visible="False" ForeColor="#ed1c24"></asp:Label>
+                            <br />
+										<div class="action_btns">
+                                            <div><a class="btn btn_red" style="background-color: #f0ce11; border-color:#f0ce11;"><asp:Button ID="btnSubmit" runat="server" style="cursor:pointer; margin-top: 0px; text-align:center;" Text="Submit" BorderStyle="None" BackColor="Transparent"  Height="100%" Width="100%" CausesValidation="False" OnClick="btnSubmit_Click" /></a></div>
+										</div>
+						</div>
+				</section>
+		</div>--%>
+        <script src="js/modal.js"></script>
+    
+    <div id="content_div" style="background-color:#ed1c24; border-color:#ed1c24; margin-top: 100px;">
+        <asp:ContentPlaceHolder id="head" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+       <nav id="nav_sec" class="navbar-Drugi navbar-inverse">
+  <div class="container-fluid" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;">
+    <div class="navbar-header">
+      <button style="border-color:#ed1c24;background-color:#f0ce11;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_sec2">
+        <span style="color:#ed1c24">Sub-Menu</span>                      
+      </button>
+
+    </div>
+    <div class="collapse navbar-collapse" id="nav_sec2" >
+        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
+            <ul class="nav navDrugi navbar-nav">
+                <li><a href="History.aspx" style="color: #f0ce11; font-size: x-large">Povijest</a></li>
+                <li><a href="StopCardPage.aspx" style="color: #f0ce11; font-size: x-large">Stop Card</a></li>
+                <li><a href="StopQueryPage.aspx" style="color: #f0ce11; font-size: x-large">E STOP Card</a></li>
+                <li><a href="HS.aspx" style="color: #f0ce11; font-size: x-large">HS</a></li>
+                <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">CAR</a></li>
+                <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">ADR</a></li>
+                <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">PTW</a></li>
+                <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">CBC</a></li>
+                <li><a href="MasterEdit.aspx" runat="server" id="MasterEditSTOP" style="color: #f0ce11; font-size: x-large">Edit STOP Cards</a></li>
+            </ul>
+        </asp:Panel>
+
+
+    </div>
+  </div>
+</nav>
+        <div id="conDiv2" style="margin-top: 30px; margin-bottom: 30px;">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="conDiv3" style="margin-top: 30px; margin-bottom: 30px;">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
