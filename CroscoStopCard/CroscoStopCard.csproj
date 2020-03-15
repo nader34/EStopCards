@@ -235,6 +235,15 @@
     <Compile Include="EditSTOPCard.aspx.designer.cs">
       <DependentUpon>EditSTOPCard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EStopCard.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EStopCardsNomination.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="H.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="History.aspx.cs">
       <DependentUpon>History.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

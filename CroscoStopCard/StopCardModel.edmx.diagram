@@ -8,6 +8,12 @@
         <EntityTypeShape EntityType="CroscoStopCardModel.StopCard" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CroscoStopCardModel.User" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="CroscoStopCardModel.FK__StopCards__UserI__0C50D423" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CroscoStopCardModel.EStopCard" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="CroscoStopCardModel.EStopCardsNomination" Width="1.5" PointX="5.25" PointY="8.875" />
+        <EntityTypeShape EntityType="CroscoStopCardModel.H" Width="1.5" PointX="3" PointY="22.75" />
+        <AssociationConnector Association="CroscoStopCardModel.FK__EStopCard__EStop__656C112C" />
+        <AssociationConnector Association="CroscoStopCardModel.FK__EStopCard__UserI__72C60C4A" />
+        <AssociationConnector Association="CroscoStopCardModel.FK__HS__UserID__73BA3083" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

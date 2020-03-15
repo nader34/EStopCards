@@ -4,7 +4,209 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CroscoStopCardModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CroscoStopCardModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EStopCards">
+          <Key>
+            <PropertyRef Name="EStopCardID" />
+          </Key>
+          <Property Name="EStopCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OJ" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubOJ" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="SigNesigPostupak" Type="bit" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="bit" />
+          <Property Name="ReakcijaLjudi" Type="bit" />
+          <Property Name="Ozo" Type="bit" />
+          <Property Name="polozajLjudi" Type="bit" />
+          <Property Name="alatioOprema" Type="bit" />
+          <Property Name="ProcedureiUrednosti" Type="bit" />
+          <Property Name="PodReak1" Type="bit" />
+          <Property Name="PodReak2" Type="bit" />
+          <Property Name="PodReak3" Type="bit" />
+          <Property Name="PodReak4" Type="bit" />
+          <Property Name="PodReak5" Type="bit" />
+          <Property Name="PodReak6" Type="bit" />
+          <Property Name="PodOzo1" Type="bit" />
+          <Property Name="PodOzo2" Type="bit" />
+          <Property Name="PodOzo3" Type="bit" />
+          <Property Name="PodOzo4" Type="bit" />
+          <Property Name="PodOzo5" Type="bit" />
+          <Property Name="PodOzo6" Type="bit" />
+          <Property Name="PodOzo7" Type="bit" />
+          <Property Name="PodPolo1" Type="bit" />
+          <Property Name="PodPolo2" Type="bit" />
+          <Property Name="PodPolo3" Type="bit" />
+          <Property Name="PodPolo4" Type="bit" />
+          <Property Name="PodPolo5" Type="bit" />
+          <Property Name="PodPolo6" Type="bit" />
+          <Property Name="PodPolo7" Type="bit" />
+          <Property Name="PodPolo8" Type="bit" />
+          <Property Name="PodPolo9" Type="bit" />
+          <Property Name="PodPolo10" Type="bit" />
+          <Property Name="PodPolo11" Type="bit" />
+          <Property Name="PodPolo12" Type="bit" />
+          <Property Name="PodAlati1" Type="bit" />
+          <Property Name="PodAlati2" Type="bit" />
+          <Property Name="PodAlati3" Type="bit" />
+          <Property Name="PodProce1" Type="bit" />
+          <Property Name="PodProce2" Type="bit" />
+          <Property Name="PodProce3" Type="bit" />
+          <Property Name="PodProce4" Type="bit" />
+          <Property Name="PodProce5" Type="bit" />
+          <Property Name="PodProce6" Type="bit" />
+          <Property Name="DatumOtvaranja" Type="date" Nullable="false" />
+          <Property Name="OpisSukNesuk" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="KorektivneRadnje" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AnalizaUzorka" Type="nvarchar" MaxLength="255" />
+          <Property Name="RokZaRjes" Type="date" />
+          <Property Name="OdgovornaOsoba" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardStatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Komentar" Type="nvarchar" MaxLength="255" />
+          <Property Name="DatumZatvaranja" Type="date" />
+          <Property Name="lastModifiedID" Type="int" />
+          <Property Name="lastModifiedName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastModifiedLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nominacije" Type="bit" />
+          <Property Name="UziIzbor" Type="bit" />
+          <Property Name="Dobitne" Type="bit" />
+        </EntityType>
+        <EntityType Name="EStopCardsNomination">
+          <Key>
+            <PropertyRef Name="NominationID" />
+          </Key>
+          <Property Name="NominationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EStopCardID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OJ" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubOJ" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="NominationStatus" Type="bit" />
+          <Property Name="Winner" Type="bit" />
+          <Property Name="SigNesigPostupak" Type="bit" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="bit" />
+          <Property Name="ReakcijaLjudi" Type="bit" />
+          <Property Name="Ozo" Type="bit" />
+          <Property Name="polozajLjudi" Type="bit" />
+          <Property Name="alatioOprema" Type="bit" />
+          <Property Name="ProcedureiUrednosti" Type="bit" />
+          <Property Name="PodReak1" Type="bit" />
+          <Property Name="PodReak2" Type="bit" />
+          <Property Name="PodReak3" Type="bit" />
+          <Property Name="PodReak4" Type="bit" />
+          <Property Name="PodReak5" Type="bit" />
+          <Property Name="PodReak6" Type="bit" />
+          <Property Name="PodOzo1" Type="bit" />
+          <Property Name="PodOzo2" Type="bit" />
+          <Property Name="PodOzo3" Type="bit" />
+          <Property Name="PodOzo4" Type="bit" />
+          <Property Name="PodOzo5" Type="bit" />
+          <Property Name="PodOzo6" Type="bit" />
+          <Property Name="PodOzo7" Type="bit" />
+          <Property Name="PodPolo1" Type="bit" />
+          <Property Name="PodPolo2" Type="bit" />
+          <Property Name="PodPolo3" Type="bit" />
+          <Property Name="PodPolo4" Type="bit" />
+          <Property Name="PodPolo5" Type="bit" />
+          <Property Name="PodPolo6" Type="bit" />
+          <Property Name="PodPolo7" Type="bit" />
+          <Property Name="PodPolo8" Type="bit" />
+          <Property Name="PodPolo9" Type="bit" />
+          <Property Name="PodPolo10" Type="bit" />
+          <Property Name="PodPolo11" Type="bit" />
+          <Property Name="PodPolo12" Type="bit" />
+          <Property Name="PodAlati1" Type="bit" />
+          <Property Name="PodAlati2" Type="bit" />
+          <Property Name="PodAlati3" Type="bit" />
+          <Property Name="PodProce1" Type="bit" />
+          <Property Name="PodProce2" Type="bit" />
+          <Property Name="PodProce3" Type="bit" />
+          <Property Name="PodProce4" Type="bit" />
+          <Property Name="PodProce5" Type="bit" />
+          <Property Name="PodProce6" Type="bit" />
+          <Property Name="DatumOtvaranja" Type="date" Nullable="false" />
+          <Property Name="OpisSukNesuk" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="KorektivneRadnje" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AnalizaUzorka" Type="nvarchar" MaxLength="255" />
+          <Property Name="RokZaRjes" Type="date" />
+          <Property Name="OdgovornaOsoba" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardStatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Komentar" Type="nvarchar" MaxLength="255" />
+          <Property Name="DatumZatvaranja" Type="date" />
+        </EntityType>
+        <EntityType Name="HS">
+          <Key>
+            <PropertyRef Name="HSID" />
+          </Key>
+          <Property Name="HSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="Oj1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oj2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lokacija" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operatori" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManNoCrosco" Type="int" />
+          <Property Name="ManNoContracori" Type="int" />
+          <Property Name="ManNoThirdParty" Type="int" />
+          <Property Name="SumNo" Type="int" />
+          <Property Name="ManHoursCrosco" Type="int" />
+          <Property Name="ManHoursContracori" Type="int" />
+          <Property Name="ManHoursThirdParty" Type="int" />
+          <Property Name="SumManHours" Type="int" />
+          <Property Name="KMCrosco" Type="int" />
+          <Property Name="KMContracori" Type="int" />
+          <Property Name="KMThirdParty" Type="int" />
+          <Property Name="SumKM" Type="int" />
+          <Property Name="CRoNII" Type="int" />
+          <Property Name="CRoRTI" Type="int" />
+          <Property Name="CRoRTA" Type="int" />
+          <Property Name="CRoNM" Type="int" />
+          <Property Name="CRoFAC" Type="int" />
+          <Property Name="CRoMTC" Type="int" />
+          <Property Name="CRoRWC" Type="int" />
+          <Property Name="CRoLTI" Type="int" />
+          <Property Name="CRoFTL" Type="int" />
+          <Property Name="CRoTRI" Type="int" />
+          <Property Name="ConNII" Type="int" />
+          <Property Name="ConRTI" Type="int" />
+          <Property Name="ConRTA" Type="int" />
+          <Property Name="ConNM" Type="int" />
+          <Property Name="ConFAC" Type="int" />
+          <Property Name="ConMTC" Type="int" />
+          <Property Name="ConRWC" Type="int" />
+          <Property Name="ConLTI" Type="int" />
+          <Property Name="ConFTL" Type="int" />
+          <Property Name="ConTRI" Type="int" />
+          <Property Name="ThrdNII" Type="int" />
+          <Property Name="ThrdRTI" Type="int" />
+          <Property Name="ThrdRTA" Type="int" />
+          <Property Name="ThrdNM" Type="int" />
+          <Property Name="ThrdFAC" Type="int" />
+          <Property Name="ThrdMTC" Type="int" />
+          <Property Name="ThrdRWC" Type="int" />
+          <Property Name="ThrdLTI" Type="int" />
+          <Property Name="ThrdFTL" Type="int" />
+          <Property Name="ThrdTRI" Type="int" />
+          <Property Name="SWA" Type="int" />
+          <Property Name="Alco" Type="int" />
+          <Property Name="TPS" Type="int" />
+          <Property Name="PlinDrill" Type="int" />
+          <Property Name="EvacDrill" Type="int" />
+          <Property Name="BOPDrill" Type="int" />
+          <Property Name="FireDrill" Type="int" />
+          <Property Name="RescueDrill" Type="int" />
+          <Property Name="SpillDrill" Type="int" />
+          <Property Name="OtherDrill" Type="int" />
+          <Property Name="OtherDrillComment" Type="nvarchar" MaxLength="255" />
+          <Property Name="DaysWoLTI" Type="int" />
+        </EntityType>
         <EntityType Name="StopCards">
           <Key>
             <PropertyRef Name="StopCardID" />
@@ -38,10 +240,47 @@
           <Property Name="MaticniBroj" Type="int" Nullable="false" />
           <Property Name="OJ" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="SubOJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="SubOJDva" Type="nvarchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" MaxLength="255" />
           <Property Name="UserRole" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK__StopCards__UserI__173876EA">
+        <Association Name="FK__EStopCard__EStop__656C112C">
+          <End Role="EStopCards" Type="Self.EStopCards" Multiplicity="1" />
+          <End Role="EStopCardsNomination" Type="Self.EStopCardsNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EStopCards">
+              <PropertyRef Name="EStopCardID" />
+            </Principal>
+            <Dependent Role="EStopCardsNomination">
+              <PropertyRef Name="EStopCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EStopCard__UserI__72C60C4A">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="EStopCards" Type="Self.EStopCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="EStopCards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HS__UserID__73BA3083">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="HS" Type="Self.HS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HS">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StopCards__UserI__71D1E811">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="StopCards" Type="Self.StopCards" Multiplicity="*" />
           <ReferentialConstraint>
@@ -54,15 +293,29 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CroscoStopCardModel1StoreContainer">
+          <EntitySet Name="EStopCards" EntityType="Self.EStopCards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStopCardsNomination" EntityType="Self.EStopCardsNomination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HS" EntityType="Self.HS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StopCards" EntityType="Self.StopCards" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__StopCards__UserI__173876EA" Association="Self.FK__StopCards__UserI__173876EA">
+          <AssociationSet Name="FK__EStopCard__EStop__656C112C" Association="Self.FK__EStopCard__EStop__656C112C">
+            <End Role="EStopCards" EntitySet="EStopCards" />
+            <End Role="EStopCardsNomination" EntitySet="EStopCardsNomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EStopCard__UserI__72C60C4A" Association="Self.FK__EStopCard__UserI__72C60C4A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="EStopCards" EntitySet="EStopCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HS__UserID__73BA3083" Association="Self.FK__HS__UserID__73BA3083">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HS" EntitySet="HS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StopCards__UserI__71D1E811" Association="Self.FK__StopCards__UserI__71D1E811">
             <End Role="Users" EntitySet="Users" />
             <End Role="StopCards" EntitySet="StopCards" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CroscoStopCardModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -103,6 +356,9 @@
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="UserRole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="StopCards" Relationship="Self.FK__StopCards__UserI__173876EA" FromRole="Users" ToRole="StopCards" />
+          <Property Name="SubOJDva" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EStopCards" Relationship="CroscoStopCardModel1.FK__EStopCard__UserI__72C60C4A" FromRole="User" ToRole="EStopCard" />
+          <NavigationProperty Name="HS" Relationship="CroscoStopCardModel1.FK__HS__UserID__73BA3083" FromRole="User" ToRole="H" />
         </EntityType>
         <Association Name="FK__StopCards__UserI__173876EA">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
@@ -123,7 +379,264 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="StopCards" EntitySet="StopCards" />
           </AssociationSet>
+          <EntitySet Name="EStopCards" EntityType="CroscoStopCardModel1.EStopCard" />
+          <EntitySet Name="EStopCardsNominations" EntityType="CroscoStopCardModel1.EStopCardsNomination" />
+          <EntitySet Name="HS" EntityType="CroscoStopCardModel1.H" />
+          <AssociationSet Name="FK__EStopCard__EStop__656C112C" Association="CroscoStopCardModel1.FK__EStopCard__EStop__656C112C">
+            <End Role="EStopCard" EntitySet="EStopCards" />
+            <End Role="EStopCardsNomination" EntitySet="EStopCardsNominations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EStopCard__UserI__72C60C4A" Association="CroscoStopCardModel1.FK__EStopCard__UserI__72C60C4A">
+            <End Role="User" EntitySet="Users" />
+            <End Role="EStopCard" EntitySet="EStopCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HS__UserID__73BA3083" Association="CroscoStopCardModel1.FK__HS__UserID__73BA3083">
+            <End Role="User" EntitySet="Users" />
+            <End Role="H" EntitySet="HS" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="EStopCard">
+          <Key>
+            <PropertyRef Name="EStopCardID" />
+          </Key>
+          <Property Name="EStopCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubOJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="SigNesigPostupak" Type="Boolean" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="Boolean" />
+          <Property Name="ReakcijaLjudi" Type="Boolean" />
+          <Property Name="Ozo" Type="Boolean" />
+          <Property Name="polozajLjudi" Type="Boolean" />
+          <Property Name="alatioOprema" Type="Boolean" />
+          <Property Name="ProcedureiUrednosti" Type="Boolean" />
+          <Property Name="PodReak1" Type="Boolean" />
+          <Property Name="PodReak2" Type="Boolean" />
+          <Property Name="PodReak3" Type="Boolean" />
+          <Property Name="PodReak4" Type="Boolean" />
+          <Property Name="PodReak5" Type="Boolean" />
+          <Property Name="PodReak6" Type="Boolean" />
+          <Property Name="PodOzo1" Type="Boolean" />
+          <Property Name="PodOzo2" Type="Boolean" />
+          <Property Name="PodOzo3" Type="Boolean" />
+          <Property Name="PodOzo4" Type="Boolean" />
+          <Property Name="PodOzo5" Type="Boolean" />
+          <Property Name="PodOzo6" Type="Boolean" />
+          <Property Name="PodOzo7" Type="Boolean" />
+          <Property Name="PodPolo1" Type="Boolean" />
+          <Property Name="PodPolo2" Type="Boolean" />
+          <Property Name="PodPolo3" Type="Boolean" />
+          <Property Name="PodPolo4" Type="Boolean" />
+          <Property Name="PodPolo5" Type="Boolean" />
+          <Property Name="PodPolo6" Type="Boolean" />
+          <Property Name="PodPolo7" Type="Boolean" />
+          <Property Name="PodPolo8" Type="Boolean" />
+          <Property Name="PodPolo9" Type="Boolean" />
+          <Property Name="PodPolo10" Type="Boolean" />
+          <Property Name="PodPolo11" Type="Boolean" />
+          <Property Name="PodPolo12" Type="Boolean" />
+          <Property Name="PodAlati1" Type="Boolean" />
+          <Property Name="PodAlati2" Type="Boolean" />
+          <Property Name="PodAlati3" Type="Boolean" />
+          <Property Name="PodProce1" Type="Boolean" />
+          <Property Name="PodProce2" Type="Boolean" />
+          <Property Name="PodProce3" Type="Boolean" />
+          <Property Name="PodProce4" Type="Boolean" />
+          <Property Name="PodProce5" Type="Boolean" />
+          <Property Name="PodProce6" Type="Boolean" />
+          <Property Name="DatumOtvaranja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OpisSukNesuk" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KorektivneRadnje" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnalizaUzorka" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RokZaRjes" Type="DateTime" Precision="0" />
+          <Property Name="OdgovornaOsoba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Komentar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DatumZatvaranja" Type="DateTime" Precision="0" />
+          <Property Name="lastModifiedID" Type="Int32" />
+          <Property Name="lastModifiedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastModifiedLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nominacije" Type="Boolean" />
+          <Property Name="UziIzbor" Type="Boolean" />
+          <Property Name="Dobitne" Type="Boolean" />
+          <NavigationProperty Name="EStopCardsNominations" Relationship="CroscoStopCardModel1.FK__EStopCard__EStop__656C112C" FromRole="EStopCard" ToRole="EStopCardsNomination" />
+          <NavigationProperty Name="User" Relationship="CroscoStopCardModel1.FK__EStopCard__UserI__72C60C4A" FromRole="EStopCard" ToRole="User" />
+        </EntityType>
+        <EntityType Name="EStopCardsNomination">
+          <Key>
+            <PropertyRef Name="NominationID" />
+          </Key>
+          <Property Name="NominationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EStopCardID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubOJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="NominationStatus" Type="Boolean" />
+          <Property Name="Winner" Type="Boolean" />
+          <Property Name="SigNesigPostupak" Type="Boolean" Nullable="false" />
+          <Property Name="NesigRadnjaUvijet" Type="Boolean" />
+          <Property Name="ReakcijaLjudi" Type="Boolean" />
+          <Property Name="Ozo" Type="Boolean" />
+          <Property Name="polozajLjudi" Type="Boolean" />
+          <Property Name="alatioOprema" Type="Boolean" />
+          <Property Name="ProcedureiUrednosti" Type="Boolean" />
+          <Property Name="PodReak1" Type="Boolean" />
+          <Property Name="PodReak2" Type="Boolean" />
+          <Property Name="PodReak3" Type="Boolean" />
+          <Property Name="PodReak4" Type="Boolean" />
+          <Property Name="PodReak5" Type="Boolean" />
+          <Property Name="PodReak6" Type="Boolean" />
+          <Property Name="PodOzo1" Type="Boolean" />
+          <Property Name="PodOzo2" Type="Boolean" />
+          <Property Name="PodOzo3" Type="Boolean" />
+          <Property Name="PodOzo4" Type="Boolean" />
+          <Property Name="PodOzo5" Type="Boolean" />
+          <Property Name="PodOzo6" Type="Boolean" />
+          <Property Name="PodOzo7" Type="Boolean" />
+          <Property Name="PodPolo1" Type="Boolean" />
+          <Property Name="PodPolo2" Type="Boolean" />
+          <Property Name="PodPolo3" Type="Boolean" />
+          <Property Name="PodPolo4" Type="Boolean" />
+          <Property Name="PodPolo5" Type="Boolean" />
+          <Property Name="PodPolo6" Type="Boolean" />
+          <Property Name="PodPolo7" Type="Boolean" />
+          <Property Name="PodPolo8" Type="Boolean" />
+          <Property Name="PodPolo9" Type="Boolean" />
+          <Property Name="PodPolo10" Type="Boolean" />
+          <Property Name="PodPolo11" Type="Boolean" />
+          <Property Name="PodPolo12" Type="Boolean" />
+          <Property Name="PodAlati1" Type="Boolean" />
+          <Property Name="PodAlati2" Type="Boolean" />
+          <Property Name="PodAlati3" Type="Boolean" />
+          <Property Name="PodProce1" Type="Boolean" />
+          <Property Name="PodProce2" Type="Boolean" />
+          <Property Name="PodProce3" Type="Boolean" />
+          <Property Name="PodProce4" Type="Boolean" />
+          <Property Name="PodProce5" Type="Boolean" />
+          <Property Name="PodProce6" Type="Boolean" />
+          <Property Name="DatumOtvaranja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OpisSukNesuk" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KorektivneRadnje" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnalizaUzorka" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RokZaRjes" Type="DateTime" Precision="0" />
+          <Property Name="OdgovornaOsoba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Komentar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DatumZatvaranja" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="EStopCard" Relationship="CroscoStopCardModel1.FK__EStopCard__EStop__656C112C" FromRole="EStopCardsNomination" ToRole="EStopCard" />
+        </EntityType>
+        <EntityType Name="H">
+          <Key>
+            <PropertyRef Name="HSID" />
+          </Key>
+          <Property Name="HSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="Oj1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oj2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lokacija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operatori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ManNoCrosco" Type="Int32" />
+          <Property Name="ManNoContracori" Type="Int32" />
+          <Property Name="ManNoThirdParty" Type="Int32" />
+          <Property Name="SumNo" Type="Int32" />
+          <Property Name="ManHoursCrosco" Type="Int32" />
+          <Property Name="ManHoursContracori" Type="Int32" />
+          <Property Name="ManHoursThirdParty" Type="Int32" />
+          <Property Name="SumManHours" Type="Int32" />
+          <Property Name="KMCrosco" Type="Int32" />
+          <Property Name="KMContracori" Type="Int32" />
+          <Property Name="KMThirdParty" Type="Int32" />
+          <Property Name="SumKM" Type="Int32" />
+          <Property Name="CRoNII" Type="Int32" />
+          <Property Name="CRoRTI" Type="Int32" />
+          <Property Name="CRoRTA" Type="Int32" />
+          <Property Name="CRoNM" Type="Int32" />
+          <Property Name="CRoFAC" Type="Int32" />
+          <Property Name="CRoMTC" Type="Int32" />
+          <Property Name="CRoRWC" Type="Int32" />
+          <Property Name="CRoLTI" Type="Int32" />
+          <Property Name="CRoFTL" Type="Int32" />
+          <Property Name="CRoTRI" Type="Int32" />
+          <Property Name="ConNII" Type="Int32" />
+          <Property Name="ConRTI" Type="Int32" />
+          <Property Name="ConRTA" Type="Int32" />
+          <Property Name="ConNM" Type="Int32" />
+          <Property Name="ConFAC" Type="Int32" />
+          <Property Name="ConMTC" Type="Int32" />
+          <Property Name="ConRWC" Type="Int32" />
+          <Property Name="ConLTI" Type="Int32" />
+          <Property Name="ConFTL" Type="Int32" />
+          <Property Name="ConTRI" Type="Int32" />
+          <Property Name="ThrdNII" Type="Int32" />
+          <Property Name="ThrdRTI" Type="Int32" />
+          <Property Name="ThrdRTA" Type="Int32" />
+          <Property Name="ThrdNM" Type="Int32" />
+          <Property Name="ThrdFAC" Type="Int32" />
+          <Property Name="ThrdMTC" Type="Int32" />
+          <Property Name="ThrdRWC" Type="Int32" />
+          <Property Name="ThrdLTI" Type="Int32" />
+          <Property Name="ThrdFTL" Type="Int32" />
+          <Property Name="ThrdTRI" Type="Int32" />
+          <Property Name="SWA" Type="Int32" />
+          <Property Name="Alco" Type="Int32" />
+          <Property Name="TPS" Type="Int32" />
+          <Property Name="PlinDrill" Type="Int32" />
+          <Property Name="EvacDrill" Type="Int32" />
+          <Property Name="BOPDrill" Type="Int32" />
+          <Property Name="FireDrill" Type="Int32" />
+          <Property Name="RescueDrill" Type="Int32" />
+          <Property Name="SpillDrill" Type="Int32" />
+          <Property Name="OtherDrill" Type="Int32" />
+          <Property Name="OtherDrillComment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DaysWoLTI" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="CroscoStopCardModel1.FK__HS__UserID__73BA3083" FromRole="H" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__EStopCard__EStop__656C112C">
+          <End Type="CroscoStopCardModel1.EStopCard" Role="EStopCard" Multiplicity="1" />
+          <End Type="CroscoStopCardModel1.EStopCardsNomination" Role="EStopCardsNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EStopCard">
+              <PropertyRef Name="EStopCardID" />
+            </Principal>
+            <Dependent Role="EStopCardsNomination">
+              <PropertyRef Name="EStopCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EStopCard__UserI__72C60C4A">
+          <End Type="CroscoStopCardModel1.User" Role="User" Multiplicity="0..1" />
+          <End Type="CroscoStopCardModel1.EStopCard" Role="EStopCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="EStopCard">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HS__UserID__73BA3083">
+          <End Type="CroscoStopCardModel1.User" Role="User" Multiplicity="0..1" />
+          <End Type="CroscoStopCardModel1.H" Role="H" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="H">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -155,6 +668,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="CroscoStopCardModel1.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="SubOJDva" ColumnName="SubOJDva" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -165,6 +679,211 @@
                 <ScalarProperty Name="SubOJ" ColumnName="SubOJ" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStopCards">
+            <EntityTypeMapping TypeName="CroscoStopCardModel1.EStopCard">
+              <MappingFragment StoreEntitySet="EStopCards">
+                <ScalarProperty Name="Dobitne" ColumnName="Dobitne" />
+                <ScalarProperty Name="UziIzbor" ColumnName="UziIzbor" />
+                <ScalarProperty Name="Nominacije" ColumnName="Nominacije" />
+                <ScalarProperty Name="lastModifiedLastName" ColumnName="lastModifiedLastName" />
+                <ScalarProperty Name="lastModifiedName" ColumnName="lastModifiedName" />
+                <ScalarProperty Name="lastModifiedID" ColumnName="lastModifiedID" />
+                <ScalarProperty Name="DatumZatvaranja" ColumnName="DatumZatvaranja" />
+                <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+                <ScalarProperty Name="OdgovornaOsoba" ColumnName="OdgovornaOsoba" />
+                <ScalarProperty Name="RokZaRjes" ColumnName="RokZaRjes" />
+                <ScalarProperty Name="AnalizaUzorka" ColumnName="AnalizaUzorka" />
+                <ScalarProperty Name="KorektivneRadnje" ColumnName="KorektivneRadnje" />
+                <ScalarProperty Name="OpisSukNesuk" ColumnName="OpisSukNesuk" />
+                <ScalarProperty Name="DatumOtvaranja" ColumnName="DatumOtvaranja" />
+                <ScalarProperty Name="PodProce6" ColumnName="PodProce6" />
+                <ScalarProperty Name="PodProce5" ColumnName="PodProce5" />
+                <ScalarProperty Name="PodProce4" ColumnName="PodProce4" />
+                <ScalarProperty Name="PodProce3" ColumnName="PodProce3" />
+                <ScalarProperty Name="PodProce2" ColumnName="PodProce2" />
+                <ScalarProperty Name="PodProce1" ColumnName="PodProce1" />
+                <ScalarProperty Name="PodAlati3" ColumnName="PodAlati3" />
+                <ScalarProperty Name="PodAlati2" ColumnName="PodAlati2" />
+                <ScalarProperty Name="PodAlati1" ColumnName="PodAlati1" />
+                <ScalarProperty Name="PodPolo12" ColumnName="PodPolo12" />
+                <ScalarProperty Name="PodPolo11" ColumnName="PodPolo11" />
+                <ScalarProperty Name="PodPolo10" ColumnName="PodPolo10" />
+                <ScalarProperty Name="PodPolo9" ColumnName="PodPolo9" />
+                <ScalarProperty Name="PodPolo8" ColumnName="PodPolo8" />
+                <ScalarProperty Name="PodPolo7" ColumnName="PodPolo7" />
+                <ScalarProperty Name="PodPolo6" ColumnName="PodPolo6" />
+                <ScalarProperty Name="PodPolo5" ColumnName="PodPolo5" />
+                <ScalarProperty Name="PodPolo4" ColumnName="PodPolo4" />
+                <ScalarProperty Name="PodPolo3" ColumnName="PodPolo3" />
+                <ScalarProperty Name="PodPolo2" ColumnName="PodPolo2" />
+                <ScalarProperty Name="PodPolo1" ColumnName="PodPolo1" />
+                <ScalarProperty Name="PodOzo7" ColumnName="PodOzo7" />
+                <ScalarProperty Name="PodOzo6" ColumnName="PodOzo6" />
+                <ScalarProperty Name="PodOzo5" ColumnName="PodOzo5" />
+                <ScalarProperty Name="PodOzo4" ColumnName="PodOzo4" />
+                <ScalarProperty Name="PodOzo3" ColumnName="PodOzo3" />
+                <ScalarProperty Name="PodOzo2" ColumnName="PodOzo2" />
+                <ScalarProperty Name="PodOzo1" ColumnName="PodOzo1" />
+                <ScalarProperty Name="PodReak6" ColumnName="PodReak6" />
+                <ScalarProperty Name="PodReak5" ColumnName="PodReak5" />
+                <ScalarProperty Name="PodReak4" ColumnName="PodReak4" />
+                <ScalarProperty Name="PodReak3" ColumnName="PodReak3" />
+                <ScalarProperty Name="PodReak2" ColumnName="PodReak2" />
+                <ScalarProperty Name="PodReak1" ColumnName="PodReak1" />
+                <ScalarProperty Name="ProcedureiUrednosti" ColumnName="ProcedureiUrednosti" />
+                <ScalarProperty Name="alatioOprema" ColumnName="alatioOprema" />
+                <ScalarProperty Name="polozajLjudi" ColumnName="polozajLjudi" />
+                <ScalarProperty Name="Ozo" ColumnName="Ozo" />
+                <ScalarProperty Name="ReakcijaLjudi" ColumnName="ReakcijaLjudi" />
+                <ScalarProperty Name="NesigRadnjaUvijet" ColumnName="NesigRadnjaUvijet" />
+                <ScalarProperty Name="SigNesigPostupak" ColumnName="SigNesigPostupak" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="SubOJ" ColumnName="SubOJ" />
+                <ScalarProperty Name="OJ" ColumnName="OJ" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="EStopCardID" ColumnName="EStopCardID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStopCardsNominations">
+            <EntityTypeMapping TypeName="CroscoStopCardModel1.EStopCardsNomination">
+              <MappingFragment StoreEntitySet="EStopCardsNomination">
+                <ScalarProperty Name="DatumZatvaranja" ColumnName="DatumZatvaranja" />
+                <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+                <ScalarProperty Name="OdgovornaOsoba" ColumnName="OdgovornaOsoba" />
+                <ScalarProperty Name="RokZaRjes" ColumnName="RokZaRjes" />
+                <ScalarProperty Name="AnalizaUzorka" ColumnName="AnalizaUzorka" />
+                <ScalarProperty Name="KorektivneRadnje" ColumnName="KorektivneRadnje" />
+                <ScalarProperty Name="OpisSukNesuk" ColumnName="OpisSukNesuk" />
+                <ScalarProperty Name="DatumOtvaranja" ColumnName="DatumOtvaranja" />
+                <ScalarProperty Name="PodProce6" ColumnName="PodProce6" />
+                <ScalarProperty Name="PodProce5" ColumnName="PodProce5" />
+                <ScalarProperty Name="PodProce4" ColumnName="PodProce4" />
+                <ScalarProperty Name="PodProce3" ColumnName="PodProce3" />
+                <ScalarProperty Name="PodProce2" ColumnName="PodProce2" />
+                <ScalarProperty Name="PodProce1" ColumnName="PodProce1" />
+                <ScalarProperty Name="PodAlati3" ColumnName="PodAlati3" />
+                <ScalarProperty Name="PodAlati2" ColumnName="PodAlati2" />
+                <ScalarProperty Name="PodAlati1" ColumnName="PodAlati1" />
+                <ScalarProperty Name="PodPolo12" ColumnName="PodPolo12" />
+                <ScalarProperty Name="PodPolo11" ColumnName="PodPolo11" />
+                <ScalarProperty Name="PodPolo10" ColumnName="PodPolo10" />
+                <ScalarProperty Name="PodPolo9" ColumnName="PodPolo9" />
+                <ScalarProperty Name="PodPolo8" ColumnName="PodPolo8" />
+                <ScalarProperty Name="PodPolo7" ColumnName="PodPolo7" />
+                <ScalarProperty Name="PodPolo6" ColumnName="PodPolo6" />
+                <ScalarProperty Name="PodPolo5" ColumnName="PodPolo5" />
+                <ScalarProperty Name="PodPolo4" ColumnName="PodPolo4" />
+                <ScalarProperty Name="PodPolo3" ColumnName="PodPolo3" />
+                <ScalarProperty Name="PodPolo2" ColumnName="PodPolo2" />
+                <ScalarProperty Name="PodPolo1" ColumnName="PodPolo1" />
+                <ScalarProperty Name="PodOzo7" ColumnName="PodOzo7" />
+                <ScalarProperty Name="PodOzo6" ColumnName="PodOzo6" />
+                <ScalarProperty Name="PodOzo5" ColumnName="PodOzo5" />
+                <ScalarProperty Name="PodOzo4" ColumnName="PodOzo4" />
+                <ScalarProperty Name="PodOzo3" ColumnName="PodOzo3" />
+                <ScalarProperty Name="PodOzo2" ColumnName="PodOzo2" />
+                <ScalarProperty Name="PodOzo1" ColumnName="PodOzo1" />
+                <ScalarProperty Name="PodReak6" ColumnName="PodReak6" />
+                <ScalarProperty Name="PodReak5" ColumnName="PodReak5" />
+                <ScalarProperty Name="PodReak4" ColumnName="PodReak4" />
+                <ScalarProperty Name="PodReak3" ColumnName="PodReak3" />
+                <ScalarProperty Name="PodReak2" ColumnName="PodReak2" />
+                <ScalarProperty Name="PodReak1" ColumnName="PodReak1" />
+                <ScalarProperty Name="ProcedureiUrednosti" ColumnName="ProcedureiUrednosti" />
+                <ScalarProperty Name="alatioOprema" ColumnName="alatioOprema" />
+                <ScalarProperty Name="polozajLjudi" ColumnName="polozajLjudi" />
+                <ScalarProperty Name="Ozo" ColumnName="Ozo" />
+                <ScalarProperty Name="ReakcijaLjudi" ColumnName="ReakcijaLjudi" />
+                <ScalarProperty Name="NesigRadnjaUvijet" ColumnName="NesigRadnjaUvijet" />
+                <ScalarProperty Name="SigNesigPostupak" ColumnName="SigNesigPostupak" />
+                <ScalarProperty Name="Winner" ColumnName="Winner" />
+                <ScalarProperty Name="NominationStatus" ColumnName="NominationStatus" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="SubOJ" ColumnName="SubOJ" />
+                <ScalarProperty Name="OJ" ColumnName="OJ" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="EStopCardID" ColumnName="EStopCardID" />
+                <ScalarProperty Name="NominationID" ColumnName="NominationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HS">
+            <EntityTypeMapping TypeName="CroscoStopCardModel1.H">
+              <MappingFragment StoreEntitySet="HS">
+                <ScalarProperty Name="DaysWoLTI" ColumnName="DaysWoLTI" />
+                <ScalarProperty Name="OtherDrillComment" ColumnName="OtherDrillComment" />
+                <ScalarProperty Name="OtherDrill" ColumnName="OtherDrill" />
+                <ScalarProperty Name="SpillDrill" ColumnName="SpillDrill" />
+                <ScalarProperty Name="RescueDrill" ColumnName="RescueDrill" />
+                <ScalarProperty Name="FireDrill" ColumnName="FireDrill" />
+                <ScalarProperty Name="BOPDrill" ColumnName="BOPDrill" />
+                <ScalarProperty Name="EvacDrill" ColumnName="EvacDrill" />
+                <ScalarProperty Name="PlinDrill" ColumnName="PlinDrill" />
+                <ScalarProperty Name="TPS" ColumnName="TPS" />
+                <ScalarProperty Name="Alco" ColumnName="Alco" />
+                <ScalarProperty Name="SWA" ColumnName="SWA" />
+                <ScalarProperty Name="ThrdTRI" ColumnName="ThrdTRI" />
+                <ScalarProperty Name="ThrdFTL" ColumnName="ThrdFTL" />
+                <ScalarProperty Name="ThrdLTI" ColumnName="ThrdLTI" />
+                <ScalarProperty Name="ThrdRWC" ColumnName="ThrdRWC" />
+                <ScalarProperty Name="ThrdMTC" ColumnName="ThrdMTC" />
+                <ScalarProperty Name="ThrdFAC" ColumnName="ThrdFAC" />
+                <ScalarProperty Name="ThrdNM" ColumnName="ThrdNM" />
+                <ScalarProperty Name="ThrdRTA" ColumnName="ThrdRTA" />
+                <ScalarProperty Name="ThrdRTI" ColumnName="ThrdRTI" />
+                <ScalarProperty Name="ThrdNII" ColumnName="ThrdNII" />
+                <ScalarProperty Name="ConTRI" ColumnName="ConTRI" />
+                <ScalarProperty Name="ConFTL" ColumnName="ConFTL" />
+                <ScalarProperty Name="ConLTI" ColumnName="ConLTI" />
+                <ScalarProperty Name="ConRWC" ColumnName="ConRWC" />
+                <ScalarProperty Name="ConMTC" ColumnName="ConMTC" />
+                <ScalarProperty Name="ConFAC" ColumnName="ConFAC" />
+                <ScalarProperty Name="ConNM" ColumnName="ConNM" />
+                <ScalarProperty Name="ConRTA" ColumnName="ConRTA" />
+                <ScalarProperty Name="ConRTI" ColumnName="ConRTI" />
+                <ScalarProperty Name="ConNII" ColumnName="ConNII" />
+                <ScalarProperty Name="CRoTRI" ColumnName="CRoTRI" />
+                <ScalarProperty Name="CRoFTL" ColumnName="CRoFTL" />
+                <ScalarProperty Name="CRoLTI" ColumnName="CRoLTI" />
+                <ScalarProperty Name="CRoRWC" ColumnName="CRoRWC" />
+                <ScalarProperty Name="CRoMTC" ColumnName="CRoMTC" />
+                <ScalarProperty Name="CRoFAC" ColumnName="CRoFAC" />
+                <ScalarProperty Name="CRoNM" ColumnName="CRoNM" />
+                <ScalarProperty Name="CRoRTA" ColumnName="CRoRTA" />
+                <ScalarProperty Name="CRoRTI" ColumnName="CRoRTI" />
+                <ScalarProperty Name="CRoNII" ColumnName="CRoNII" />
+                <ScalarProperty Name="SumKM" ColumnName="SumKM" />
+                <ScalarProperty Name="KMThirdParty" ColumnName="KMThirdParty" />
+                <ScalarProperty Name="KMContracori" ColumnName="KMContracori" />
+                <ScalarProperty Name="KMCrosco" ColumnName="KMCrosco" />
+                <ScalarProperty Name="SumManHours" ColumnName="SumManHours" />
+                <ScalarProperty Name="ManHoursThirdParty" ColumnName="ManHoursThirdParty" />
+                <ScalarProperty Name="ManHoursContracori" ColumnName="ManHoursContracori" />
+                <ScalarProperty Name="ManHoursCrosco" ColumnName="ManHoursCrosco" />
+                <ScalarProperty Name="SumNo" ColumnName="SumNo" />
+                <ScalarProperty Name="ManNoThirdParty" ColumnName="ManNoThirdParty" />
+                <ScalarProperty Name="ManNoContracori" ColumnName="ManNoContracori" />
+                <ScalarProperty Name="ManNoCrosco" ColumnName="ManNoCrosco" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Operatori" ColumnName="Operatori" />
+                <ScalarProperty Name="Lokacija" ColumnName="Lokacija" />
+                <ScalarProperty Name="Oj2" ColumnName="Oj2" />
+                <ScalarProperty Name="Oj1" ColumnName="Oj1" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="HSID" ColumnName="HSID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

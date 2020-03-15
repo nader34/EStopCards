@@ -27,5 +27,8 @@ namespace CroscoStopCard
     
         public virtual DbSet<StopCard> StopCards { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<EStopCard> EStopCards { get; set; }
+        public virtual DbSet<EStopCardsNomination> EStopCardsNominations { get; set; }
+        public virtual DbSet<H> HS { get; set; }
     }
 }
