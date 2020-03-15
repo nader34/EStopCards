@@ -36,16 +36,7 @@ namespace CroscoStopCard
                 SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE OJ LIKE '" + (string)Session["OJ"] + "'";
                 SqlDataSource2.SelectCommand = "SELECT * from StopCards JOIN Users ON StopCards.UserID = Users.UserID WHERE Users.OJ like '" + (string)Session["OJ"] + "'";
             }
-            else if ((string)Session["UserRole"] == "LocalAdmin")
-            {
-                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE OJ LIKE '" + (string)Session["OJ"] + "'";
-                SqlDataSource2.SelectCommand = "SELECT * from StopCards JOIN Users ON StopCards.UserID = Users.UserID WHERE Users.OJ like '" + (string)Session["OJ"] + "'";
-            }
-            else if ((string)Session["UserRole"] == "Manager")
-            {
-                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE OJ LIKE '" + (string)Session["OJ"] + "'";
-                SqlDataSource2.SelectCommand = "SELECT * from StopCards JOIN Users ON StopCards.UserID = Users.UserID WHERE Users.OJ like '" + (string)Session["OJ"] + "'";
-            }
+
             lblError.Visible = false;
 
             GetFilesPath = Server.MapPath("~/MyFiles/");

@@ -41,9 +41,7 @@
                             <EditItemTemplate>
                                 <asp:DropDownList ID="ddlUserRole" runat="server">
                                     <asp:ListItem>User</asp:ListItem>
-                                    <asp:ListItem>LocalAdmin</asp:ListItem>
                                     <asp:ListItem>Admin</asp:ListItem>
-                                    <asp:ListItem>Manager</asp:ListItem>
                                     <asp:ListItem>MasterAdmin</asp:ListItem>
                                 </asp:DropDownList>
                             </EditItemTemplate>
@@ -215,9 +213,7 @@
                                 <InsertItemTemplate>
                                     <asp:DropDownList ID="ddlUserRole" runat="server">
                                         <asp:ListItem>User</asp:ListItem>
-                                        <asp:ListItem>LocalAdmin</asp:ListItem>
                                         <asp:ListItem>Admin</asp:ListItem>
-                                        <asp:ListItem>Manager</asp:ListItem>
                                         <asp:ListItem>MasterAdmin</asp:ListItem>
                                     </asp:DropDownList>
                                 </InsertItemTemplate>
@@ -719,16 +715,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap//4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        function pokazi() {
-            var x = document.getElementById("AddUserDivID");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        <script>
+            function pokazi() {
+                var x = document.getElementById("AddUserDivID");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
-        }
-    </script>
+        </script>
     
     <script>
         //$('#mytb1').DataTable();
@@ -751,7 +747,6 @@
            //alert('Spremno za Display')
           // display();
             //$('#mytb1').DataTable();
-            display();
             $('.mydatatable').DataTable();
             var AddUserDisplay = document.getElementById("ContentPlaceHolder1_DetailsView1").firstElementChild.firstElementChild.firstElementChild.firstElementChild;
             if (AddUserDisplay.innerText == "Insert") {
@@ -763,7 +758,7 @@
 
            $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered");
 
-          
+           
            //var xmlhttp = new XMLHttpRequest();
            //xmlhttp.open('Get', 'InsertPage.aspx?opr=display', false);
            //xmlhttp.send(null);
@@ -796,45 +791,23 @@
             }
         });
     </script>
-    <script>
-        $(document).on('click', 'td .EditSTOPCardbtn', function () {
-            var html = $(this).text()
-            var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('Get', 'EditSTOPCard.aspx?opr=Edit' + '&STOPID=' + text1, false);
-            xmlhttp.send(null);
-            window.open('EditSTOPCard.aspx');
-            if (xmlhttp.readyState == 4) {
-                if (xmlhttp.status == 200) {
-                    var resultText = xmlhttp.responseText;
-                    document.getElementById("mytb2").innerHTML = xmlhttp.responseText;
+        <script>
+            $(document).on('click', 'td .EditSTOPCardbtn', function () {
+                var html = $(this).text()
+                var text1 = $(this).closest("tr").find('td:first').text();
+                alert(text1);
+                alert(html);
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('Get', 'EditSTOPCard.aspx?opr=Edit' + '&STOPID=' + text1, false);
+                xmlhttp.send(null);
+                window.open('EditSTOPCard.aspx');
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        var resultText = xmlhttp.responseText;
+                        document.getElementById("mytb2").innerHTML = xmlhttp.responseText;
+                    }
                 }
-            }
-        });
-
-        function display() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('Get', 'InsertPage.aspx?opr=displayAdmin', false);
-        xmlhttp.send(null);
-        var resultText = xmlhttp.responseText;
-        document.getElementById("ContentPlaceHolder1_tablicaSTOP1").innerHTML = resultText;
-        //$('#ContentPlaceHolder1_tablicaSTOP').DataTable();
-        if (xmlhttp.readyState == 4) {
-            if (xmlhttp.status == 200) {
-                //resultText = xmlhttp.responseText;
-                //document.getElementById("mytb1").innerHTML = resultText;
-                    
-                //if ($.fn.DataTable.isDataTable("#mytb1")) {
-                //    $('#mytb1').DataTable().clear().destroy();
-                //    $('#mytb1').DataTable({
-                //        select: true
-                //    });
-                //}
-            }
-        }
-    }
-    </script>
-    </asp:Panel>
+            });
+        </script>
+        </asp:Panel>
 </asp:Content>
