@@ -39,6 +39,24 @@ namespace CroscoStopCard
                 usr.Visible = true;
                 MasterEditSTOP.Visible = true;
             }
+            else if ((string)Session["UserRole"] == "Manager")
+            {
+                modal_trigger.Visible = false;
+                adminLink.Visible = true;
+                btnLogout.Visible = true;
+                usr.InnerText = "Welcome: " + (string)Session["UserName"];
+                usr.Visible = true;
+                MasterEditSTOP.Visible = false;
+            }
+            else if ((string)Session["UserRole"] == "LocalAdmin")
+            {
+                modal_trigger.Visible = false;
+                adminLink.Visible = true;
+                btnLogout.Visible = true;
+                usr.InnerText = "Welcome: " + (string)Session["UserName"];
+                usr.Visible = true;
+                MasterEditSTOP.Visible = false;
+            }
             else
             {
                 adminLink.Visible = false;
@@ -93,8 +111,9 @@ namespace CroscoStopCard
                     {
                        
                         Session["UserRole"] = loginResult.Select(x => x.UserRole).FirstOrDefault();
-                        Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
+                        //Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["userID"] = loginResult.Select(x => x.UserID).FirstOrDefault();
+                        Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
                         Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
                         Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
@@ -103,6 +122,54 @@ namespace CroscoStopCard
                     }
                     else lblError.Visible = true;
                     
+                }
+                else if (loginResult.Select(x => x.UserRole).FirstOrDefault() == "LocalAdmin")
+                {
+                    if (tbxPassword.Value == "User.123" && PasswordHash.ValidatePassword(tbxPassword.Value, loginResult.Select(x => x.Lozinka).FirstOrDefault()))
+                    {
+                        Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
+                        Session["NewPassword"] = true;
+
+                    }
+                    else if (PasswordHash.ValidatePassword(tbxPassword.Value, loginResult.Select(x => x.Lozinka).FirstOrDefault()))
+                    {
+
+                        Session["UserRole"] = loginResult.Select(x => x.UserRole).FirstOrDefault();
+                        //Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
+                        Session["userID"] = loginResult.Select(x => x.UserID).FirstOrDefault();
+                        Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
+                        Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
+                        Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
+                        Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
+                        Response.Redirect("AdminPage.aspx");
+                    }
+                    else lblError.Visible = true;
+
+                }
+                else if (loginResult.Select(x => x.UserRole).FirstOrDefault() == "Manager")
+                {
+                    if (tbxPassword.Value == "User.123" && PasswordHash.ValidatePassword(tbxPassword.Value, loginResult.Select(x => x.Lozinka).FirstOrDefault()))
+                    {
+                        Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
+                        Session["NewPassword"] = true;
+
+                    }
+                    else if (PasswordHash.ValidatePassword(tbxPassword.Value, loginResult.Select(x => x.Lozinka).FirstOrDefault()))
+                    {
+
+                        Session["UserRole"] = loginResult.Select(x => x.UserRole).FirstOrDefault();
+                        //Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
+                        Session["userID"] = loginResult.Select(x => x.UserID).FirstOrDefault();
+                        Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
+                        Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
+                        Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
+                        Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
+                        Response.Redirect("AdminPage.aspx");
+                    }
+                    else lblError.Visible = true;
+
                 }
                 else if (tbxPassword.Value == "User.123" && PasswordHash.ValidatePassword(tbxPassword.Value, loginResult.Select(x => x.Lozinka).FirstOrDefault()))
                 {
