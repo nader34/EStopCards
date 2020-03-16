@@ -315,7 +315,7 @@
       <DependentUpon>StopQueryPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="StopCard.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>StopCardModel.tt</DependentUpon>
     </Compile>
     <Compile Include="StopCardModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -340,7 +340,7 @@
       <DependentUpon>StopCardPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>StopCardModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

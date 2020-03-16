@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CroscoStopCardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CroscoStopCardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="StopCards">
           <Key>
             <PropertyRef Name="StopCardID" />
@@ -38,10 +38,11 @@
           <Property Name="MaticniBroj" Type="int" Nullable="false" />
           <Property Name="OJ" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="SubOJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="SubOJDva" Type="nvarchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" MaxLength="255" />
           <Property Name="UserRole" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK__StopCards__UserI__0C50D423">
+        <Association Name="FK__StopCards__UserI__71D1E811">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="StopCards" Type="Self.StopCards" Multiplicity="*" />
           <ReferentialConstraint>
@@ -56,13 +57,12 @@
         <EntityContainer Name="CroscoStopCardModelStoreContainer">
           <EntitySet Name="StopCards" EntityType="Self.StopCards" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__StopCards__UserI__0C50D423" Association="Self.FK__StopCards__UserI__0C50D423">
+          <AssociationSet Name="FK__StopCards__UserI__71D1E811" Association="Self.FK__StopCards__UserI__71D1E811">
             <End Role="Users" EntitySet="Users" />
             <End Role="StopCards" EntitySet="StopCards" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CroscoStopCardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -103,6 +103,7 @@
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="UserRole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="StopCards" Relationship="Self.FK__StopCards__UserI__0C50D423" FromRole="Users" ToRole="StopCards" />
+          <Property Name="SubOJDva" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__StopCards__UserI__0C50D423">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
@@ -155,6 +156,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="CroscoStopCardModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="SubOJDva" ColumnName="SubOJDva" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

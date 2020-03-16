@@ -26,9 +26,13 @@
                         <asp:TemplateField HeaderText="OJ" SortExpression="OJ">
                             <EditItemTemplate>
                                 <asp:DropDownList ID="ddlOJ" runat="server">
-                                    <asp:ListItem>OJ1</asp:ListItem>
-                                    <asp:ListItem>OJ2</asp:ListItem>
-                                    <asp:ListItem>OJ3</asp:ListItem>
+                                    <asp:ListItem>Uprava</asp:ListItem>
+                                    <asp:ListItem>QHSE</asp:ListItem>
+                                    <asp:ListItem>Marketing</asp:ListItem>
+                                    <asp:ListItem>Bušenje</asp:ListItem>
+                                    <asp:ListItem>Remont</asp:ListItem>
+                                    <asp:ListItem>Bušotinski servisi</asp:ListItem>
+                                    <asp:ListItem>Održavanje</asp:ListItem>
                                 </asp:DropDownList>
                             </EditItemTemplate>
                             <ItemTemplate>
@@ -36,6 +40,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="SubOJ" HeaderText="SubOJ" SortExpression="SubOJ" />
+                        <asp:BoundField DataField="SubOJDva" HeaderText="SubOJDva" SortExpression="SubOJDva" />
                         <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                         <asp:TemplateField HeaderText="UserRole" SortExpression="UserRole">
                             <EditItemTemplate>
@@ -74,6 +79,7 @@
                         <asp:Parameter Name="MaticniBroj" Type="Int32" />
                         <asp:Parameter Name="OJ" Type="String" />
                         <asp:Parameter Name="SubOJ" Type="String" />
+                        <asp:Parameter Name="SubOJDva" Type="String" />
                         <asp:Parameter Name="Email" Type="String" />
                         <asp:Parameter Name="UserRole" Type="String" />
                     </InsertParameters>
@@ -85,6 +91,7 @@
                         <asp:Parameter Name="MaticniBroj" Type="Int32" />
                         <asp:Parameter Name="OJ" Type="String" />
                         <asp:Parameter Name="SubOJ" Type="String" />
+                        <asp:Parameter Name="SubOJDva" Type="String" />
                         <asp:Parameter Name="Email" Type="String" />
                         <asp:Parameter Name="UserRole" Type="String" />
                         <asp:Parameter Name="UserID" Type="Int32" />
@@ -177,9 +184,13 @@
                                 </EditItemTemplate>
                                 <InsertItemTemplate>
                                     <asp:DropDownList ID="ddlOJ" runat="server">
-                                        <asp:ListItem>OJ1</asp:ListItem>
-                                        <asp:ListItem>OJ2</asp:ListItem>
-                                        <asp:ListItem>OJ3</asp:ListItem>
+                                        <asp:ListItem>Uprava</asp:ListItem>
+                                        <asp:ListItem>QHSE</asp:ListItem>
+                                        <asp:ListItem>Marketing</asp:ListItem>
+                                        <asp:ListItem>Bušenje</asp:ListItem>
+                                        <asp:ListItem>Remont</asp:ListItem>
+                                        <asp:ListItem>Bušotinski servisi</asp:ListItem>
+                                        <asp:ListItem>Održavanje</asp:ListItem>
                                     </asp:DropDownList>
                                 </InsertItemTemplate>
                                 <ItemTemplate>
@@ -195,6 +206,17 @@
                                 </InsertItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label ID="lblSubOJ" runat="server" Text=""></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="SubOJDva" SortExpression="SubOJDva">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="tbxSubOJDva1" runat="server" Text='<%# Bind("SubOJDva") %>'></asp:TextBox>
+                                </EditItemTemplate>
+                                <InsertItemTemplate>
+                                    <asp:TextBox ID="tbxSubOJDva" runat="server" Text='<%# Bind("SubOJDva") %>'></asp:TextBox>
+                                </InsertItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSubOJDva" runat="server" Text=""></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Email" SortExpression="Email">
@@ -243,6 +265,7 @@
                             <asp:Parameter Name="MaticniBroj" Type="Int32" />
                             <asp:Parameter Name="OJ" Type="String" />
                             <asp:Parameter Name="SubOJ" Type="String" />
+                            <asp:Parameter Name="SubOJDva" Type="String" />
                             <asp:Parameter Name="Email" Type="String" />
                             <asp:Parameter Name="UserRole" Type="String" />
                         </InsertParameters>
@@ -254,6 +277,7 @@
                             <asp:Parameter Name="MaticniBroj" Type="Int32" />
                             <asp:Parameter Name="OJ" Type="String" />
                             <asp:Parameter Name="SubOJ" Type="String" />
+                            <asp:Parameter Name="SubOJDva" Type="String" />
                             <asp:Parameter Name="Email" Type="String" />
                             <asp:Parameter Name="UserRole" Type="String" />
                             <asp:Parameter Name="UserID" Type="Int32" />

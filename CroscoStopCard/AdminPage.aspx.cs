@@ -312,9 +312,12 @@ namespace CroscoStopCard
                             column = new DataColumn("SubOJ");
                             break;
                         case 7:
-                            column = new DataColumn("Email");
+                            column = new DataColumn("SubOJDva");
                             break;
                         case 8:
+                            column = new DataColumn("Email");
+                            break;
+                        case 9:
                             column = new DataColumn("UserRole");
                             break;
                         default:
@@ -333,11 +336,12 @@ namespace CroscoStopCard
                      maticniBr = rec.MaticniBroj,
                      oj = rec.OJ,
                      subOJ = rec.SubOJ,
+                     subOJDva = rec.SubOJDva,
                      email = rec.Email,
                      userRole = rec.UserRole
                  }).Aggregate(dt, (user, r) =>
                  {
-                     dt.Rows.Add(r.firstName, r.lastName, r.userName, r.password, r.maticniBr, r.oj, r.subOJ, r.email, r.userRole);
+                     dt.Rows.Add(r.firstName, r.lastName, r.userName, r.password, r.maticniBr, r.oj, r.subOJ, r.subOJDva, r.email, r.userRole);
                      return user;
                  });
                 return dt;
@@ -654,14 +658,14 @@ namespace CroscoStopCard
                     if (oj != null)
                     {
                         oj.SelectedValue = result.Select(x => x.OJ).FirstOrDefault();
-                        if ((string)Session["UserRole"] == "Admin") oj.Enabled = false;
+                        if (((string)Session["UserRole"] == "Admin") || ((string)Session["UserRole"] == "LocalAdmin") || ((string)Session["UserRole"] == "Manager")) oj.Enabled = false;
                     }
 
                     DropDownList role = e.Row.FindControl("ddlUserRole") as DropDownList;
                     if (role != null)
                     {
                         role.SelectedValue = result.Select(x => x.UserRole).FirstOrDefault();
-                        if ((string)Session["UserRole"] == "Admin") role.Enabled = false;
+                        if (((string)Session["UserRole"] == "Admin") || ((string)Session["UserRole"] == "LocalAdmin") || ((string)Session["UserRole"] == "Manager")) role.Enabled = false;
                     }
                 }
             }
@@ -669,7 +673,7 @@ namespace CroscoStopCard
 
         protected void DetailsView1_DataBound(object sender, EventArgs e)
         {
-            if ((string)Session["UserRole"] == "Admin")
+            if (((string)Session["UserRole"] == "Admin") || ((string)Session["UserRole"] == "LocalAdmin") || ((string)Session["UserRole"] == "Manager"))
             {
                 DropDownList oj = DetailsView1.FindControl("ddlOJ") as DropDownList;
                 if (oj != null)

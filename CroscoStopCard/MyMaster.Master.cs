@@ -78,7 +78,7 @@ namespace CroscoStopCard
         {
             CroscoStopCardEntities stopCardEntities = new CroscoStopCardEntities();
 
-            var loginResult = stopCardEntities.Users.Select(x => new { x.UserID, x.UserName, x.Lozinka, x.UserRole, x.OJ , x.SubOJ, x.FirstName, x.LastName }).Where(x => x.UserName == tbxUsername.Value.Trim());
+            var loginResult = stopCardEntities.Users.Select(x => new { x.UserID, x.UserName, x.Lozinka, x.UserRole, x.OJ , x.SubOJ, x.SubOJDva, x.FirstName, x.LastName }).Where(x => x.UserName == tbxUsername.Value.Trim());
 
             if (loginResult.Count() > 0)
             {
@@ -93,6 +93,7 @@ namespace CroscoStopCard
                         Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
                         Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["SubOJDva"] = loginResult.Select(x => x.SubOJDva).FirstOrDefault();
                         Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
                         Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
                         Response.Redirect("AdminPage.aspx");
@@ -116,6 +117,7 @@ namespace CroscoStopCard
                         Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
                         Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["SubOJDva"] = loginResult.Select(x => x.SubOJDva).FirstOrDefault();
                         Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
                         Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
                         Response.Redirect("AdminPage.aspx");
@@ -140,6 +142,7 @@ namespace CroscoStopCard
                         Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
                         Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["SubOJDva"] = loginResult.Select(x => x.SubOJDva).FirstOrDefault();
                         Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
                         Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
                         Response.Redirect("AdminPage.aspx");
@@ -164,6 +167,7 @@ namespace CroscoStopCard
                         Session["UserName"] = loginResult.Select(x => x.UserName).FirstOrDefault();
                         Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                         Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                        Session["SubOJDva"] = loginResult.Select(x => x.SubOJDva).FirstOrDefault();
                         Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
                         Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
                         Response.Redirect("AdminPage.aspx");
@@ -182,6 +186,7 @@ namespace CroscoStopCard
                     Session["userID"] = loginResult.Select(x => x.UserID).FirstOrDefault();
                     Session["OJ"] = loginResult.Select(x => x.OJ).FirstOrDefault();
                     Session["SubOJ"] = loginResult.Select(x => x.SubOJ).FirstOrDefault();
+                    Session["SubOJDva"] = loginResult.Select(x => x.SubOJDva).FirstOrDefault();
                     Session["FirstName"] = loginResult.Select(x => x.FirstName).FirstOrDefault();
                     Session["LastName"] = loginResult.Select(x => x.LastName).FirstOrDefault();
                     Session["NewPassword"] = null;
