@@ -28,7 +28,7 @@ namespace CroscoStopCard
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
         string opr, opis, DateCreated, DatumOtvaranja, korekcija, AnalizaUzroka, OdgovornaOsoba, RokZaRijesavanja, Komentar, Status, DatumZatvaranja, STOPCheckBoxes, UaUc;
         int UserID;
-        string STOPID, OrgJed, SubOrgJed;
+        string STOPID, OrgJed, SubOrgJed, SubOrgJedDva;
         protected void Page_Load(object sender, EventArgs e)
         {
             //EStopCard eStopCard = new EStopCard();
@@ -46,6 +46,7 @@ namespace CroscoStopCard
             UserID = (int)Session["userID"];
             OrgJed = (string)Session["OJ"];
             SubOrgJed = (string)Session["SubOJ"];
+            SubOrgJedDva = (string)Session["SubOJDva"];
             String FName = (string)Session["FirstName"];
             String LName = (string)Session["LastName"];
             DateCreated = DateTime.Today.ToString("yyyy-MM-dd");
@@ -77,7 +78,7 @@ namespace CroscoStopCard
                 SqlCommand command;
                 string sql = null;
                 // comstrin = "Insert into CROSCO_CBC values ('" & Ime.ToString() & "','" & Prezime.ToString() & "')"
-                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,DateCreated,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + DateCreated + "', '" + 1 + "', '" +
+                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,SubOJDva,DateCreated,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + SubOrgJedDva + "', '" + DateCreated + "', '" + 1 + "', '" +
                     d1 + "', '" + opis.ToString() + "', '" + korekcija.ToString() + "', '" + AnalizaUzroka.ToString() +
                     "', '" + OdgovornaOsoba.ToString() + "', '" + d2 + "', '" + Komentar.ToString() +
                     "', '" + Status.ToString() + "', '" + d3 + "')");
@@ -306,7 +307,7 @@ namespace CroscoStopCard
                 string sql = null;
                 // comstrin = "Insert into CROSCO_CBC values ('" & Ime.ToString() & "','" & Prezime.ToString() & "')"
                 //Insert into EStopCards (UserID,DateCreated,SigNesigPostupak,NesigRadnjaUvijet,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (1 ','2019-08-31', '0', 'Unsafe act', '2019-08-31', 'dsSFD', 'FDSAFDAS', '', 'Upištite ime, funkcija ili firma', '2019-08-31', 'Komentar', 'closed', '2019-08-31')
-                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,DateCreated,SigNesigPostupak,NesigRadnjaUvijet," + checkHeaders + "DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + DateCreated + "', '" + 0 + "', '" + UaUc + "', " + checkValues + "'" + d1 + "', '" + opis.ToString() + "', '" + korekcija.ToString() + "', '" + AnalizaUzroka.ToString() +
+                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,SubOJDva,DateCreated,SigNesigPostupak,NesigRadnjaUvijet," + checkHeaders + "DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + SubOrgJedDva + "', '" + DateCreated + "', '" + 0 + "', '" + UaUc + "', " + checkValues + "'" + d1 + "', '" + opis.ToString() + "', '" + korekcija.ToString() + "', '" + AnalizaUzroka.ToString() +
                     "', '" + OdgovornaOsoba.ToString() + "', '" + d2 + "', '" + Komentar.ToString() +
                     "', '" + Status.ToString() + "', '" + d3 + "')");
                 //sql = ("Insert into EStopCards (UserID,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES ( 1, 1,'1/7/2019', 'das', 'kor', 'anal', 'OdgovornaOsoba', '7/7/2020', 'kome', 'closed','7/8/2020')");

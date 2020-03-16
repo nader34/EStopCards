@@ -23,7 +23,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="MaticniBroj" HeaderText="MaticniBroj" SortExpression="MaticniBroj" />
-                        <asp:TemplateField HeaderText="OJ" SortExpression="OJ">
+                        <asp:TemplateField HeaderText="Proces" SortExpression="OJ">
                             <EditItemTemplate>
                                 <asp:DropDownList ID="ddlOJ" runat="server">
                                     <asp:ListItem>Uprava</asp:ListItem>
@@ -39,8 +39,8 @@
                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("OJ") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="SubOJ" HeaderText="SubOJ" SortExpression="SubOJ" />
-                        <asp:BoundField DataField="SubOJDva" HeaderText="SubOJDva" SortExpression="SubOJDva" />
+                        <asp:BoundField DataField="SubOJ" HeaderText="Servis" SortExpression="SubOJ" />
+                        <asp:BoundField DataField="SubOJDva" HeaderText="Tim/Postrojenja" SortExpression="SubOJDva" />
                         <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                         <asp:TemplateField HeaderText="UserRole" SortExpression="UserRole">
                             <EditItemTemplate>
@@ -67,7 +67,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CroscoStopCardConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [UserID] = @UserID" InsertCommand="INSERT INTO [Users] ([FirstName], [LastName], [UserName], [Lozinka], [MaticniBroj], [OJ], [SubOJ], [Email], [UserRole]) VALUES (@FirstName, @LastName, @UserName, @Lozinka, @MaticniBroj, @OJ, @SubOJ, @Email, @UserRole)" SelectCommand="SELECT * FROM [Users]" UpdateCommand="UPDATE [Users] SET [FirstName] = @FirstName, [LastName] = @LastName, [UserName] = @UserName, [Lozinka] = @Lozinka, [MaticniBroj] = @MaticniBroj, [OJ] = @OJ, [SubOJ] = @SubOJ, [Email] = @Email, [UserRole] = @UserRole WHERE [UserID] = @UserID">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CroscoStopCardConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [UserID] = @UserID" InsertCommand="INSERT INTO [Users] ([FirstName], [LastName], [UserName], [Lozinka], [MaticniBroj], [OJ], [SubOJ], [SubOJDva], [Email], [UserRole]) VALUES (@FirstName, @LastName, @UserName, @Lozinka, @MaticniBroj, @OJ, @SubOJ, @SubOJDva, @Email, @UserRole)" SelectCommand="SELECT * FROM [Users]" UpdateCommand="UPDATE [Users] SET [FirstName] = @FirstName, [LastName] = @LastName, [UserName] = @UserName, [Lozinka] = @Lozinka, [MaticniBroj] = @MaticniBroj, [OJ] = @OJ, [SubOJ] = @SubOJ, [SubOJDva] = @SubOJDva, [Email] = @Email, [UserRole] = @UserRole WHERE [UserID] = @UserID">
                     <DeleteParameters>
                         <asp:Parameter Name="UserID" Type="Int32" />
                     </DeleteParameters>
@@ -178,7 +178,7 @@
                                     <asp:Label ID="lblMB" runat="server" Text=""></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="OJ" SortExpression="OJ">
+                            <asp:TemplateField HeaderText="Proces" SortExpression="OJ">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="tbxOJ1" runat="server" Text='<%# Bind("OJ") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -197,7 +197,7 @@
                                     <asp:Label ID="lblOJ" runat="server" Text=""></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="SubOJ" SortExpression="SubOJ">
+                            <asp:TemplateField HeaderText="Servis" SortExpression="SubOJ">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="tbxSubOJ1" runat="server" Text='<%# Bind("SubOJ") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -208,7 +208,7 @@
                                     <asp:Label ID="lblSubOJ" runat="server" Text=""></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="SubOJDva" SortExpression="SubOJDva">
+                            <asp:TemplateField HeaderText="Tim/Postrojenja" SortExpression="SubOJDva">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="tbxSubOJDva1" runat="server" Text='<%# Bind("SubOJDva") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -253,7 +253,7 @@
                         <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
                         <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
                     </asp:DetailsView>
-                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CroscoStopCardConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [UserID] = @UserID" InsertCommand="INSERT INTO [Users] ([FirstName], [LastName], [UserName], [Lozinka], [MaticniBroj], [OJ], [SubOJ], [Email], [UserRole]) VALUES (@FirstName, @LastName, @UserName, @Lozinka, @MaticniBroj, @OJ, @SubOJ, @Email, @UserRole)" SelectCommand="SELECT * FROM [Users]" UpdateCommand="UPDATE [Users] SET [FirstName] = @FirstName, [LastName] = @LastName, [UserName] = @UserName, [Lozinka] = @Lozinka, [MaticniBroj] = @MaticniBroj, [OJ] = @OJ, [SubOJ] = @SubOJ, [Email] = @Email, [UserRole] = @UserRole WHERE [UserID] = @UserID">
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CroscoStopCardConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [UserID] = @UserID" InsertCommand="INSERT INTO [Users] ([FirstName], [LastName], [UserName], [Lozinka], [MaticniBroj], [OJ], [SubOJ], [SubOJDva], [Email], [UserRole]) VALUES (@FirstName, @LastName, @UserName, @Lozinka, @MaticniBroj, @OJ, @SubOJ, @SubOJDva, @Email, @UserRole)" SelectCommand="SELECT * FROM [Users]" UpdateCommand="UPDATE [Users] SET [FirstName] = @FirstName, [LastName] = @LastName, [UserName] = @UserName, [Lozinka] = @Lozinka, [MaticniBroj] = @MaticniBroj, [OJ] = @OJ, [SubOJ] = @SubOJ, [SubOJDva] = @SubOJDva, [Email] = @Email, [UserRole] = @UserRole WHERE [UserID] = @UserID">
                         <DeleteParameters>
                             <asp:Parameter Name="UserID" Type="Int32" />
                         </DeleteParameters>
