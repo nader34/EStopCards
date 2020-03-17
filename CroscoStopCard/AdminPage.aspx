@@ -101,7 +101,7 @@
             </td>
         </tr>
         <tr style="display: table-caption">
-            <td class="addUserID btn btn-dark" onclick="pokazi()">Add user
+            <td class="addUserID btn btn-info" onclick="pokazi()">Add user
             </td>
             <td>
 
@@ -736,7 +736,18 @@
                 </asp:Panel>
             </td>
        </tr>
+        <tr>
+            <td>
+                <h3>Nomination table</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Panel ID="NominationTable" CssClass="container mb-5 mt-3" runat="server">
 
+                </asp:Panel>
+            </td>
+       </tr>
     </table>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>
@@ -775,7 +786,17 @@
            //alert('Spremno za Display')
           // display();
             //$('#mytb1').DataTable();
+            
             display();
+            displayNomination();
+            $('td.txtBox').each(function () {
+                if ($(this).text() == "True") {
+                    $(this).closest("tr").find('td:last').text("Nominirana");
+                    var a = $(this).closest("tr").find('td:last')
+                    a.removeClass("btn-primary");
+                    a.addClass("btn-success");
+                }
+            });
             $('.mydatatable').DataTable();
             var AddUserDisplay = document.getElementById("ContentPlaceHolder1_DetailsView1").firstElementChild.firstElementChild.firstElementChild.firstElementChild;
             if (AddUserDisplay.innerText == "Insert") {
@@ -785,20 +806,11 @@
            }
 
 
-           $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered");
+            $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered");
+            
 
           
-           //var xmlhttp = new XMLHttpRequest();
-           //xmlhttp.open('Get', 'InsertPage.aspx?opr=display', false);
-           //xmlhttp.send(null);
-           //var resultText = xmlhttp.responseText;
-           //document.getElementById("ContentPlaceHolder1_tablicaSTOP").innerHTML = resultText;
-           //if (xmlhttp.readyState == 4) {
-           //    if (xmlhttp.status == 200) {
-           //        var resultText = xmlhttp.responseText;
-           //         document.getElementById("ContentPlaceHolder1_tablicaSTOP").innerHTML = resultText;
-           //    }
-           //}
+           
         });
     </script>
     <script>
@@ -844,6 +856,44 @@
         xmlhttp.send(null);
         var resultText = xmlhttp.responseText;
         document.getElementById("ContentPlaceHolder1_tablicaSTOP1").innerHTML = resultText;
+        //$('#ContentPlaceHolder1_tablicaSTOP').DataTable();
+        if (xmlhttp.readyState == 4) {
+            if (xmlhttp.status == 200) {
+                //resultText = xmlhttp.responseText;
+                //document.getElementById("mytb1").innerHTML = resultText;
+                    
+                //if ($.fn.DataTable.isDataTable("#mytb1")) {
+                //    $('#mytb1').DataTable().clear().destroy();
+                //    $('#mytb1').DataTable({
+                //        select: true
+                //    });
+                //}
+            }
+        }
+    }
+    </script>
+    <script>
+        $(document).on('click', 'td .nominLocal', function () {
+            $(this).text("Nomenirana");
+            $(this).removeClass("btn-primary");
+            $(this).addClass("btn-success");
+            $(this).closest("tr").find('td.txtBox')[4].innerHTML="<span>True</span>";
+            var html = $(this).text()
+            var text1 = $(this).closest("tr").find('td:first').text();
+            alert(text1);
+            alert(html);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('Get', 'Insertpage.aspx?opr=UpdateNominacije' + '&STOPID=' + text1, false);
+            xmlhttp.send(null);
+            //displayNomination(); 
+            
+        });
+        function displayNomination() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('Get', 'InsertPage.aspx?opr=displayNomination', false);
+        xmlhttp.send(null);
+        var resultText = xmlhttp.responseText;
+        document.getElementById("ContentPlaceHolder1_NominationTable").innerHTML = resultText;
         //$('#ContentPlaceHolder1_tablicaSTOP').DataTable();
         if (xmlhttp.readyState == 4) {
             if (xmlhttp.status == 200) {

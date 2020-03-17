@@ -24,7 +24,7 @@ namespace CroscoStopCard
             else if (Session["user"] != null)
             {
                 Session["NewPassword"] = null;
-                Response.Redirect("StopCardPage.aspx");
+                Response.Redirect("StopQueryPage.aspx");
             }
 
             Response.AppendHeader("Cache-Control", "no-store");
@@ -62,12 +62,12 @@ namespace CroscoStopCard
                             result.Lozinka = PasswordHash.CreateHash(tbxNewPass.Text);
                             SCDB.SaveChanges();
 
-                            if (result.UserRole == "Admin" || result.UserRole == "MasterAdmin")
+                            if (result.UserRole == "Admin" || result.UserRole == "LocalAdmin" || result.UserRole == "Manager" || result.UserRole == "MasterAdmin")
                                 Session["UserRole"] = result.UserRole;
                             else Session["user"] = result.UserName;
                             
                             Session["userID"] = result.UserID;
-                            Response.Redirect("StopCardPage.aspx");
+                            Response.Redirect("StopQueryPage.aspx");
                         }
                     }
                 }

@@ -202,7 +202,7 @@ namespace CroscoStopCard
                     html.Append("</th>");
                 }
                 html.Append("<th style='cursor:pointer'>");
-                html.Append("PDF");
+                html.Append("Otvori");
                 html.Append("</th>");
 
                 html.Append("<th style='cursor:pointer'>");
@@ -225,16 +225,10 @@ namespace CroscoStopCard
                         html.Append("</td>");
                     }
 
-                    //html.Append("<td Class='btn'>");
-                    //html.Append("<span>");
-                    //html.Append("PDF");
-                    //html.Append("</span>");
-                    //html.Append("</td>");
-
                     html.Append("<td Class='STOPCardbtn btn'>");
                     //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
-                    html.Append("Otvori");
+                    html.Append("Pregled");
                     html.Append("</span>");
                     html.Append("</td>");
 
@@ -258,7 +252,6 @@ namespace CroscoStopCard
             {
 
                 Session["STOPID"] = Request.QueryString["STOPID"];
-
                 //var DateCreated1 = DateTime.Parse(DatumOtvaranja1).ToString("yyyy-MM-dd");
                 SqlCommand command;
                 string sql = null;
@@ -275,6 +268,113 @@ namespace CroscoStopCard
                 command.ExecuteNonQuery();
                 command.Dispose();
                 con.Close();
+            }
+            else if (opr=="UpdateNominacije")
+            {
+                STOPID = Request.QueryString["STOPID"];
+
+                //var DateCreated1 = DateTime.Parse(DatumOtvaranja1).ToString("yyyy-MM-dd");
+                SqlCommand command;
+                string sql = null;
+                if ((string)Session["UserRole"]=="LocalAdmin")
+                {
+                    sql = ("UPDATE EStopCards SET NominacijeLocal = 'True' WHERE EStopCardID = " + STOPID);
+                }
+                else if((string)Session["UserRole"] == "Admin")
+                {
+                    sql = ("UPDATE EStopCards SET NominacijeAdmin = 'True' WHERE EStopCardID = " + STOPID);
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    sql = ("UPDATE EStopCards SET NominacijeManger = 'True' WHERE EStopCardID = " + STOPID);
+                }
+
+                SqlConnection con = new SqlConnection(constr);
+                SqlCommand cmd = new SqlCommand();
+                con.Open();
+                command = new SqlCommand(sql, con);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                con.Close();
+            }
+            else if (opr == "displayNomination")
+            {
+                DataTable dt = new DataTable();
+                if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    // Populating a DataTable from database.
+                    dt = this.GetDataLocal();
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    // Populating a DataTable from database.
+                    dt = this.GetDataAdmin1();
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    // Populating a DataTable from database.
+                    dt = this.GetDataManager();
+                }
+                else if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    // Populating a DataTable from database.
+                    dt = this.GetData();
+                }
+
+
+                // Building an HTML string.
+                StringBuilder html = new StringBuilder();
+
+                // Table start.
+                // html.Append("<table id='mytb1' border = '1' cellspacing='1' class='tablesorter'>")
+                html.Append("<table id='tb1Nominacija' class='table table-striped table-bordered mydatatable' style='width: 100 %'>");
+                // Building the Header row.
+                html.Append("<thead>");
+                html.Append("<tr>");
+                int i = 0;
+                foreach (DataColumn column in dt.Columns)
+                {
+                    string stri;
+                    stri = "<th style='cursor:pointer'>";
+                    html.Append(stri);
+                    i = i + 1;
+                    html.Append(column.ColumnName);
+                    html.Append("</th>");
+                }
+                html.Append("<th style='cursor:pointer'>");
+                html.Append("Nominacije");
+                html.Append("</th>");
+
+                html.Append("</tr>");
+                html.Append("</thead>");
+                // html.Append("<tbody id='myTable'>")
+                // Building the Data rows.
+                foreach (DataRow row in dt.Rows)
+                {
+                    html.Append("<tr class='item'>");
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        html.Append("<td Class='txtBox'>");
+                        html.Append("<span>");
+                        html.Append(row[column.ColumnName]);
+                        html.Append("</span>");
+                        html.Append("</td>");
+                    }
+
+                    html.Append("<td Class='btn-primary nominLocal'>");
+                    //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
+                    html.Append("<span>");
+                    html.Append("Nominiraj");
+                    html.Append("</span>");
+                    html.Append("</td>");
+
+                    html.Append("</tr>");
+                }
+                // html.Append("</tbody>")
+                // Table end.
+                html.Append("</table>");
+                Response.Write(html);
+                Response.End();
             }
             else
             {
@@ -346,6 +446,63 @@ namespace CroscoStopCard
             {
                 using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
                 //using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataLocal()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeLocal FROM EStopCards"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataAdmin1()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataManager()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

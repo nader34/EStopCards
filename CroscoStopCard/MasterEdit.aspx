@@ -86,12 +86,6 @@
                             }
                         },
                         {
-                            text: 'nesto',
-                            action: function ( e, dt, node, config ) {
-                                alert( 'Button activated' );
-                            }
-                        },
-                        {
                             extend: 'colvis',
                             text: 'Pokaži',
 
@@ -102,9 +96,13 @@
                             "targets": -1,
                             "data": null,
                             "defaultContent": "<button class='btn btn-danger DeleteRow'>Delete!</button>"
+                        },
+                        {
+                            "targets": -2,
+                            "data": null,
+                            "defaultContent": "<button class='btn btn-success'>Prvo mjesto!</button>"
                         }
-                ]
-            
+                ]            
             });
             //$('.mydatatable').DataTable();
             var table1 = $('#mytb1').DataTable();
@@ -269,6 +267,7 @@
                     xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + redid + '&opr=delete', false);
                     xmlhttp.send(null);
                     redid = "";
+                    //provjeriti zašto table2 ne 4
                     table2
                         .row($(this).parents('tr'))
                         .remove()
