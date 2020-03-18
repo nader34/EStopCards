@@ -1477,7 +1477,7 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND NominacijeAdmin = 'True'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
