@@ -1438,7 +1438,8 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeLocal FROM EStopCards"))
+                //using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeLocal FROM EStopCards"))
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeLocal FROM EStopCards WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -1457,7 +1458,7 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeAdmin FROM EStopCards WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND NominacijeLocal = 'True'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
