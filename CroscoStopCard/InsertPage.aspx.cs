@@ -40,6 +40,7 @@ namespace CroscoStopCard
 
             //}
             if (Session["user"] == null && Session["UserRole"] == null) Response.Redirect("Home.aspx");
+
             if (Session["STOPID"] != null)
             {
                 STOPID = (string)Session["STOPID"];
@@ -277,7 +278,28 @@ namespace CroscoStopCard
                 //var DateCreated1 = DateTime.Parse(DatumOtvaranja1).ToString("yyyy-MM-dd");
                 SqlCommand command;
                 string sql = null;
-                if ((string)Session["UserRole"]=="LocalAdmin")
+                if ((string)Session["OJ"] == "Uprava")
+                {
+                    string rezultati= Request.QueryString["rezul"];
+                    if (rezultati == "Odaberi")
+                    {
+                        sql = ("UPDATE EStopCards SET UziIzbor = 'True', Dobitne = 'False' WHERE EStopCardID = " + STOPID);
+                    }
+                    else if (rezultati == "Prvo mjesto")
+                    {
+                        sql = ("UPDATE EStopCards SET UziIzbor = 'False', Dobitne = '1' WHERE EStopCardID = " + STOPID);
+                    }
+                    else if (rezultati == "Drugo mjesto")
+                    {
+                        sql = ("UPDATE EStopCards SET UziIzbor = 'False', Dobitne = '2' WHERE EStopCardID = " + STOPID);
+                    }
+                    else if (rezultati == "Treće mjesto")
+                    {
+                        sql = ("UPDATE EStopCards SET UziIzbor = 'False', Dobitne = '3' WHERE EStopCardID = " + STOPID);
+                    }
+
+                }
+                else if ((string)Session["UserRole"] == "LocalAdmin") 
                 {
                     sql = ("UPDATE EStopCards SET NominacijeLocal = 'True' WHERE EStopCardID = " + STOPID);
                 }
@@ -287,7 +309,12 @@ namespace CroscoStopCard
                 }
                 else if ((string)Session["UserRole"] == "Manager")
                 {
-                    sql = ("UPDATE EStopCards SET NominacijeManger = 'True' WHERE EStopCardID = " + STOPID);
+                    sql = ("UPDATE EStopCards SET NominacijeManger = 'True', UziIzbor = 'True'  WHERE EStopCardID = " + STOPID);
+                }
+                //komisija
+                else if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    sql = ("UPDATE EStopCards SET UziIzbor = 'False', Dobitne = '1'  WHERE EStopCardID = " + STOPID);
                 }
 
                 SqlConnection con = new SqlConnection(constr);
@@ -301,81 +328,121 @@ namespace CroscoStopCard
             else if (opr == "displayNomination")
             {
                 DataTable dt = new DataTable();
-                if ((string)Session["UserRole"] == "LocalAdmin")
+                if ((string)Session["OJ"] == "Uprava")
                 {
-                    // Populating a DataTable from database.
-                    dt = this.GetDataLocal();
-                }
-                else if ((string)Session["UserRole"] == "Admin")
-                {
-                    // Populating a DataTable from database.
-                    dt = this.GetDataAdmin1();
-                }
-                else if ((string)Session["UserRole"] == "Manager")
-                {
-                    // Populating a DataTable from database.
-                    dt = this.GetDataManager();
-                }
-                else if ((string)Session["UserRole"] == "MasterAdmin")
-                {
-                    // Populating a DataTable from database.
-                    dt = this.GetData();
-                }
-
-
-                // Building an HTML string.
-                StringBuilder html = new StringBuilder();
-
-                // Table start.
-                // html.Append("<table id='mytb1' border = '1' cellspacing='1' class='tablesorter'>")
-                html.Append("<table id='tb1Nominacija' class='table table-striped table-bordered mydatatable' style='width: 100 %'>");
-                // Building the Header row.
-                html.Append("<thead>");
-                html.Append("<tr>");
-                int i = 0;
-                foreach (DataColumn column in dt.Columns)
-                {
-                    string stri;
-                    stri = "<th style='cursor:pointer'>";
-                    html.Append(stri);
-                    i = i + 1;
-                    html.Append(column.ColumnName);
-                    html.Append("</th>");
-                }
-                html.Append("<th style='cursor:pointer'>");
-                html.Append("Nominacije");
-                html.Append("</th>");
-
-                html.Append("</tr>");
-                html.Append("</thead>");
-                // html.Append("<tbody id='myTable'>")
-                // Building the Data rows.
-                foreach (DataRow row in dt.Rows)
-                {
-                    html.Append("<tr class='item'>");
+                    dt = this.GetDataKomisija();
+                    StringBuilder html = new StringBuilder();
+                    html.Append("<table id='tb1Nominacija' class='table table-striped table-bordered mydatatable' style='width: 100 %'>");
+                    html.Append("<thead>");
+                    html.Append("<tr>");
+                    int i = 0;
                     foreach (DataColumn column in dt.Columns)
                     {
-                        html.Append("<td Class='txtBox'>");
-                        html.Append("<span>");
-                        html.Append(row[column.ColumnName]);
-                        html.Append("</span>");
-                        html.Append("</td>");
+                        string stri;
+                        stri = "<th style='cursor:pointer'>";
+                        html.Append(stri);
+                        i = i + 1;
+                        html.Append(column.ColumnName);
+                        html.Append("</th>");
+                    }
+                    html.Append("<th style='cursor:pointer'>Odabir</th></tr></thead>");                   
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        html.Append("<tr class='item'>");
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            html.Append("<td class='txtBoxDva'>");
+                            html.Append("<span>");
+                            html.Append(row[column.ColumnName]);
+                            html.Append("</span>");
+                            html.Append("</td>");
+                        }
+                        //html.Append("<td>");
+                        html.Append("<td><span><select class='browser-default custom-select Dobitkol'><option selected>Odaberi</option><option>Prvo mjesto</option><option>Drugo mjesto</option><option>Treće mjesto</option></select></span></td></tr>");
+                        //html.Append("</tr>");
+                    }
+                    html.Append("</table>");
+                    Response.Write(html);
+                    Response.End();
+                }
+                else
+                {
+                    if ((string)Session["UserRole"] == "LocalAdmin")
+                    {
+                        // Populating a DataTable from database.
+                        dt = this.GetDataLocal();
+                    }
+                    else if ((string)Session["UserRole"] == "Admin")
+                    {
+                        // Populating a DataTable from database.
+                        dt = this.GetDataAdmin1();
+                    }
+                    else if ((string)Session["UserRole"] == "Manager")
+                    {
+                        // Populating a DataTable from database.
+                        dt = this.GetDataManager();
+                    }
+                    else if ((string)Session["UserRole"] == "MasterAdmin")
+                    {
+                        // Populating a DataTable from database.
+                        dt = this.GetDataMaster();
                     }
 
-                    html.Append("<td Class='btn-primary nominLocal'>");
-                    //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
-                    html.Append("<span>");
-                    html.Append("Nominiraj");
-                    html.Append("</span>");
-                    html.Append("</td>");
+
+                    // Building an HTML string.
+                    StringBuilder html = new StringBuilder();
+
+                    // Table start.
+                    // html.Append("<table id='mytb1' border = '1' cellspacing='1' class='tablesorter'>")
+                    html.Append("<table id='tb1Nominacija' class='table table-striped table-bordered mydatatable' style='width: 100 %'>");
+                    // Building the Header row.
+                    html.Append("<thead>");
+                    html.Append("<tr>");
+                    int i = 0;
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        string stri;
+                        stri = "<th style='cursor:pointer'>";
+                        html.Append(stri);
+                        i = i + 1;
+                        html.Append(column.ColumnName);
+                        html.Append("</th>");
+                    }
+                    html.Append("<th style='cursor:pointer'>Nominacije</th>");
+                    //html.Append("Nominacije");
+                    //html.Append("</th>");
 
                     html.Append("</tr>");
+                    html.Append("</thead>");
+                    // html.Append("<tbody id='myTable'>")
+                    // Building the Data rows.
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        html.Append("<tr class='item'>");
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            html.Append("<td Class='txtBox'>");
+                            html.Append("<span>");
+                            html.Append(row[column.ColumnName]);
+                            html.Append("</span>");
+                            html.Append("</td>");
+                        }
+
+                        html.Append("<td Class='btn-primary nominLocal'>");
+                        //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
+                        html.Append("<span>");
+                        html.Append("Nominiraj");
+                        html.Append("</span>");
+                        html.Append("</td>");
+
+                        html.Append("</tr>");
+                    }
+                    // html.Append("</tbody>")
+                    // Table end.
+                    html.Append("</table>");
+                    Response.Write(html);
+                    Response.End();
                 }
-                // html.Append("</tbody>")
-                // Table end.
-                html.Append("</table>");
-                Response.Write(html);
-                Response.End();
             }
             else
             {
@@ -504,6 +571,44 @@ namespace CroscoStopCard
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND NominacijeAdmin = 'True'"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataMaster()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager, UziIzbor FROM EStopCards WHERE UziIzbor = 'True'"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataKomisija()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, DateCreated, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards WHERE UziIzbor = 'True'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

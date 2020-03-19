@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.0.1/css/searchPanes.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"/>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -29,6 +31,9 @@
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+    <%--search feature--%>
+    <%--<script src="https://cdn.datatables.net/searchpanes/1.0.1/js/dataTables.searchPanes.min.js"></script>--%>
 
 
 
@@ -50,9 +55,20 @@
 
     <script>
         $(document).ready(function () {
+            //search feature
+            //$('#mytb1 tfoot th').each(function () {
+            //    var title = $(this).text();
+            //    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            //});
             $('#mytb1').DataTable({
+                
                 select: true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                //search feature
+                //searchPanes: {
+                //    viewTotal: true,
+                //},
+
                 //dom: 'Bfrtip',
                 "dom": '<"toolbar">lBfrtip',
                 //buttons: [
@@ -96,14 +112,35 @@
                             "targets": -1,
                             "data": null,
                             "defaultContent": "<button class='btn btn-danger DeleteRow'>Delete!</button>"
-                        },
-                        {
-                            "targets": -2,
-                            "data": null,
-                            "defaultContent": "<button class='btn btn-success'>Prvo mjesto!</button>"
                         }
+                        //{
+                        //    "targets": -2,
+                        //    "data": null,
+                        //    "defaultContent": "<button class='btn btn-success'>Prvo mjesto!</button>"
+                        //}
                 ]            
             });
+            
+            //var table = $('#mytb1').DataTable({
+            //    //searchPanes: {
+            //    //    viewTotal: true,
+            //    //},
+            //    //dom: 'Pfrtip',
+            //});
+
+            //search feature
+            //var table5 = $('#mytb1').DataTable();
+            //table5.columns().every(function () {
+            //    var that = this;
+            //    $('input', this.footer()).on('keyup change', function () {
+            //        if (that.search() !== this.value) {
+            //            that
+            //                .search(this.value)
+            //                .draw();
+            //        }
+            //    });
+            //});
+
             //$('.mydatatable').DataTable();
             var table1 = $('#mytb1').DataTable();
 
@@ -117,14 +154,14 @@
                     $(this).addClass('selected');
                 }
             });
-            $('#DeleteRow').click(function () {
-                table1.row('.selected').remove().draw(false);
-                var thisro = getcolid();
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + thisro + '&opr=delete', false);
-                xmlhttp.send(null);
-                redid = "";
-            });
+            //$('#DeleteRow').click(function () {
+            //    table1.row('.selected').remove().draw(false);
+            //    var thisro = getcolid();
+            //    var xmlhttp = new XMLHttpRequest();
+            //    xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + thisro + '&opr=delete', false);
+            //    xmlhttp.send(null);
+            //    redid = "";
+            //});
             var table3 = $('#mytb1').DataTable();
             $(document).on('click', '#mytb1 td', function () {
                 var idx = table3.cell(this).index().column;

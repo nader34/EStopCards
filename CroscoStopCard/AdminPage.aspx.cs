@@ -166,8 +166,8 @@ namespace CroscoStopCard
             }
             else if ((string)Session["UserRole"] == "MasterAdmin")
             {
-                // Populating a DataTable from database.
-                dt = this.GetData();
+                // Populating a DataTable from database. za komisiju zapravo
+                dt = this.GetDataMaster();
             }
 
 
@@ -1478,6 +1478,25 @@ namespace CroscoStopCard
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND NominacijeAdmin = 'True'"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+        private DataTable GetDataMaster()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, UziIzbor FROM EStopCards WHERE UziIzbor = 'True'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

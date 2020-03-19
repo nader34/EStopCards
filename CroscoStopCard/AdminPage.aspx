@@ -888,6 +888,27 @@
             //displayNomination(); 
             
         });
+        $(document).on('change', 'select.Dobitkol', function () {
+            
+        //    $(this).text("Nomenirana");
+        //    $(this).removeClass("btn-primary");
+        //    $(this).addClass("btn-success");
+        //    $(this).closest("tr").find('td.txtBox')[4].innerHTML="<span>True</span>";
+            //var html = $(this).text();
+            var html = $(this).val();;
+            var text1 = $(this).closest("tr").find('td:first').text();
+            alert(text1);
+            alert(html);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('Get', 'Insertpage.aspx?opr=UpdateNominacije' + '&STOPID=' + text1 + '&rezul=' + html, false);
+            xmlhttp.send(null);
+        //    //displayNomination(); 
+            
+        });
+        //forntEnd session
+        //sessionStorage.setItem("userName",document.getElementById('usr').innerText.split(" ",2)[1]);
+        //sessionStorage.getItem("userName");
+
         function displayNomination() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open('Get', 'InsertPage.aspx?opr=displayNomination', false);

@@ -154,7 +154,7 @@
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">ADR</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">PTW</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">CBC</a></li>
-                <li><a href="MasterEdit.aspx" runat="server" id="MasterEditSTOP" style="color: #f0ce11; font-size: x-large">Edit STOP Cards</a></li>
+                <li><a href="MasterEdit.aspx" runat="server" target='_blank' id="MasterEditSTOP" style="color: #f0ce11; font-size: x-large">Edit STOP Cards</a></li>
             </ul>
         </asp:Panel>
 

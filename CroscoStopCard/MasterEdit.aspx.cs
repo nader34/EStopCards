@@ -27,6 +27,7 @@ namespace CroscoStopCard
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["UserRole"] != "MasterAdmin") Response.Redirect("Home.aspx");
             if (!IsPostBack)
             { 
 
@@ -48,13 +49,6 @@ namespace CroscoStopCard
                 {
                     string stri;
                     stri = "<th style='cursor:pointer'>";
-                    // stri = "<th onclick='sortTable(" & i & ")'>"
-
-
-
-                    // stri = "<th onclick="
-                    // stri = stri & "w3.sortHTML("
-                    // stri = stri & "'" & "#tb1" & "','.item'," & "'td:nth-child(" & i & ")')' " & "style='cursor:pointer'>"
                     html.Append(stri);
                     i = i + 1;
                     html.Append(column.ColumnName);
