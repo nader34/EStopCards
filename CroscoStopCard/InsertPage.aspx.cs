@@ -283,7 +283,7 @@ namespace CroscoStopCard
                     string rezultati= Request.QueryString["rezul"];
                     if (rezultati == "Odaberi")
                     {
-                        sql = ("UPDATE EStopCards SET UziIzbor = 'True', Dobitne = 'False' WHERE EStopCardID = " + STOPID);
+                        sql = ("UPDATE EStopCards SET UziIzbor = 'True', Dobitne = NULL WHERE EStopCardID = " + STOPID);
                     }
                     else if (rezultati == "Prvo mjesto")
                     {
@@ -358,7 +358,8 @@ namespace CroscoStopCard
                             html.Append("</td>");
                         }
                         //html.Append("<td>");
-                        html.Append("<td><span><select class='browser-default custom-select Dobitkol'><option selected>Odaberi</option><option>Prvo mjesto</option><option>Drugo mjesto</option><option>Treće mjesto</option></select></span></td></tr>");
+                        //html.Append("<td><span><select class='mdb-select md-form colorful-select dropdown-success Dobitkol'><option selected>Odaberi</option><option>Prvo mjesto</option><option>Drugo mjesto</option><option>Treće mjesto</option></select></span></td></tr>");
+                        html.Append("<td><select class='form-control Dobitkol'><option selected>Odaberi</option><option>Prvo mjesto</option><option>Drugo mjesto</option><option>Treće mjesto</option></select></td></tr>");
                         //html.Append("</tr>");
                     }
                     html.Append("</table>");

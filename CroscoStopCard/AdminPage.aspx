@@ -775,6 +775,7 @@
     </script>
     <script>
         $(document).ready(function () {
+            
 
            //document.querySelector("#DatumOt").value = new Date()
            //let today = new Date().toISOString().substr(0, 10);
@@ -807,9 +808,10 @@
 
 
             $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered");
-            
 
-          
+            //ne prepozna možda zbog depenedance
+            //$('.mdb-select').materialSelect(); 
+         
            
         });
     </script>
@@ -895,10 +897,15 @@
         //    $(this).addClass("btn-success");
         //    $(this).closest("tr").find('td.txtBox')[4].innerHTML="<span>True</span>";
             //var html = $(this).text();
-            var html = $(this).val();;
+            var html = $(this).val();
+            if ($(this).val() == "Odaberi") {
+                if ($(this).hasClass("btn-success")) { $(this).removeClass("btn-success") };
+            } else {
+                $(this).addClass("btn-success");
+            }
             var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
+            //alert(text1);
+            //alert(html);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'Insertpage.aspx?opr=UpdateNominacije' + '&STOPID=' + text1 + '&rezul=' + html, false);
             xmlhttp.send(null);
