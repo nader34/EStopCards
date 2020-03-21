@@ -731,7 +731,8 @@
     </table>
     <table>
         <tr>
-            <td><asp:Panel ID="tablicaSTOP1" CssClass="container mb-5 mt-3" runat="server">
+            <td>
+                <asp:Panel ID="tablicaSTOP1" CssClass="container mb-5 mt-3" runat="server">
 
                 </asp:Panel>
             </td>
