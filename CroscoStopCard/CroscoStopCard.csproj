@@ -209,6 +209,7 @@
       <LastGenOutput>StopCardModel.cs</LastGenOutput>
     </Content>
     <Content Include="StopCardPage.aspx" />
+    <Content Include="StopReports.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -338,6 +339,13 @@
     </Compile>
     <Compile Include="StopCardPage.aspx.designer.cs">
       <DependentUpon>StopCardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StopReports.aspx.cs">
+      <DependentUpon>StopReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StopReports.aspx.designer.cs">
+      <DependentUpon>StopReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>StopCardModel.tt</DependentUpon>
