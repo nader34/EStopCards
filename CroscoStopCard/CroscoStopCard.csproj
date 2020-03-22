@@ -116,6 +116,7 @@
     <Content Include="css\MasterStyle.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\Reports.css" />
     <Content Include="DoneSTOPCard.aspx" />
     <Content Include="EditSTOPCard.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />

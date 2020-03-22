@@ -149,6 +149,7 @@
                 <li><a href="History.aspx" style="color: #f0ce11; font-size: x-large">Povijest</a></li>
                 <li><a href="StopCardPage.aspx" style="color: #f0ce11; font-size: x-large">Stop Card</a></li>
                 <li><a href="StopQueryPage.aspx" style="color: #f0ce11; font-size: x-large">E STOP Card</a></li>
+                <li><a href="StopReports.aspx" style="color: #f0ce11; font-size: x-large">Reports</a></li>
                 <li><a href="HS.aspx" style="color: #f0ce11; font-size: x-large">HS</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">CAR</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">ADR</a></li>
