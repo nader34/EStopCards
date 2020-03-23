@@ -108,7 +108,7 @@
                     <tbody>
                         <tr>
                             <th>
-                                Dani rada
+                                01. Dani rada
                             </th>
                             <td>
                                 31
@@ -170,7 +170,69 @@
                         </tr>
                         <tr>
                             <th>
-                                Broj kartica
+                                02. Broj kartica
+                            </th>
+                            <td>
+                                <span id="K1" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="K2"></span>
+                            </td>
+                            <td>
+                                <span id="K3"></span>
+                            </td>
+                            <td>
+                                <span id="Kq1"></span>
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q2
+                            </td>
+                            <td>
+                                H1
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q3
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q4
+                            </td>
+                            <td>
+                                H2
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                               03. Pozitivne kartice
                             </th>
                             <td>
                                 31
@@ -232,7 +294,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Pozitivne kartice
+                                04. Negativne kartice
                             </th>
                             <td>
                                 31
@@ -294,7 +356,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Negativne kartice
+                                05. Nesigurne radnje
                             </th>
                             <td>
                                 31
@@ -356,7 +418,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nesigurne radnje
+                                06. Nesigurne uvjete
                             </th>
                             <td>
                                 31
@@ -418,7 +480,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nesigurne uvjete
+                                07. Otvorene kartice
                             </th>
                             <td>
                                 31
@@ -480,7 +542,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Otvorene kartice
+                                08. Kartice u postupku
                             </th>
                             <td>
                                 31
@@ -542,7 +604,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Kartice u postupku
+                                09. Zatvorene kartice
                             </th>
                             <td>
                                 31
@@ -604,7 +666,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Zatvorene kartice
+                                10. Zatvorene negativne kartice
                             </th>
                             <td>
                                 31
@@ -666,7 +728,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Zatvorene negativne kartice
+                                11. Zatvorene nesigurne radnje
                             </th>
                             <td>
                                 31
@@ -728,7 +790,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Zatvorene nesigurne radnje
+                                12. Zatvorene nesigurne uvjete
                             </th>
                             <td>
                                 31
@@ -790,7 +852,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Zatvorene nesigurne uvjete
+                                13. Broj radnika
                             </th>
                             <td>
                                 31
@@ -852,7 +914,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Broj radnika
+                                14. Kartice po osobi
                             </th>
                             <td>
                                 31
@@ -914,7 +976,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Kartice po osobi
+                                15. Kartice po osobi po dani rada
                             </th>
                             <td>
                                 31
@@ -976,7 +1038,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Kartice po osobi po dani rada
+                                16. Negativne kartice po osobi
                             </th>
                             <td>
                                 31
@@ -1038,7 +1100,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Negativne kartice po osobi
+                                17. Negativne kartice po osobi po dani rada
                             </th>
                             <td>
                                 31
@@ -1096,48 +1158,6 @@
                             </td>
                             <td>
                                 Year
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Negativne kartice po osobi po dani rada
-                            </th>
-                            <td>31
-                            </td>
-                            <td>29
-                            </td>
-                            <td>31
-                            </td>
-                            <td>Q1
-                            </td>
-                            <td>30
-                            </td>
-                            <td>31
-                            </td>
-                            <td>30
-                            </td>
-                            <td>Q2
-                            </td>
-                            <td>H1
-                            </td>
-                            <td>31
-                            </td>
-                            <td>31
-                            </td>
-                            <td>30
-                            </td>
-                            <td>Q3
-                            </td>
-                            <td>31
-                            </td>
-                            <td>30
-                            </td>
-                            <td>31
-                            </td>
-                            <td>Q4
-                            </td>
-                            <td>H2
-                            </td>
-                            <td>Year
                             </td>
                         </tr>
 
@@ -1216,7 +1236,7 @@
                     <tbody>
                         <tr>
                             <th>
-                                Reakcija ljudi
+                                1. Reakcija ljudi
                             </th>
                             <td>
                                 31
@@ -1278,7 +1298,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Podešavanje osobne zaštitne opreme
+                                1.1 Podešavanje osobne zaštitne opreme
                             </th>
                             <td>
                                 31
@@ -1340,7 +1360,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Promjena položaja
+                                1.2 Promjena položaja
                             </th>
                             <td>
                                 31
@@ -1402,7 +1422,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Obavljanje posla na drugi način
+                                1.3 Obavljanje posla na drugi način
                             </th>
                             <td>
                                 31
@@ -1464,7 +1484,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Prekidanje s poslom
+                                1.4 Prekidanje s poslom
                             </th>
                             <td>
                                 31
@@ -1526,7 +1546,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Uzemljivanje
+                                1.5 Uzemljivanje
                             </th>
                             <td>
                                 31
@@ -1588,7 +1608,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Isključivanje strojeva
+                                1.6 Isključivanje strojeva
                             </th>
                             <td>
                                 31
@@ -1650,7 +1670,7 @@
                         </tr>
                         <tr>
                             <th>
-                                OSOBNA ZAŠTITNA OPREMA
+                                2. OSOBNA ZAŠTITNA OPREMA
                             </th>
                             <td>
                                 31
@@ -1712,7 +1732,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Glava
+                                2.1 Glava
                             </th>
                             <td>
                                 31
@@ -1774,7 +1794,7 @@
                         </tr>
                         <tr>
                             <th>
-                                 Oči i lice
+                                 2.2 Oči i lice
                             </th>
                             <td>
                                 31
@@ -1836,7 +1856,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Uši
+                                2.3 Uši
                             </th>
                             <td>
                                 31
@@ -1898,7 +1918,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Respiratorni sustav
+                                2.4 Respiratorni sustav
                             </th>
                             <td>
                                 31
@@ -1960,7 +1980,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Ruke i šake
+                                2.5 Ruke i šake
                             </th>
                             <td>
                                 31
@@ -2022,7 +2042,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Torzo
+                                2.6 Torzo
                             </th>
                             <td>
                                 31
@@ -2084,7 +2104,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Noge i stopala
+                                2.7 Noge i stopala
                             </th>
                             <td>
                                 31
@@ -2146,7 +2166,7 @@
                         </tr>
                         <tr>
                             <th>
-                                POLOŽAJ LJUDI (uzroci ozljeda)
+                                3. POLOŽAJ LJUDI (uzroci ozljeda)
                             </th>
                             <td>
                                 31
@@ -2208,7 +2228,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Udaranje u neki predmet
+                                3.1 Udaranje u neki predmet
                             </th>
                             <td>
                                 31
@@ -2270,7 +2290,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Udar nekog predmeta
+                                3.2 Udar nekog predmeta
                             </th>
                             <td>
                                 31
@@ -2332,7 +2352,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nači se u, na liniji nekog predmeta
+                                3.3 Nači se u, na liniji nekog predmeta
                             </th>
                             <td>
                                 31
@@ -2394,7 +2414,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Pad na istoj/različitoj razini
+                                3.4 Pad na istoj/različitoj razini
                             </th>
                             <td>
                                 31
@@ -2456,7 +2476,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Doticaj s ekstremnim temperaturama
+                                3.5 Doticaj s ekstremnim temperaturama
                             </th>
                             <td>
                                 31
@@ -2518,7 +2538,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Doticaj s električnom strujom
+                                3.6 Doticaj s električnom strujom
                             </th>
                             <td>
                                 31
@@ -2580,7 +2600,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Doticaj s visokim tlakovima
+                                3.7 Doticaj s visokim tlakovima
                             </th>
                             <td>
                                 31
@@ -2642,7 +2662,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Udisanje opasnih tvari
+                                3.8 Udisanje opasnih tvari
                             </th>
                             <td>
                                 31
@@ -2704,7 +2724,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Apsorbiranje opasnih tvari
+                                3.9 Apsorbiranje opasnih tvari
                             </th>
                             <td>
                                 31
@@ -2766,7 +2786,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Preveliko naprezanje
+                                3.10 Preveliko naprezanje
                             </th>
                             <td>
                                 31
@@ -2828,7 +2848,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Ponavljanje pokreta
+                                3.11 Ponavljanje pokreta
                             </th>
                             <td>
                                 31
@@ -2890,7 +2910,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nespretni položaj /Statično držanje
+                                3.12 Nespretni položaj /Statično držanje
                             </th>
                             <td>
                                 31
@@ -2952,7 +2972,7 @@
                         </tr>
                         <tr>
                             <th>
-                                ALATI I OPREMA
+                                4. ALATI I OPREMA
                             </th>
                             <td>
                                 31
@@ -3014,7 +3034,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Pogrešni za dotični posao
+                                4.1 Pogrešni za dotični posao
                             </th>
                             <td>
                                 31
@@ -3076,7 +3096,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nepravilno korišteni
+                                4.2 Nepravilno korišteni
                             </th>
                             <td>
                                 31
@@ -3138,7 +3158,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Neispravni alati i oprema
+                                4.3 Neispravni alati i oprema
                             </th>
                             <td>
                                 31
@@ -3200,7 +3220,7 @@
                         </tr>
                         <tr>
                             <th>
-                                PROCEDURE POSTUPCI I UREDNOST
+                                6. PROCEDURE POSTUPCI I UREDNOST
                             </th>
                             <td>
                                 31
@@ -3262,7 +3282,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Neodgovarajuće procedure
+                                6.1 Neodgovarajuće procedure
                             </th>
                             <td>
                                 31
@@ -3324,7 +3344,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Neznanje/Nerazumjevanje procedura
+                                6.2 Neznanje/Nerazumjevanje procedura
                             </th>
                             <td>
                                 31
@@ -3386,7 +3406,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nepridržavanje procedura
+                                6.3 Nepridržavanje procedura
                             </th>
                             <td>
                                 31
@@ -3448,7 +3468,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Norme urednosti neodgovarajuće
+                                6.4 Norme urednosti neodgovarajuće
                             </th>
                             <td>
                                 31
@@ -3510,7 +3530,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Neznanja /Nerazumjevanja normi urednosti
+                                6.5 Neznanja /Nerazumjevanja normi urednosti
                             </th>
                             <td>
                                 31
@@ -3572,7 +3592,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Nepridržavanje normi i urednosti
+                                6.6 Nepridržavanje normi i urednosti
                             </th>
                             <td>
                                 31
@@ -3710,7 +3730,7 @@
                     <tbody>
                         <tr>
                             <th>
-                                Sati rada
+                                01. Sati rada
                             </th>
                             <td>
                                 31
@@ -3772,7 +3792,7 @@
                         </tr>
                         <tr>
                             <th>
-                                FTL
+                                02. FTL
                             </th>
                             <td>
                                 31
@@ -3834,7 +3854,7 @@
                         </tr>
                         <tr>
                             <th>
-                                LTI
+                                03. LTI
                             </th>
                             <td>
                                 31
@@ -3896,7 +3916,7 @@
                         </tr>
                         <tr>
                             <th>
-                                RWC
+                                04. RWC
                             </th>
                             <td>
                                 31
@@ -3958,7 +3978,7 @@
                         </tr>
                         <tr>
                             <th>
-                                MTC
+                                05. MTC
                             </th>
                             <td>
                                 31
@@ -4020,7 +4040,7 @@
                         </tr>
                         <tr>
                             <th>
-                                FAC
+                                06. FAC
                             </th>
                             <td>
                                 31
@@ -4082,7 +4102,7 @@
                         </tr>
                         <tr>
                             <th>
-                                NM
+                                07. NM
                             </th>
                             <td>
                                 31
@@ -4144,7 +4164,7 @@
                         </tr>
                         <tr>
                             <th>
-                                RTA
+                                08. RTA
                             </th>
                             <td>
                                 31
@@ -4206,7 +4226,7 @@
                         </tr>
                         <tr>
                             <th>
-                                RTI
+                                09. RTI
                             </th>
                             <td>
                                 31
@@ -4268,7 +4288,7 @@
                         </tr>
                         <tr>
                             <th>
-                                NII
+                                10. NII
                             </th>
                             <td>
                                 31
@@ -4330,7 +4350,7 @@
                         </tr>
                         <tr>
                             <th>
-                                SWA
+                                11. SWA
                             </th>
                             <td>
                                 31
@@ -4392,7 +4412,7 @@
                         </tr>
                         <tr>
                             <th>
-                                TPS
+                                12. TPS
                             </th>
                             <td>
                                 31
@@ -4454,7 +4474,7 @@
                         </tr>
                         <tr>
                             <th>
-                                Broj Alkotestiranja
+                                13. Broj Alkotestiranja
                             </th>
                             <td>
                                 31
@@ -4516,7 +4536,7 @@
                         </tr>
                         <tr>
                             <th>
-                                LTIF
+                                14. LTIF
                             </th>
                             <td>
                                 31
@@ -4578,7 +4598,7 @@
                         </tr>
                         <tr>
                             <th>
-                                LTI rate
+                                15. LTI rate
                             </th>
                             <td>
                                 31
@@ -4640,7 +4660,7 @@
                         </tr>
                         <tr>
                             <th>
-                                TRIF
+                                16. TRIF
                             </th>
                             <td>
                                 31
@@ -4702,7 +4722,7 @@
                         </tr>
                         <tr>
                             <th>
-                                TRI rate
+                                17. TRI rate
                             </th>
                             <td>
                                 31
@@ -4764,7 +4784,7 @@
                         </tr>
                         <tr>
                             <th>
-                                NMF
+                                18. NMF
                             </th>
                             <td>
                                 31
@@ -4826,7 +4846,7 @@
                         </tr>
                         <tr>
                             <th>
-                                NM rate
+                                19. NM rate
                             </th>
                             <td>
                                 31
