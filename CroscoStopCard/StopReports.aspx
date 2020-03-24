@@ -235,7 +235,7 @@
                                03. Pozitivne kartice
                             </th>
                             <td>
-                                31
+                                <span id="positive1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -297,7 +297,7 @@
                                 04. Negativne kartice
                             </th>
                             <td>
-                                31
+                                <span id="negative1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -359,7 +359,7 @@
                                 05. Nesigurne radnje
                             </th>
                             <td>
-                                31
+                                <span id="UA1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -421,7 +421,7 @@
                                 06. Nesigurne uvjete
                             </th>
                             <td>
-                                31
+                                <span id="UC1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -483,7 +483,7 @@
                                 07. Otvorene kartice
                             </th>
                             <td>
-                                31
+                                <span id="open1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -545,7 +545,7 @@
                                 08. Kartice u postupku
                             </th>
                             <td>
-                                31
+                                <span id="ongoing1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -607,7 +607,7 @@
                                 09. Zatvorene kartice
                             </th>
                             <td>
-                                31
+                                <span id="close1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -669,7 +669,7 @@
                                 10. Zatvorene negativne kartice
                             </th>
                             <td>
-                                31
+                                <span id="NegativeClosed1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -731,7 +731,7 @@
                                 11. Zatvorene nesigurne radnje
                             </th>
                             <td>
-                                31
+                                <span id="UAClosed1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -793,7 +793,7 @@
                                 12. Zatvorene nesigurne uvjete
                             </th>
                             <td>
-                                31
+                                <span id="UCClosed1" runat="server"></span>
                             </td>
                             <td>
                                 29
