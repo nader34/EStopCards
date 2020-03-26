@@ -82,7 +82,7 @@ namespace CroscoStopCard
                     //html.Append("</td>");
 
                     html.Append("<td Class='STOPCardbtn btn'>");
-                    //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
+                    //html.Append("<a href='DoneSTOPCard.aspx' -čć.target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
                     html.Append("Delete!");
                     html.Append("</span>");

@@ -1239,7 +1239,7 @@
                                 1. Reakcija ljudi
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1301,7 +1301,7 @@
                                 1.1 Podešavanje osobne zaštitne opreme
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1363,7 +1363,7 @@
                                 1.2 Promjena položaja
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak2" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1425,7 +1425,7 @@
                                 1.3 Obavljanje posla na drugi način
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak3" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1487,7 +1487,7 @@
                                 1.4 Prekidanje s poslom
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak4" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1549,7 +1549,7 @@
                                 1.5 Uzemljivanje
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak5" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1611,7 +1611,7 @@
                                 1.6 Isključivanje strojeva
                             </th>
                             <td>
-                                31
+                                <span id="P1Reak6" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1673,7 +1673,7 @@
                                 2. OSOBNA ZAŠTITNA OPREMA
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1735,7 +1735,7 @@
                                 2.1 Glava
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1797,7 +1797,7 @@
                                  2.2 Oči i lice
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo2" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1859,7 +1859,7 @@
                                 2.3 Uši
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo3" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1921,7 +1921,7 @@
                                 2.4 Respiratorni sustav
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo4" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1983,7 +1983,7 @@
                                 2.5 Ruke i šake
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo5" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2045,7 +2045,7 @@
                                 2.6 Torzo
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo6" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2107,7 +2107,7 @@
                                 2.7 Noge i stopala
                             </th>
                             <td>
-                                31
+                                <span id="P1ozo7" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2169,7 +2169,7 @@
                                 3. POLOŽAJ LJUDI (uzroci ozljeda)
                             </th>
                             <td>
-                                31
+                                <span id="P1polo" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2231,7 +2231,7 @@
                                 3.1 Udaranje u neki predmet
                             </th>
                             <td>
-                                31
+                                <span id="P1polo1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2293,7 +2293,7 @@
                                 3.2 Udar nekog predmeta
                             </th>
                             <td>
-                                31
+                                <span id="P1polo2" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2355,7 +2355,7 @@
                                 3.3 Nači se u, na liniji nekog predmeta
                             </th>
                             <td>
-                                31
+                                <span id="P1polo3" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2417,7 +2417,7 @@
                                 3.4 Pad na istoj/različitoj razini
                             </th>
                             <td>
-                                31
+                                <span id="P1polo4" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2479,7 +2479,7 @@
                                 3.5 Doticaj s ekstremnim temperaturama
                             </th>
                             <td>
-                                31
+                                <span id="P1polo5" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2541,7 +2541,7 @@
                                 3.6 Doticaj s električnom strujom
                             </th>
                             <td>
-                                31
+                                <span id="P1polo6" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2603,7 +2603,7 @@
                                 3.7 Doticaj s visokim tlakovima
                             </th>
                             <td>
-                                31
+                                <span id="P1polo7" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2665,7 +2665,7 @@
                                 3.8 Udisanje opasnih tvari
                             </th>
                             <td>
-                                31
+                                <span id="P1polo8" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2727,7 +2727,7 @@
                                 3.9 Apsorbiranje opasnih tvari
                             </th>
                             <td>
-                                31
+                                <span id="P1polo9" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2789,7 +2789,7 @@
                                 3.10 Preveliko naprezanje
                             </th>
                             <td>
-                                31
+                                <span id="P1polo10" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2851,7 +2851,7 @@
                                 3.11 Ponavljanje pokreta
                             </th>
                             <td>
-                                31
+                                <span id="P1polo11" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2913,7 +2913,7 @@
                                 3.12 Nespretni položaj /Statično držanje
                             </th>
                             <td>
-                                31
+                                <span id="P1polo12" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -2975,7 +2975,7 @@
                                 4. ALATI I OPREMA
                             </th>
                             <td>
-                                31
+                                <span id="P1alat" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3037,7 +3037,7 @@
                                 4.1 Pogrešni za dotični posao
                             </th>
                             <td>
-                                31
+                                <span id="P1alat1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3099,7 +3099,7 @@
                                 4.2 Nepravilno korišteni
                             </th>
                             <td>
-                                31
+                                <span id="P1alat2" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3161,7 +3161,7 @@
                                 4.3 Neispravni alati i oprema
                             </th>
                             <td>
-                                31
+                                <span id="P1alat3" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3223,7 +3223,7 @@
                                 6. PROCEDURE POSTUPCI I UREDNOST
                             </th>
                             <td>
-                                31
+                                <span id="P1proce" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3285,7 +3285,7 @@
                                 6.1 Neodgovarajuće procedure
                             </th>
                             <td>
-                                31
+                                <span id="P1proce1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3347,7 +3347,7 @@
                                 6.2 Neznanje/Nerazumjevanje procedura
                             </th>
                             <td>
-                                31
+                                <span id="P1proce2" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3409,7 +3409,7 @@
                                 6.3 Nepridržavanje procedura
                             </th>
                             <td>
-                                31
+                                <span id="P1proce3" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3471,7 +3471,7 @@
                                 6.4 Norme urednosti neodgovarajuće
                             </th>
                             <td>
-                                31
+                                <span id="P1proce4" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3533,7 +3533,7 @@
                                 6.5 Neznanja /Nerazumjevanja normi urednosti
                             </th>
                             <td>
-                                31
+                                <span id="P1proce5" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3595,7 +3595,7 @@
                                 6.6 Nepridržavanje normi i urednosti
                             </th>
                             <td>
-                                31
+                                <span id="P1proce6" runat="server"></span>
                             </td>
                             <td>
                                 29

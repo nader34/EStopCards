@@ -25,7 +25,7 @@ namespace CroscoStopCard
     public partial class StopReports : System.Web.UI.Page
     {
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
-        //int KK1, KK2, KK3;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -41,7 +41,14 @@ namespace CroscoStopCard
             //Int32 KK1 = (Int32)cmd.ExecuteScalar();
             //con.Close();
             //K1.InnerText = KK1.ToString();
+            LoadPrvi();
 
+
+
+        }
+
+        protected void LoadPrvi()
+        {
             DataTable dt = new DataTable();
             // Populating a DataTable from database.
             dt = this.GetReportPrvi();
@@ -56,7 +63,9 @@ namespace CroscoStopCard
             dt1 = this.GetReportPrvi();
             K1.InnerText = (dt1.Rows.Count).ToString();
 
-            int sigurne = 0, nesigurne = 0, UA=0, UC=0, closed=0, open=0, ongoing=0, negativClosed=0, UAclosed=0, UCclosed=0;
+            int sigurne = 0, nesigurne = 0, UA = 0, UC = 0, closed = 0, open = 0, ongoing = 0, negativClosed = 0, UAclosed = 0, UCclosed = 0;
+
+            int PodReak1 = 0, PodReak2 = 0, PodReak3 = 0, PodReak4 = 0, PodReak5 = 0, PodReak6 = 0, PodOzo1 = 0, PodOzo2 = 0, PodOzo3 = 0, PodOzo4 = 0, PodOzo5 = 0, PodOzo6 = 0, PodOzo7 = 0, PodPolo1 = 0, PodPolo2 = 0, PodPolo3 = 0, PodPolo4 = 0, PodPolo5 = 0, PodPolo6 = 0, PodPolo7 = 0, PodPolo8 = 0, PodPolo9 = 0, PodPolo10 = 0, PodPolo11 =0, PodPolo12=0,   PodAlati1=0, PodAlati2 = 0, PodAlati3 =0, PodProce1=0,   PodProce2=0, PodProce3=0,   PodProce4=0, PodProce5=0, PodProce6 = 0;
             for (int x = 0; x < dt1.Rows.Count; x++)
             {
                 for (int y = 0; y < dt1.Columns.Count; y++)
@@ -75,17 +84,15 @@ namespace CroscoStopCard
                         else
                         {
                             nesigurne++;
-                        }
-                    }
-                    else if (header == "NesigRadnjaUvijet")
-                    {
-                        if (cell.ToString() == "True")
-                        {
-                            UA++;
-                        }
-                        else
-                        {
-                            UC++;
+                            if ((dt.Rows[x].ItemArray[y + 1]).ToString() == "Flase")
+                            {
+                                UC++;
+                            }
+                            else
+                            {
+                                UA++;
+                            }
+
                         }
                     }
                     else if (header == "CardStatus")
@@ -93,22 +100,23 @@ namespace CroscoStopCard
                         if (cell.ToString() == "closed")
                         {
                             closed++;
-                            //object ProvjeraNegativne =
-                            //DataColumn NewUseres = dt1.Columns[y-2];
-                            //string Newheader = NewUseres.ToString();
-                            if ((dt.Rows[x].ItemArray[y-2]).ToString()=="Flase")
+                            // Zatvorene Negativne
+                            if ((dt.Rows[x].ItemArray[y - 2]).ToString() == "False")
                             {
                                 negativClosed++;
-                            }
-                            if (((dt.Rows[x].ItemArray[y - 2]).ToString() == "Flase") && ((dt.Rows[x].ItemArray[y - 1]).ToString() == "Flase"))
-                            {
-                                UCclosed++;
-                            }
-                            else
-                            {
-                                UAclosed++;
+                                //Zatvorene negativne UAUC
+                                if ((dt.Rows[x].ItemArray[y - 1]).ToString() == "True")
+                                {
+                                    UCclosed++;
+                                }
+                                else
+                                {
+                                    UAclosed++;
+                                }
                             }
                             
+                            
+
                         }
                         else if (cell.ToString() == "open")
                         {
@@ -119,7 +127,244 @@ namespace CroscoStopCard
                             ongoing++;
                         }
                     }
-
+                    else if (header== "PodReak1")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak1++;
+                        }
+                    }
+                    else if (header == "PodReak2")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak2++;
+                        }
+                    }
+                    else if (header == "PodReak3")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak3++;
+                        }
+                    }
+                    else if (header == "PodReak4")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak4++;
+                        }
+                    }
+                    else if (header == "PodReak5")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak5++;
+                        }
+                    }
+                    else if (header == "PodReak6")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodReak6++;
+                        }
+                    }
+                    else if (header == "PodOzo1")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo1++;
+                        }
+                    }
+                    else if (header == "PodOzo2")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo2++;
+                        }
+                    }
+                    else if (header == "PodOzo3")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo3++;
+                        }
+                    }
+                    else if (header == "PodOzo4")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo4++;
+                        }
+                    }
+                    else if (header == "PodOzo5")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo5++;
+                        }
+                    }
+                    else if (header == "PodOzo6")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo6++;
+                        }
+                    }
+                    else if (header == "PodOzo7")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodOzo7++;
+                        }
+                    }
+                    else if (header == "PodPolo1")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo1++;
+                        }
+                    }
+                    else if (header == "PodPolo2")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo2++;
+                        }
+                    }
+                    else if (header == "PodPolo3")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo3++;
+                        }
+                    }
+                    else if (header == "PodPolo4")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo4++;
+                        }
+                    }
+                    else if (header == "PodPolo5")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo5++;
+                        }
+                    }
+                    else if (header == "PodPolo6")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo6++;
+                        }
+                    }
+                    else if (header == "PodPolo7")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo7++;
+                        }
+                    }
+                    else if (header == "PodPolo8")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo8++;
+                        }
+                    }
+                    else if (header == "PodPolo9")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo9++;
+                        }
+                    }
+                    else if (header == "PodPolo10")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo10++;
+                        }
+                    }
+                    else if (header == "PodPolo11")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo11++;
+                        }
+                    }
+                    else if (header == "PodPolo12")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodPolo12++;
+                        }
+                    }
+                    else if (header == "PodAlati1")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodAlati1++;
+                        }
+                    }
+                    else if (header == "PodAlati2")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodAlati2++;
+                        }
+                    }
+                    else if (header == "PodAlati3")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodAlati3++;
+                        }
+                    }
+                    else if (header == "PodProce1")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce1++;
+                        }
+                    }
+                    else if (header == "PodProce2")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce2++;
+                        }
+                    }
+                    else if (header == "PodProce3")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce3++;
+                        }
+                    }
+                    else if (header == "PodProce4")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce4++;
+                        }
+                    }
+                    else if (header == "PodProce5")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce5++;
+                        }
+                    }
+                    else if (header == "PodProce6")
+                    {
+                        if (cell.ToString() == "True")
+                        {
+                            PodProce6++;
+                        }
+                    }
                 }
 
             }
@@ -133,13 +378,61 @@ namespace CroscoStopCard
             NegativeClosed1.InnerText = negativClosed.ToString();
             UAClosed1.InnerText = UAclosed.ToString();
             UCClosed1.InnerText = UCclosed.ToString();
+
+            P1Reak1.InnerText = PodReak1.ToString();
+            P1Reak2.InnerText = PodReak2.ToString();
+            P1Reak3.InnerText = PodReak3.ToString();
+            P1Reak4.InnerText = PodReak4.ToString();
+            P1Reak5.InnerText = PodReak5.ToString();
+            P1Reak6.InnerText = PodReak6.ToString();
+            P1Reak.InnerText = (PodReak1+ PodReak2+ PodReak3+ PodReak4+ PodReak5+ PodReak6).ToString();
+
+            P1ozo1.InnerText = PodOzo1.ToString();
+            P1ozo2.InnerText = PodOzo2.ToString();
+            P1ozo3.InnerText = PodOzo3.ToString();
+            P1ozo4.InnerText = PodOzo4.ToString();
+            P1ozo5.InnerText = PodOzo5.ToString();
+            P1ozo6.InnerText = PodOzo6.ToString();
+            P1ozo7.InnerText = PodOzo7.ToString();
+            P1ozo.InnerText = (PodOzo1 + PodOzo2+ PodOzo3+ PodOzo4+ PodOzo5+ PodOzo6+PodOzo7).ToString();
+
+            P1polo1.InnerText = PodPolo1.ToString();
+            P1polo2.InnerText = PodPolo2.ToString();
+            P1polo3.InnerText = PodPolo3.ToString();
+            P1polo4.InnerText = PodPolo4.ToString();
+            P1polo5.InnerText = PodPolo5.ToString();
+            P1polo6.InnerText = PodPolo6.ToString();
+            P1polo7.InnerText = PodPolo7.ToString();
+            P1polo8.InnerText = PodPolo8.ToString();
+            P1polo9.InnerText = PodPolo9.ToString();
+            P1polo10.InnerText = PodPolo10.ToString();
+            P1polo11.InnerText = PodPolo11.ToString();
+            P1polo12.InnerText = PodPolo12.ToString();
+            P1polo.InnerText = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+
+            P1alat1.InnerText = PodAlati1.ToString();
+            P1alat2.InnerText = PodAlati2.ToString();
+            P1alat3.InnerText = PodAlati3.ToString();
+            P1alat.InnerText = (PodAlati1+ PodAlati2+ PodAlati3).ToString();
+
+            P1proce1.InnerText = PodProce1.ToString();
+            P1proce2.InnerText = PodProce2.ToString();
+            P1proce3.InnerText = PodProce3.ToString();
+            P1proce4.InnerText = PodProce4.ToString();
+            P1proce5.InnerText = PodProce5.ToString();
+            P1proce6.InnerText = PodProce6.ToString();
+            P1proce.InnerText = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+
         }
     
         private DataTable GetReportPrvi()
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
+                using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                    "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                    "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                    "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

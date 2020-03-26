@@ -198,13 +198,14 @@ namespace CroscoStopCard
                             }
                             else if (header == "NesigRadnjaUvijet")
                             {
-                                if (cell.ToString() == "1")
+                                if (cell.ToString() == "True")
                                 {
-                                    UCUAIzbbornik.Value = "UnSafeAct";
+                                    UCUAIzbbornik.Value = "UnSafeCondition";
                                 }
                                 else
                                 {
-                                    UCUAIzbbornik.Value = "UnSafeCondition";
+                                    
+                                    UCUAIzbbornik.Value = "UnSafeAct";
                                 }
                             }
                             else if (header == "ReakcijaLjudi")
