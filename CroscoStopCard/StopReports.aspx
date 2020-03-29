@@ -176,7 +176,7 @@
                                 <span id="K1" runat="server"></span>
                             </td>
                             <td>
-                                <span id="K2"></span>
+                                <span id="K2" runat="server"></span>
                             </td>
                             <td>
                                 <span id="K3"></span>
@@ -4910,6 +4910,7 @@
                     </tbody>
                 </table>
             </asp:Panel>
+            <p><span id="poruka" runat="server"></span></p>
             <script>
                 $(document).ready(function () {
                     $('.mydatatable').DataTable();

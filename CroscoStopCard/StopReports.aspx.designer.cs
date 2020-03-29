@@ -40,6 +40,15 @@ namespace CroscoStopCard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl K1;
         
         /// <summary>
+        /// K2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl K2;
+        
+        /// <summary>
         /// positive1 control.
         /// </summary>
         /// <remarks>
@@ -497,5 +506,14 @@ namespace CroscoStopCard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel HStable;
+        
+        /// <summary>
+        /// poruka control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl poruka;
     }
 }

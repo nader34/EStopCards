@@ -5,37 +5,142 @@
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div id="HSForma" style="margin-left:20px">
-    <table id ="WorkersData">
+    <table id ="WorkersData" style="border:2em; margin:4px">
         <thead>
             <tr>
                 <th colspan="3">Broj radnika <strong>Number of Workers</strong></th>
+                <th colspan="10">Podaci o inidentima <strong>CROSCO</strong></th>
             </tr>
             <tr>
-                <label>CROSCO
-                <input type="text"/>
-                </label>
-                <label>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong>
-                <input type="text"/>
-                </label>
-                <label>TREĆA STRANA <strong>3rd PARTY</strong>
-                <input type="text"/>
-                </label>
+                <td>
+                    <label>CROSCO<input type="text"/></label>
+                </td>
+                <td>
+                    <label>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong><input type="text"/></label>
+                </td>
+                <td>
+                    <label>TREĆA STRANA <strong>3rd PARTY</strong><input type="text"/></label>
+                </td>
+                <td>
+                    <label>NII<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTA<input type="text"/></label>
+                </td>
+                <td>
+                    <label>NM<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FAC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>MTC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RWC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>LTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FTL<input type="text"/></label>
+                </td>
+                <td>
+                    <label>TRI<input type="text"/></label>
+                </td>
             </tr>
             <tr>
                 <th colspan="3">Sati rada <strong>Manhours</strong></th>
+                <th colspan="10">Podaci o inidentima <strong>PODUGOVARAČI</strong></th>
             </tr>
             <tr>
-                <th>CROSCO</th>
-                <th>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th>
-                <th>TREĆA STRANA <strong>3rd PARTY</strong></th>
+                <td>
+                    <label>CROSCO<input type="text"/></label>
+                </td>
+                <td>
+                    <label>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong><input type="text"/></label>
+                </td>
+                <td>
+                    <label>TREĆA STRANA <strong>3rd PARTY</strong><input type="text"/></label>
+                </td>
+                <td>
+                    <label>NII<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTA<input type="text"/></label>
+                </td>
+                <td>
+                    <label>NM<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FAC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>MTC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RWC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>LTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FTL<input type="text"/></label>
+                </td>
+                <td>
+                    <label>TRI<input type="text"/></label>
+                </td>
             </tr>
             <tr>
                 <th colspan="3">Kilometraža vozila <strong>Mileage (km)</strong></th>
+                <th colspan="10">Podaci o inidentima <strong>TREĆA STRANA</strong></th>
             </tr>
             <tr>
-                <th>CROSCO</th>
-                <th>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th>
-                <th>TREĆA STRANA <strong>3rd PARTY</strong></th>
+                <td>
+                    <label>CROSCO<input type="text"/></label>
+                </td>
+                <td>
+                    <label>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong><input type="text"/></label>
+                </td>
+                <td>
+                    <label>TREĆA STRANA <strong>3rd PARTY</strong><input type="text"/></label>
+                </td>
+                 <td>
+                    <label>NII<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RTA<input type="text"/></label>
+                </td>
+                <td>
+                    <label>NM<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FAC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>MTC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>RWC<input type="text"/></label>
+                </td>
+                <td>
+                    <label>LTI<input type="text"/></label>
+                </td>
+                <td>
+                    <label>FTL<input type="text"/></label>
+                </td>
+                <td>
+                    <label>TRI<input type="text"/></label>
+                </td>
             </tr>
         </thead>
     </table>

@@ -25,7 +25,7 @@ namespace CroscoStopCard
     public partial class StopReports : System.Web.UI.Page
     {
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
-        
+        private string SqlString;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -42,10 +42,12 @@ namespace CroscoStopCard
             //con.Close();
             //K1.InnerText = KK1.ToString();
             LoadPrvi();
+            Kvartalno();
 
 
 
         }
+        public static string prvi;
 
         protected void LoadPrvi()
         {
@@ -385,7 +387,8 @@ namespace CroscoStopCard
             P1Reak4.InnerText = PodReak4.ToString();
             P1Reak5.InnerText = PodReak5.ToString();
             P1Reak6.InnerText = PodReak6.ToString();
-            P1Reak.InnerText = (PodReak1+ PodReak2+ PodReak3+ PodReak4+ PodReak5+ PodReak6).ToString();
+            string E1Reak= (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
+            P1Reak.InnerText = E1Reak;
 
             P1ozo1.InnerText = PodOzo1.ToString();
             P1ozo2.InnerText = PodOzo2.ToString();
@@ -394,7 +397,8 @@ namespace CroscoStopCard
             P1ozo5.InnerText = PodOzo5.ToString();
             P1ozo6.InnerText = PodOzo6.ToString();
             P1ozo7.InnerText = PodOzo7.ToString();
-            P1ozo.InnerText = (PodOzo1 + PodOzo2+ PodOzo3+ PodOzo4+ PodOzo5+ PodOzo6+PodOzo7).ToString();
+            string E1Ozo= (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
+            P1ozo.InnerText = E1Ozo;
 
             P1polo1.InnerText = PodPolo1.ToString();
             P1polo2.InnerText = PodPolo2.ToString();
@@ -408,12 +412,14 @@ namespace CroscoStopCard
             P1polo10.InnerText = PodPolo10.ToString();
             P1polo11.InnerText = PodPolo11.ToString();
             P1polo12.InnerText = PodPolo12.ToString();
-            P1polo.InnerText = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            string E1Polo= (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            P1polo.InnerText = E1Polo;
 
             P1alat1.InnerText = PodAlati1.ToString();
             P1alat2.InnerText = PodAlati2.ToString();
             P1alat3.InnerText = PodAlati3.ToString();
-            P1alat.InnerText = (PodAlati1+ PodAlati2+ PodAlati3).ToString();
+            string E1Alati= (PodAlati1 + PodAlati2 + PodAlati3).ToString();
+            P1alat.InnerText = E1Alati;
 
             P1proce1.InnerText = PodProce1.ToString();
             P1proce2.InnerText = PodProce2.ToString();
@@ -421,18 +427,60 @@ namespace CroscoStopCard
             P1proce4.InnerText = PodProce4.ToString();
             P1proce5.InnerText = PodProce5.ToString();
             P1proce6.InnerText = PodProce6.ToString();
-            P1proce.InnerText = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            string E1Proce= (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            P1proce.InnerText = E1Proce;
+            string str1= sigurne +", " + nesigurne + ", " + UA+", "+UC + ", "+ closed + ", "+open + ", "+ongoing + ", "+negativClosed + ", " + UAclosed + ", " + UCclosed;
+
+            string str2 =PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E1Reak + ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " +
+                PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E1Ozo + ", " +  PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " +
+                PodPolo7 + ", " + PodPolo8 + ", " + PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E1Polo + ", " + PodAlati1 + ", " +
+                PodAlati2 + ", " + PodAlati3 + ", "  + E1Alati + ", "+ PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " + E1Proce;
+
+            prvi = str1 + ", " + str2;
 
         }
-    
+        protected void Kvartalno()
+        {
+            poruka.InnerText = prvi;
+        }
+
         private DataTable GetReportPrvi()
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
-                    "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
-                    "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                    "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
+                if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                        "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                        "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                        "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                        "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                        "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                        "PodProce6 FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                        "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                        "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                        "PodProce6 FROM EStopCards WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                        "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                        "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                        "PodProce6 FROM EStopCards WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                }
+                using (SqlCommand cmd = new SqlCommand(SqlString))
+                //using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                //    "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                //    "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                //    "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -447,5 +495,7 @@ namespace CroscoStopCard
                 }
             }
         }
+
+        
     }
 }
