@@ -13,6 +13,7 @@
     background-color: #ed1c24 !important;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom:0.2em;
     border:1px solid black;
     border-collapse:collapse;
 }
@@ -37,6 +38,7 @@ h3.classth {
 	margin: 0 auto;
 	text-align: center;
     width:100%;
+    margin-bottom:2em;
 }
 
 .classth {

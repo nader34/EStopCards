@@ -6,7 +6,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <h1 class="classH1">HS form</h1>
 	<div id="HSForma">
-	<h3 class="classth">Unons podataka za <input class="classinput" type="date"/><input class="classinput" type="submit" value="Unos!"/></h3>
+	<h3 class="classth">Unons podataka za <input id="HSdate" class="classinput" type="date"/><input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()"/></h3>
         <table id ="WorkersData">
             <thead>
                 <tr class="classtr">
@@ -68,7 +68,7 @@
                         <label>CROSCO</label>
                     </th>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroWorkers" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
                         <input class="classinput" type="number"/>
@@ -383,147 +383,60 @@
 
         </asp:Panel>
     </table>
-    <script>
-      $( function() {
-        var dialog, form,
- 
-          // Fromhttp://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-          emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-          name = $( "#name" ),
-          email = $( "#email" ),
-          password = $( "#password" ),
-          allFields = $( [] ).add( name ).add( email ).add( password ),
-          tips = $( ".validateTips" );
- 
-        function updateTips( t ) {
-          tips
-            .text( t )
-            .addClass( "ui-state-highlight" );
-          setTimeout(function() {
-            tips.removeClass( "ui-state-highlight", 1500 );
-          }, 500 );
-        }
- 
-        function checkLength( o, n, min, max ) {
-          if ( o.val().length > max || o.val().length < min ) {
-            o.addClass( "ui-state-error" );
-            updateTips( "Length of " + n + " must be between " +
-              min + " and " + max + "." );
-            return false;
-          } else {
-            return true;
-          }
-        }
- 
-        function checkRegexp( o, regexp, n ) {
-          if ( !( regexp.test( o.val() ) ) ) {
-            o.addClass( "ui-state-error" );
-            updateTips( n );
-            return false;
-          } else {
-            return true;
-          }
-        }
- 
-        function addUser() {
-          var valid = true;
-          allFields.removeClass( "ui-state-error" );
- 
-          valid = valid && checkLength( name, "username", 3, 16 );
-          valid = valid && checkLength( email, "email", 6, 80 );
-          valid = valid && checkLength( password, "password", 5, 16 );
- 
-          valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
-          valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
-          valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
- 
-          if ( valid ) {
-            $( "#users tbody" ).append( "<tr>" +
-              "<td>" + name.val() + "</td>" +
-              "<td>" + email.val() + "</td>" +
-              "<td>" + password.val() + "</td>" +
-            "</tr>" );
-            dialog.dialog( "close" );
-          }
-          return valid;
-        }
- 
-        dialog = $("#dialogForm").dialog({
-          autoOpen: false,
-          height: 400,
-          width: 350,
-          modal: true,
-          buttons: {
-            "Create an account": addUser,
-            Cancel: function() {
-              dialog.dialog( "close" );
-            }
-          },
-          close: function() {
-            form[ 0 ].reset();
-            allFields.removeClass( "ui-state-error" );
-          }
-        });
- 
-        form = dialog.find("form").on("submit", function(event) {
-          event.preventDefault();
-          addUser();
-        });
- 
-        $("#HSDodaj").button().on("click", function () {
-          dialog.dialog( "open" );
-        });
-      });
-    </script>
-    <div id="dialogForm" title="HS form" hidden="hidden">
-        <p class="validateTips">All form fields are required.</p>
 
-        <form>
-            <fieldset>
-                <label for="name">Date</label>
-                <input type="date" name="datum" id="datum" class="text ui-widget-content ui-corner-all">
-                <label for="Oj1">Oj1</label>
-                <input type="text" name="Oj1" id="Oj1" value="" class="text ui-widget-content ui-corner-all">
-                <label for="Oj2">Oj2</label>
-                <input type="text" name="Oj2" id="Oj2" value="" class="text ui-widget-content ui-corner-all">
-                <label for="Location">Location</label>
-                <input type="text" name="Location" id="Location" value="" class="text ui-widget-content ui-corner-all">
-                <label for="Operator">Operator</label>
-                <input type="text" name="Operator" id="Operator" value="" class="text ui-widget-content ui-corner-all">
-                <label for="Status">Status</label>
-                <input type="text" name="Status" id="Status" value="" class="text ui-widget-content ui-corner-all">
-                <label>Sati rada ManHour</label>
-                <label for="CROSCOMH">CROSCO</label>
-                <input type="text" name="CROSCOMH" id="CROSCOMH" value="" class="text ui-widget-content ui-corner-all">
-                <label for="PodugovaraciMH">Podugovaraci</label>
-                <input type="text" name="PodugovaraciMH" id="PodugovaraciMH" value="" class="text ui-widget-content ui-corner-all">
-                <label for="TrecaStranaMH">Treća strana</label>
-                <input type="text" name="TrecaStranaMH" id="TrecaStranaMH" value="" class="text ui-widget-content ui-corner-all">
-                <label>Broj radnika Workers No.</label>
-                <label for="CROSCOW">CROSCO</label>
-                <input type="text" name="CROSCOW" id="CROSCOW" value="" class="text ui-widget-content ui-corner-all">
-                <label for="PodugovaraciW">Podugovaraci</label>
-                <input type="text" name="PodugovaraciW" id="PodugovaraciW" value="" class="text ui-widget-content ui-corner-all">
-                <label for="TrecaStranaW">Treća strana</label>
-                <input type="text" name="TrecaStranaW" id="TrecaStranaW" value="" class="text ui-widget-content ui-corner-all">
-                <label>CROSCO</label>
-
-                <!-- Allow form submission with keyboard without duplicating the dialog button -->
-                <input type="submit" tabindex="-1" style="position: absolute; top: -1000px">
-            </fieldset>
-        </form>
-    </div>
-    <button id="HSDodaj">HS form</button>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>
+    <%--<script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>--%>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap//4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
+        function display() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('Get', 'InsertHS.aspx?opr=display', false);
+            xmlhttp.send(null);
+            var resultText = xmlhttp.responseText;
+            document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
+        }
+    </script>
+    <script>
         $('.mydatatable').DataTable();
+    </script>
+    <script>
+        $(document).ready(function () {
+            
+           display();
+           $('.mydatatable').DataTable();
+           
+        });
     </script>
     <script>
         var hsTable = document.getElementById('HS_wrapper');
         hsTable.style.marginLeft = '20px';
+    </script>
+    <script>
+        function ProvjeraHSForm() {
+            var HsDatum = document.getElementById("HSdate");
+            var CroWorkers = document.getElementById("CroWorkers");        
+            
+
+            if (HsDatum.value == "" || CroWorkers.value == "") {
+                alert("Niste unijeli borj radnika")
+                $('#UnosHSbtn').bind('click', function (e) {
+                    return false;
+                    
+                    $("#UnosHSbtn").unbind('click').click();
+                });
+            }
+            else {
+                $("#UnosHSbtn").unbind('click').click();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('Get', 'InsertHS.aspx?opr=InsertHS', false);
+                xmlhttp.send(null);
+                HsDatum.value = '';
+                CroWorkers.value = '';
+
+
+            }
+        }
     </script>
 </asp:Content>

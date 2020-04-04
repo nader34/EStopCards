@@ -133,6 +133,7 @@
     <Content Include="Images\img04.jpg" />
     <Content Include="Images\img05.jpg" />
     <Content Include="Images\img06.jpg" />
+    <Content Include="InsertHS.aspx" />
     <Content Include="InsertPage.aspx" />
     <Content Include="InsertSTOPBaza.aspx" />
     <Content Include="js\jquery.leanModal.min_.js" />
@@ -258,6 +259,13 @@
     </Compile>
     <Compile Include="HS.aspx.designer.cs">
       <DependentUpon>HS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertHS.aspx.cs">
+      <DependentUpon>InsertHS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertHS.aspx.designer.cs">
+      <DependentUpon>InsertHS.aspx</DependentUpon>
     </Compile>
     <Compile Include="InsertPage.aspx.cs">
       <DependentUpon>InsertPage.aspx</DependentUpon>
