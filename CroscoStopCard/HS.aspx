@@ -6,7 +6,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <h1 class="classH1">HS form</h1>
 	<div id="HSForma">
-	<h3 class="classth">Unons podataka za <input id="HSdate" class="classinput" type="date"/><input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()"/></h3>
+        <div id="UnosHS">
+            <h3 class="classth">Unons podataka za 
+                <input id="HSdate" class="classinput" type="date"/>
+                <input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()"/>
+
+            </h3>
+
+	    </div>
         <table id ="WorkersData">
             <thead>
                 <tr class="classtr">
@@ -71,58 +78,58 @@
                         <input id="CroWorkers" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroManHours" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroKm" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroSWA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroLSR" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroAlco" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroNII" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroRTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroRTA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroLOPC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroSpill" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroFire" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroNM" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroFAC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroMTC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroRWC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroLTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroFTL" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="CroTRI" class="classinput" type="number"/>
                     </td>
                 </tr>
                 <tr class="classtr">
@@ -130,61 +137,61 @@
                         <label>Subcontractors</label>
                     </th>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubWorkers" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubManHours" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubKm" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubSWA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubLSR" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubAlco" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubNII" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubRTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubRTA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubLOPC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubSpill" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubFire" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubNM" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubFAC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubMTC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubRWC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubLTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubFTL" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="SubTRI" class="classinput" type="number"/>
                     </td>
                 </tr>
 				<tr class="classtr">
@@ -192,61 +199,61 @@
                         <label>3rd party</label>
                     </th>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdWorkers" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdManHours" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdKm" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdSWA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdLSR" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdAlco" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdNII" class="classinput" type="number"/>
                     </td>
                     <td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdRTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdRTA" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdLOPC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdSpill" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdFire" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdNM" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdFAC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdMTC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdRWC" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdLTI" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdFTL" class="classinput" type="number"/>
                     </td>
 					<td class="classtd">
-                        <input class="classinput" type="number"/>
+                        <input id="RdTRI" class="classinput" type="number"/>
                     </td>
                 </tr>
 				<tr class="classtr">
@@ -262,19 +269,21 @@
 					<th colspan="1" class="classth">Days without LTI</th>
 				</tr>
 				<tr class="classtr">
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
-					<td colspan="11" class="classtd"><input class="classinput" type="text"/></td>
-					<td colspan="1" class="classtd"><input class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillH2S" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillEvac" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillBOP" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillFire" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillRescue" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillSpill" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillOther" class="classinput" type="number"/></td>
+					<td colspan="11" class="classtd"><input id="DrillComent" class="classinput" type="text"/></td>
+					<td colspan="1" class="classtd"><input id="DaysWout" class="classinput" type="number"/></td>
 				</tr>
             </thead>
         </table>
-    </div>
+	</div>
+	    
+    
   
     <table id="HS" class="table table-striped table-bordered mydatatable" style="width: 100%; left:20px">
         <thead>
@@ -382,8 +391,9 @@
         <asp:Panel id="HStbody" CssClass="container mb-3 mt-3" runat="server">  
 
         </asp:Panel>
-    </table>
 
+    </table>
+    <input type="submit" value="Btn" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>--%>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap//4.3.1/js/bootstrap.min.js"></script>
@@ -391,27 +401,75 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
         function display() {
+
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'InsertHS.aspx?opr=display', false);
             xmlhttp.send(null);
             var resultText = xmlhttp.responseText;
-            document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
+            //document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
+            document.getElementById("HS").lastElementChild.innerHTML = resultText;
+
+           // if (xmlhttp.readyState == 4) {
+           //    if (xmlhttp.status == 200) {
+           //        var resultText = xmlhttp.responseText;
+           //        document.getElementById("myHSTable").innerHTML = resultText;
+           //        if ($.fn.DataTable.isDataTable(".mydatatable")) {
+           //            $('.mydatatable').DataTable().clear().destroy();
+           //            $('.mydatatable').DataTable();
+           //        } else {
+           //            $('.mydatatable').DataTable();
+           //        }
+           //    }
+           //}
         }
     </script>
     <script>
-        $('.mydatatable').DataTable();
+        function displayNovi() {
+
+
+            var myTableHead ="<table id='HS' class='table table-striped table-bordered mydatatable' style='width: 100%; left:20px'><thead><tr><th colspan='1' rowspan='2' style='cursor: pointer'>HSID</th><th colspan='1' rowspan='2' style='cursor: pointer'>No</th><th colspan='1' rowspan='2' style='cursor: pointer'>First name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Last name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Datum <strong>Date</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Proces</th><th colspan='1' rowspan='2' style='cursor: pointer'>Servis</th><th colspan='1' rowspan='2' style='cursor: pointer'>Tim/postrojenja</th><th colspan='1' rowspan='2' style='cursor: pointer'>Lokacija <strong>Site</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Operator</th><th colspan='1' rowspan='2' style='cursor: pointer'>Status</th><th colspan='4' style='cursor: pointer'>Broj radnika <strong>Number of Workers</strong></th><th colspan='4' style='cursor: pointer'>Sati rada <strong>Manhours</strong></th><th colspan='4' style='cursor: pointer'>Kilometraža vozila <strong>Mileage (km)</strong></th><th colspan='16' style='cursor: pointer'>CROSCO</th><th colspan='16' style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th colspan='16' style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba postupanje kod pojave opasnih plinova <strong>H2S Drill, CO2 Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba Evakuacija <strong>Evacuation drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba zatvaranja bušotine <strong>BOP Drill (Gas Drill)</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vatrogasna vježba <strong>Fire Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba spašavanja unesrećenih <strong>Rescue Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba izlijevanja u okoliš <strong>Spill in the environment drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe <strong>Other Drills</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe - komentar <strong>Other drills - comment</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Broj dana bez ozljeda <strong>Days without LTI</strong></th></tr><tr><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th></tr></thead>";
+
+
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('Get', 'InsertHS.aspx?opr=display', false);
+            xmlhttp.send(null);
+            var resultText = xmlhttp.responseText;
+            var myTable = myTableHead + resultText;
+            //document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
+            document.getElementById("HS").innerHTML = myTable;
+            a = $('.mydatatable').DataTable();
+            a.destroy();
+            $('.mydatatable').DataTable();
+            var hsTable = document.getElementById('HS_wrapper');
+            hsTable.style.marginLeft = '20px';
+           // if (xmlhttp.readyState == 4) {
+           //    if (xmlhttp.status == 200) {
+           //        var resultText = xmlhttp.responseText;
+           //        document.getElementById("myHSTable").innerHTML = resultText;
+           //        if ($.fn.DataTable.isDataTable(".mydatatable")) {
+           //            $('.mydatatable').DataTable().clear().destroy();
+           //            $('.mydatatable').DataTable();
+           //        } else {
+           //            $('.mydatatable').DataTable();
+           //        }
+           //    }
+           //}
+        }
+    </script>
+    <script>
+        //$('.mydatatable').DataTable();
     </script>
     <script>
         $(document).ready(function () {
-            
-           display();
-           $('.mydatatable').DataTable();
-           
+            //display();
+            displayNovi();
+           //$('.mydatatable').DataTable();
         });
     </script>
     <script>
-        var hsTable = document.getElementById('HS_wrapper');
-        hsTable.style.marginLeft = '20px';
+        //var hsTable = document.getElementById('HS_wrapper');
+        //hsTable.style.marginLeft = '20px';
     </script>
     <script>
         function ProvjeraHSForm() {
@@ -421,14 +479,14 @@
 
             if (HsDatum.value == "" || CroWorkers.value == "") {
                 alert("Niste unijeli borj radnika")
-                $('#UnosHSbtn').bind('click', function (e) {
+                $('#UnosHS').bind('click', function (e) {
                     return false;
                     
-                    $("#UnosHSbtn").unbind('click').click();
+                    $("#UnosHS").unbind('click').click();
                 });
             }
             else {
-                $("#UnosHSbtn").unbind('click').click();
+                $("#UnosHS").unbind('click').click();
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open('Get', 'InsertHS.aspx?opr=InsertHS', false);
                 xmlhttp.send(null);
