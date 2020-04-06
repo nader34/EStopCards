@@ -6,14 +6,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <h1 class="classH1">HS form</h1>
 	<div id="HSForma">
-        <div id="UnosHS">
-            <h3 class="classth">Unons podataka za 
-                <input id="HSdate" class="classinput" type="date"/>
-                <input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()"/>
-
-            </h3>
-
-	    </div>
+        
+        <%--<h3 class="classth">
+            <label>Datum: </label><input id="HSdate1" class="classinput" type="date"/>            
+        </h3>--%>
         <table id ="WorkersData">
             <thead>
                 <tr class="classtr">
@@ -279,6 +275,19 @@
 					<td colspan="11" class="classtd"><input id="DrillComent" class="classinput" type="text"/></td>
 					<td colspan="1" class="classtd"><input id="DaysWout" class="classinput" type="number"/></td>
 				</tr>
+                <tr class="classtr">
+					<td colspan="1" class="classtd"><div id="UnosHS"><input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()" /></div></td>
+                    <td colspan="1" class="classtd"><input id="ZadnjiRed" class="classinput" type="button" value="Zadnji red"/></td>
+                    <td colspan="1" class="classlb"><label>Datum: </label></td>
+					<td colspan="2" class="classtd"><input id="HSdate" class="classinput" type="date"/></td>
+                    <td colspan="1" class="classlb"><label>Lokacija: </label></td>
+                    <td colspan="4" class="classtd"><input id="HSLocacija" class="classinput" type="text"/></td>
+                    <td colspan="1" class="classlb"><label>Operator: </label></td>
+                    <td colspan="4" class="classtd"><input id="HSOperator" class="classinput" type="text"/></td>
+                    <td colspan="1" class="classlb"><label>Status: </label></td>
+                    <td colspan="4" class="classtd"><input id="HSStatus" class="classinput" type="text"/></td>
+					<%--<td colspan="6" class="classtd"></td>--%>
+				</tr>
             </thead>
         </table>
 	</div>
@@ -425,12 +434,7 @@
     </script>
     <script>
         function displayNovi() {
-
-
             var myTableHead ="<table id='HS' class='table table-striped table-bordered mydatatable' style='width: 100%; left:20px'><thead><tr><th colspan='1' rowspan='2' style='cursor: pointer'>HSID</th><th colspan='1' rowspan='2' style='cursor: pointer'>No</th><th colspan='1' rowspan='2' style='cursor: pointer'>First name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Last name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Datum <strong>Date</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Proces</th><th colspan='1' rowspan='2' style='cursor: pointer'>Servis</th><th colspan='1' rowspan='2' style='cursor: pointer'>Tim/postrojenja</th><th colspan='1' rowspan='2' style='cursor: pointer'>Lokacija <strong>Site</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Operator</th><th colspan='1' rowspan='2' style='cursor: pointer'>Status</th><th colspan='4' style='cursor: pointer'>Broj radnika <strong>Number of Workers</strong></th><th colspan='4' style='cursor: pointer'>Sati rada <strong>Manhours</strong></th><th colspan='4' style='cursor: pointer'>Kilometraža vozila <strong>Mileage (km)</strong></th><th colspan='16' style='cursor: pointer'>CROSCO</th><th colspan='16' style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th colspan='16' style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba postupanje kod pojave opasnih plinova <strong>H2S Drill, CO2 Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba Evakuacija <strong>Evacuation drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba zatvaranja bušotine <strong>BOP Drill (Gas Drill)</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vatrogasna vježba <strong>Fire Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba spašavanja unesrećenih <strong>Rescue Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba izlijevanja u okoliš <strong>Spill in the environment drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe <strong>Other Drills</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe - komentar <strong>Other drills - comment</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Broj dana bez ozljeda <strong>Days without LTI</strong></th></tr><tr><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th></tr></thead>";
-
-
-
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'InsertHS.aspx?opr=display', false);
             xmlhttp.send(null);
@@ -457,19 +461,112 @@
            //}
         }
     </script>
-    <script>
-        //$('.mydatatable').DataTable();
-    </script>
+    
     <script>
         $(document).ready(function () {
             //display();
             displayNovi();
            //$('.mydatatable').DataTable();
+            var table1 = $('.mydatatable').DataTable();
+            $(document).on('click', '.mydatatable td', function () {
+                var idx = table1.cell(this).index().column;
+               
+                                        
+            });
+            UpdateHS();
+            
+        
         });
     </script>
     <script>
         //var hsTable = document.getElementById('HS_wrapper');
         //hsTable.style.marginLeft = '20px';
+        function HSDictionary(YNmae) {
+            var HSdict = {
+                0:"HSID",
+                1:"UserID",         
+                2:"FirstName",         
+                3:"LastName",         
+                4:"DateCreated",         
+                5:"Oj1",         
+                6:"SubOj",         
+                7:"SubOjDva",         
+                8:"Lokacija",         
+                9:"Operatori",         
+                10:"Status",               
+                11:"ManNoCrosco",
+                12:"ManNoContracori",
+                13:"ManNoThirdParty",
+                14:"SumNo",
+                15:"ManHoursCrosco",
+                16:"ManHoursContracori",
+                17:"ManHoursThirdParty",
+                18:"SumManHours",
+                19:"KMCrosco",
+                20:"KMContracori",
+                21:"KMThirdParty",
+                22:"SumKM",
+                23:"CRoSWA",
+                24:"CRoLSRV",
+                25:"CRoAlco",
+                26:"CRoNII",
+                27:"CRoRTI",
+                28:"CRoRTA",
+                29:"CRoLOPC",
+                30:"CRoSPILL",
+                31:"CRoFIRE",
+                32:"CRoNM",
+                33:"CRoFAC",
+                34:"CRoMTC",
+                35:"CRoRWC",
+                36:"CRoLTI",
+                37:"CRoFTL",
+                38:"CRoTRI",
+                39:"ConSWA",
+                40:"ConLSRV",
+                41:"ConAlco",
+                42:"ConNII",
+                43:"ConRTI",
+                44:"ConRTA",
+                45:"ConLOPC",
+                46:"ConSPILL",
+                47:"ConFIRE",
+                48:"ConNM",
+                49:"ConFAC",
+                50:"ConMTC",
+                51:"ConRWC",
+                52:"ConLTI",
+                53:"ConFTL",
+                54:"ConTRI",
+                55:"ThrdSWA",
+                56:"ThrdLSRV",
+                57:"ThrdAlco",
+                58:"ThrdNII",
+                59:"ThrdRTI",
+                60:"ThrdRTA",
+                61:"ThrdLOPC",
+                62:"ThrdSPILL",
+                63:"ThrdFIRE",
+                64:"ThrdNM",
+                65:"ThrdFAC",
+                66:"ThrdMTC",
+                67:"ThrdRWC",
+                68:"ThrdLTI",
+                69:"ThrdFTL",
+                70:"ThrdTRI",
+                71:"PlinDrill",
+                72:"EvacDrill",
+                73:"BOPDrill",
+                74:"FireDrill",
+                75:"RescueDrill",
+                76:"SpillDrill",
+                77:"OtherDrill",
+                78:"OtherDrillComment",
+                79:"DaysWoLTI"
+            };
+            var KolumnName = HSdict[YNmae];
+            return (KolumnName);
+        }
     </script>
     <script>
         function ProvjeraHSForm() {
@@ -496,5 +593,16 @@
 
             }
         }
+    </script>
+    <script>
+        function UpdateHS() {
+            var table1 = $('.mydatatable').DataTable();
+            $(document).on('click', '.mydatatable td', function () {
+                var idx = table1.cell(this).index().column;
+                var YName = HSDictionary(idx);
+                alert(YName);
+
+            });
+        };
     </script>
 </asp:Content>

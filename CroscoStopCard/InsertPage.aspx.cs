@@ -309,7 +309,7 @@ namespace CroscoStopCard
                 }
                 else if ((string)Session["UserRole"] == "Manager")
                 {
-                    sql = ("UPDATE EStopCards SET NominacijeManger = 'True', UziIzbor = 'True'  WHERE EStopCardID = " + STOPID);
+                    sql = ("UPDATE EStopCards SET NominacijeManager = 'True', UziIzbor = 'True'  WHERE EStopCardID = " + STOPID);
                 }
                 //komisija
                 else if ((string)Session["UserRole"] == "MasterAdmin")

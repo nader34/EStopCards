@@ -47,32 +47,39 @@ h3.classth {
     text-align: center;
 }
 .classinput[type="date"] {
-    /* box-sizing: border-box; */
+     box-sizing: border-box; 
     /* width: 100%; */
     color: black;
     height: 90%;
     padding: 5px;
     text-align: center;
-    display: inline;
-    font-size: 18px;
+    /*display: inline;*/
+    /*font-size: 18px;*/
 }
-.classinput[type="submit"] {
+.classinput[type="submit"],
+.classinput[type="button"] {
     height: 100%;
     padding: 5px;
     color: White;
     background: green;
-    height: 100%;
-    margin-left: 10em;
     text-align: center;
-    display: inline;
-    font-size: 18px;
+    /*display: inline;*/
+    /*font-size: 18px;*/
+    width: 100%;
+}
+
+.classlb {
+    color: White;
+    background: green;
+    text-align: center;
+    padding: 2px;
 }
 .classinput[type="number"],
 .classinput[type="text"] {
-	box-sizing: border-box;
-	width: 100%;
-	height:100%;
-	padding:5px;
-	text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    text-align: center;
 }
 
