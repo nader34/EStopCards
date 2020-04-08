@@ -7,9 +7,6 @@
     <h1 class="classH1">HS form</h1>
 	<div id="HSForma">
         
-        <%--<h3 class="classth">
-            <label>Datum: </label><input id="HSdate1" class="classinput" type="date"/>            
-        </h3>--%>
         <table id ="WorkersData">
             <thead>
                 <tr class="classtr">
@@ -433,6 +430,16 @@
         }
     </script>
     <script>
+        //$(document).on('blur', '.mydatatable input', function () {
+        //    $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
+        //    var idx = $(this).index();
+        //    var YName = HSDictionary(idx);
+        //        //alert(YName);
+        //    var HSid= $(this).parent().children()[0].innerText;
+        //    alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
+        //});
+    </script>
+    <script>
         function displayNovi() {
             var myTableHead ="<table id='HS' class='table table-striped table-bordered mydatatable' style='width: 100%; left:20px'><thead><tr><th colspan='1' rowspan='2' style='cursor: pointer'>HSID</th><th colspan='1' rowspan='2' style='cursor: pointer'>No</th><th colspan='1' rowspan='2' style='cursor: pointer'>First name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Last name</th><th colspan='1' rowspan='2' style='cursor: pointer'>Datum <strong>Date</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Proces</th><th colspan='1' rowspan='2' style='cursor: pointer'>Servis</th><th colspan='1' rowspan='2' style='cursor: pointer'>Tim/postrojenja</th><th colspan='1' rowspan='2' style='cursor: pointer'>Lokacija <strong>Site</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Operator</th><th colspan='1' rowspan='2' style='cursor: pointer'>Status</th><th colspan='4' style='cursor: pointer'>Broj radnika <strong>Number of Workers</strong></th><th colspan='4' style='cursor: pointer'>Sati rada <strong>Manhours</strong></th><th colspan='4' style='cursor: pointer'>Kilometraža vozila <strong>Mileage (km)</strong></th><th colspan='16' style='cursor: pointer'>CROSCO</th><th colspan='16' style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th colspan='16' style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba postupanje kod pojave opasnih plinova <strong>H2S Drill, CO2 Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba Evakuacija <strong>Evacuation drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba zatvaranja bušotine <strong>BOP Drill (Gas Drill)</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vatrogasna vježba <strong>Fire Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba spašavanja unesrećenih <strong>Rescue Drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Vježba izlijevanja u okoliš <strong>Spill in the environment drill</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe <strong>Other Drills</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Ostale vježbe - komentar <strong>Other drills - comment</strong></th><th colspan='1' rowspan='2' style='cursor: pointer'>Broj dana bez ozljeda <strong>Days without LTI</strong></th></tr><tr><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>CROSCO</th><th style='cursor: pointer'>PODUGOVARAČI <strong>SUBCONTRACTOR's</strong></th><th style='cursor: pointer'>TREĆA STRANA <strong>3rd PARTY</strong></th><th style='cursor: pointer'>UKUPNO <strong>TOTAL</strong></th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th><th style='cursor: pointer'>SWA</th><th style='cursor: pointer'>LSRV</th><th style='cursor: pointer'>Alcotests</th><th style='cursor: pointer'>NII</th><th style='cursor: pointer'>RTI</th><th style='cursor: pointer'>RTA</th><th style='cursor: pointer'>LOPC</th><th style='cursor: pointer'>SPILL</th><th style='cursor: pointer'>FIRE</th><th style='cursor: pointer'>NM</th><th style='cursor: pointer'>FAC</th><th style='cursor: pointer'>MTC</th><th style='cursor: pointer'>RWC</th><th style='cursor: pointer'>LTI</th><th style='cursor: pointer'>FTL</th><th style='cursor: pointer'>TRI</th></tr></thead>";
             var xmlhttp = new XMLHttpRequest();
@@ -467,12 +474,12 @@
             //display();
             displayNovi();
            //$('.mydatatable').DataTable();
+
             var table1 = $('.mydatatable').DataTable();
-            $(document).on('click', '.mydatatable td', function () {
-                var idx = table1.cell(this).index().column;
-               
-                                        
-            });
+            //$(document).on('click', '.mydatatable td', function () {
+            //    var idx = table1.cell(this).index().column;                          
+            //});
+
             UpdateHS();
             
         
@@ -596,13 +603,84 @@
     </script>
     <script>
         function UpdateHS() {
-            var table1 = $('.mydatatable').DataTable();
-            $(document).on('click', '.mydatatable td', function () {
-                var idx = table1.cell(this).index().column;
-                var YName = HSDictionary(idx);
-                alert(YName);
-
+            var inputValue;
+            var HSid, YName;
+            $(document).on('blur', '.mydatatable input', function () {
+                $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
+                inputValue = this.value;
+                //alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
+                var sve = "HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + inputValue;   
+                   
             });
+                
+
+             function returnInputValue() {
+                 return inputValue;
+             }
+             
+            $(document).on('click', '.mydatatable td', function () {
+                var idx = $(this).index();
+
+                YName = HSDictionary(idx);
+                //alert(YName);
+                HSid= $(this).parent().children()[0].innerText;
+                 //var idx = table3.cell(this).index().column;
+                 
+                if (idx >= 0 && idx < 8) {
+
+
+                }
+                else {
+                    var html = $(this).text();
+                     var input = $('<input type="text" />');
+                     input.val(html);
+                     $(this).replaceWith(input);
+                     $('.mydatatable input').focus();
+                 }
+            });
+            //var table1 = $('.mydatatable').DataTable();
+            //$(document).on('click', '.mydatatable td', function () {
+            //    //var idx = table1.cell(this).index().column;
+            //    var idx = $(this).index();
+            //    var YName = HSDictionary(idx);
+            //    //alert(YName);
+            //    var HSid= $(this).parent().children()[0].innerText;
+            //    var table3 = $('.mydatatable').DataTable();
+            //    var inputValue = "Not Blurred Yet!";
+            //    $(document).on('blur', '.mydatatable input', function () {
+            //        $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
+            //        inputValue = this.value;
+            //        //alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
+                    
+                   
+            //    });
+                //var inputValue = "Not Blurred Yet!";
+                //$('.mydatatable input').blur(function() {   
+                //    inputValue = $('.mydatatable input').val();
+                //});
+
+                //function returnInputValue() {
+                //    return inputValue;
+                //}
+                
+                //$(document).on('click', '.mydatatable td', function () {
+                //    //var idx = table3.cell(this).index().column;
+                //    var idx = $(this).index();
+                //    if (idx >= 0 && idx < 8) {
+
+
+                //    }
+                //    else {
+                //        var html = $(this).text();
+                //        var input = $('<input type="text" />');
+                //        input.val(html);
+                //        $(this).replaceWith(input);
+                //        $('.mydatatable input').focus();
+                //    }
+                //});
+                             
+
+            //});
         };
     </script>
 </asp:Content>
