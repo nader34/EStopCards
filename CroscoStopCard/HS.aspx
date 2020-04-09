@@ -282,7 +282,7 @@
                     <td colspan="1" class="classlb"><label>Operator: </label></td>
                     <td colspan="4" class="classtd"><input id="HSOperator" class="classinput" type="text"/></td>
                     <td colspan="1" class="classlb"><label>Status: </label></td>
-                    <td colspan="4" class="classtd"><input id="HSStatus" class="classinput" type="text"/></td>
+                    <td colspan="4" class="classtd"><input id="HSStatus" class="classinput" list="Status" style="width:100%"/><datalist id="Status"><option value="Pod ugovorom"><option value="Nije pod ugovorom"></datalist></td>
 					<%--<td colspan="6" class="classtd"></td>--%>
 				</tr>
             </thead>
@@ -399,7 +399,8 @@
         </asp:Panel>
 
     </table>
-    <input type="submit" value="Btn" />
+    <input type="submit" value="Btn" /><br />
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>--%>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap//4.3.1/js/bootstrap.min.js"></script>
@@ -430,14 +431,52 @@
         }
     </script>
     <script>
-        //$(document).on('blur', '.mydatatable input', function () {
-        //    $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
-        //    var idx = $(this).index();
-        //    var YName = HSDictionary(idx);
-        //        //alert(YName);
-        //    var HSid= $(this).parent().children()[0].innerText;
-        //    alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
-        //});
+        function Zbroj() {
+            var CroTRI = document.getElementById("CroTRI");
+            var CroFTL = document.getElementById("CroFTL");
+            var CroLTI = document.getElementById("CroLTI");
+            var CroRWC = document.getElementById("CroRWC");
+            var CroMTC = document.getElementById("CroMTC");
+            CroFTL.valueAsNumber = 0;
+            CroLTI.valueAsNumber = 0;
+            CroRWC.valueAsNumber = 0;
+            CroMTC.valueAsNumber = 0;
+            //CroTRI.innerText = CroFTL.innerText + CroLTI.innerText + CroRWC.innerText + CroMTC.innerText;
+            CroFTL.onchange = function () { CroTRI.valueAsNumber = CroFTL.valueAsNumber + CroLTI.valueAsNumber + CroRWC.valueAsNumber + CroMTC.valueAsNumber };
+            CroLTI.onchange = function () { CroTRI.valueAsNumber = CroFTL.valueAsNumber + CroLTI.valueAsNumber + CroRWC.valueAsNumber + CroMTC.valueAsNumber };
+            CroRWC.onchange = function () { CroTRI.valueAsNumber = CroFTL.valueAsNumber + CroLTI.valueAsNumber + CroRWC.valueAsNumber + CroMTC.valueAsNumber };
+            CroMTC.onchange = function () { CroTRI.valueAsNumber = CroFTL.valueAsNumber + CroLTI.valueAsNumber + CroRWC.valueAsNumber + CroMTC.valueAsNumber };
+
+            var SubTRI = document.getElementById("SubTRI");
+            var SubFTL = document.getElementById("SubFTL");
+            var SubLTI = document.getElementById("SubLTI");
+            var SubRWC = document.getElementById("SubRWC");
+            var SubMTC = document.getElementById("SubMTC");
+            SubFTL.valueAsNumber = 0;
+            SubLTI.valueAsNumber = 0;
+            SubRWC.valueAsNumber = 0;
+            SubMTC.valueAsNumber = 0;
+            //CroTRI.innerText = CroFTL.innerText + CroLTI.innerText + CroRWC.innerText + CroMTC.innerText;
+            SubFTL.onchange = function () { SubTRI.valueAsNumber = SubFTL.valueAsNumber + SubLTI.valueAsNumber + SubRWC.valueAsNumber + SubMTC.valueAsNumber };
+            SubLTI.onchange = function () { SubTRI.valueAsNumber = SubFTL.valueAsNumber + SubLTI.valueAsNumber + SubRWC.valueAsNumber + SubMTC.valueAsNumber };
+            SubRWC.onchange = function () { SubTRI.valueAsNumber = SubFTL.valueAsNumber + SubLTI.valueAsNumber + SubRWC.valueAsNumber + SubMTC.valueAsNumber };
+            SubMTC.onchange = function () { SubTRI.valueAsNumber = SubFTL.valueAsNumber + SubLTI.valueAsNumber + SubRWC.valueAsNumber + SubMTC.valueAsNumber };
+
+            var RdTRI = document.getElementById("RdTRI");
+            var RdFTL = document.getElementById("RdFTL");
+            var RdLTI = document.getElementById("RdLTI");
+            var RdRWC = document.getElementById("RdRWC");
+            var RdMTC = document.getElementById("RdMTC");
+            RdFTL.valueAsNumber = 0;
+            RdLTI.valueAsNumber = 0;
+            RdRWC.valueAsNumber = 0;
+            RdMTC.valueAsNumber = 0;
+            //CroTRI.innerText = CroFTL.innerText + CroLTI.innerText + CroRWC.innerText + CroMTC.innerText;
+            RdFTL.onchange = function () { RdTRI.valueAsNumber = RdFTL.valueAsNumber + RdLTI.valueAsNumber + RdRWC.valueAsNumber + RdMTC.valueAsNumber };
+            RdLTI.onchange = function () { RdTRI.valueAsNumber = RdFTL.valueAsNumber + RdLTI.valueAsNumber + RdRWC.valueAsNumber + RdMTC.valueAsNumber };
+            RdRWC.onchange = function () { RdTRI.valueAsNumber = RdFTL.valueAsNumber + RdLTI.valueAsNumber + RdRWC.valueAsNumber + RdMTC.valueAsNumber };
+            RdMTC.onchange = function () { RdTRI.valueAsNumber = RdFTL.valueAsNumber + RdLTI.valueAsNumber + RdRWC.valueAsNumber + RdMTC.valueAsNumber };
+        }
     </script>
     <script>
         function displayNovi() {
@@ -473,14 +512,9 @@
         $(document).ready(function () {
             //display();
             displayNovi();
-           //$('.mydatatable').DataTable();
-
-            var table1 = $('.mydatatable').DataTable();
-            //$(document).on('click', '.mydatatable td', function () {
-            //    var idx = table1.cell(this).index().column;                          
-            //});
 
             UpdateHS();
+            Zbroj();
             
         
         });
@@ -577,9 +611,79 @@
     </script>
     <script>
         function ProvjeraHSForm() {
+            var HSLocacija = document.getElementById("HSLocacija");
+            var HSOperator = document.getElementById("HSOperator");
+            var HSStatus = document.getElementById("HSStatus");
             var HsDatum = document.getElementById("HSdate");
-            var CroWorkers = document.getElementById("CroWorkers");        
-            
+            var CroWorkers = document.getElementById("CroWorkers");
+            var CroManHours = document.getElementById("CroManHours");
+            var CroKm = document.getElementById("CroKm");
+
+            var CroTRI = document.getElementById("CroTRI");
+            var CroFTL = document.getElementById("CroFTL");
+            var CroLTI = document.getElementById("CroLTI");
+            var CroRWC = document.getElementById("CroRWC");
+            var CroMTC = document.getElementById("CroMTC");
+            var CroFAC = document.getElementById("CroFAC");
+            var CroNM = document.getElementById("CroNM");
+            var CroFire = document.getElementById("CroFire");
+            var CroSpill = document.getElementById("CroSpill");
+            var CroLOPC = document.getElementById("CroLOPC");
+            var CroRTA = document.getElementById("CroRTA");
+            var CroRTI = document.getElementById("CroRTI");
+            var CroNII = document.getElementById("CroNII");
+            var CroAlco = document.getElementById("CroAlco");
+            var CroLSR = document.getElementById("CroLSR");
+            var CroSWA = document.getElementById("CroSWA");
+
+            var SubWorkers = document.getElementById("SubWorkers");
+            var SubManHours = document.getElementById("SubManHours");
+            var SubKm = document.getElementById("SubKm");
+            var SubTRI = document.getElementById("SubTRI");
+            var SubFTL = document.getElementById("SubFTL");
+            var SubLTI = document.getElementById("SubLTI");
+            var SubRWC = document.getElementById("SubRWC");
+            var SubMTC = document.getElementById("SubMTC");
+            var SubFAC = document.getElementById("SubFAC");
+            var SubNM = document.getElementById("SubNM");
+            var SubFire = document.getElementById("SubFire");
+            var SubSpill = document.getElementById("SubSpill");
+            var SubLOPC = document.getElementById("SubLOPC");
+            var SubRTA = document.getElementById("SubRTA");
+            var SubRTI = document.getElementById("SubRTI");
+            var SubNII = document.getElementById("SubNII");
+            var SubAlco = document.getElementById("SubAlco");
+            var SubLSR = document.getElementById("SubLSR");
+            var SubSWA = document.getElementById("SubSWA");
+
+            var RdWorkers = document.getElementById("RdWorkers");
+            var RdManHours = document.getElementById("RdManHours");
+            var RdKm = document.getElementById("RdKm");
+            var RdTRI = document.getElementById("RdTRI");
+            var RdFTL = document.getElementById("RdFTL");
+            var RdLTI = document.getElementById("RdLTI");
+            var RdRWC = document.getElementById("RdRWC");
+            var RdMTC = document.getElementById("RdMTC");
+            var RdFAC = document.getElementById("RdFAC");
+            var RdNM = document.getElementById("RdNM");
+            var RdFire = document.getElementById("RdFire");
+            var RdSpill = document.getElementById("RdSpill");
+            var RdLOPC = document.getElementById("RdLOPC");
+            var RdRTA = document.getElementById("RdRTA");
+            var RdRTI = document.getElementById("RdRTI");
+            var RdNII = document.getElementById("RdNII");
+            var RdAlco = document.getElementById("RdAlco");
+            var RdLSR = document.getElementById("RdLSR");
+            var RdSWA = document.getElementById("RdSWA");
+
+            var DrillH2S = document.getElementById("DrillH2S");
+            var DrillEvac = document.getElementById("DrillEvac");
+            var DrillBOP = document.getElementById("DrillBOP");
+            var DrillFire = document.getElementById("DrillFire");
+            var DrillRescue = document.getElementById("DrillRescue");
+            var DrillSpill = document.getElementById("DrillSpill");
+            var DrillOther = document.getElementById("DrillOther");
+            var DrillComent = document.getElementById("DrillComent");
 
             if (HsDatum.value == "" || CroWorkers.value == "") {
                 alert("Niste unijeli borj radnika")
@@ -610,7 +714,12 @@
                 inputValue = this.value;
                 //alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
                 var sve = "HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + inputValue;   
-                   
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('Get', 'InsertHS.aspx?hsid=' + HSid + '&CloumnName=' + YName + '&NewValue=' + inputValue + '&opr=update', false);
+                xmlhttp.send(null);
+                inputValue = "";
+                HSid = "";
+                YName = "";
             });
                 
 
