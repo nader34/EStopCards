@@ -68,13 +68,13 @@
                         <label>CROSCO</label>
                     </th>
                     <td class="classtd">
-                        <input id="CroWorkers" class="classinput" type="number"/>
+                        <input id="CroWorkers" class="classinput" type="number" value="0"/>
                     </td>
                     <td class="classtd">
-                        <input id="CroManHours" class="classinput" type="number"/>
+                        <input id="CroManHours" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroKm" class="classinput" type="number"/>
+                        <input id="CroKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
                         <input id="CroSWA" class="classinput" type="number"/>
@@ -130,13 +130,13 @@
                         <label>Subcontractors</label>
                     </th>
 					<td class="classtd">
-                        <input id="SubWorkers" class="classinput" type="number"/>
+                        <input id="SubWorkers" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubManHours" class="classinput" type="number"/>
+                        <input id="SubManHours" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubKm" class="classinput" type="number"/>
+                        <input id="SubKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
                         <input id="SubSWA" class="classinput" type="number"/>
@@ -192,13 +192,13 @@
                         <label>3rd party</label>
                     </th>
 					<td class="classtd">
-                        <input id="RdWorkers" class="classinput" type="number"/>
+                        <input id="RdWorkers" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdManHours" class="classinput" type="number"/>
+                        <input id="RdManHours" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdKm" class="classinput" type="number"/>
+                        <input id="RdKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
                         <input id="RdSWA" class="classinput" type="number"/>
@@ -252,11 +252,11 @@
 				<tr class="classtr">
 					<th colspan="1" rowspan="2" class="classth">Drills</th>
 					<th colspan="1" class="classth">H2S/CO2 Drill</th>
-					<th colspan="1" class="classth">Evacuation drill</th>
+					<th colspan="1" class="classth">Evacuation Drill</th>
 					<th colspan="1" class="classth">BOP Drill (Gas Drill)</th>
 					<th colspan="1" class="classth">Fire Drill</th>
 					<th colspan="1" class="classth">Rescue Drill</th>
-					<th colspan="1" class="classth">Spill drill</th>
+					<th colspan="1" class="classth">Spill Drill</th>
 					<th colspan="1" class="classth">Other Drills</th>
 					<th colspan="11" class="classth">Other drills - comment</th>
 					<th colspan="1" class="classth">Days without LTI</th>
@@ -399,7 +399,7 @@
         </asp:Panel>
 
     </table>
-    <input type="submit" value="Btn" /><br />
+    
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>--%>
@@ -520,8 +520,6 @@
         });
     </script>
     <script>
-        //var hsTable = document.getElementById('HS_wrapper');
-        //hsTable.style.marginLeft = '20px';
         function HSDictionary(YNmae) {
             var HSdict = {
                 0:"HSID",
@@ -685,7 +683,7 @@
             var DrillOther = document.getElementById("DrillOther");
             var DrillComent = document.getElementById("DrillComent");
 
-            if (HsDatum.value == "" || CroWorkers.value == "") {
+            if (HsDatum.value == "" || CroWorkers.value == "" || CroManHours.value == "") {
                 alert("Niste unijeli borj radnika")
                 $('#UnosHS').bind('click', function (e) {
                     return false;
@@ -695,8 +693,21 @@
             }
             else {
                 $("#UnosHS").unbind('click').click();
+                var insertString = 'InsertHS.aspx?opr=InsertHS&HSLocacija=' + HSLocacija.value + '&HSOperator=' + HSOperator.value + '&HSStatus=' + HSStatus.value + '&HsDatum=' + HsDatum.value +
+                    '&CroWorkers=' + CroWorkers.value + '&CroManHours=' + CroManHours.value + '&CroKm=' + CroKm.value + '&CroSWA=' + CroSWA.value + '&CroLSR=' + CroLSR.value + '&CroAlco=' + CroAlco.value +
+                    '&CroNII=' + CroNII.value + '&CroRTI=' + CroRTI.value + '&CroRTA=' + CroRTA.value + '&CroLOPC=' + CroLOPC.value + '&CroSpill=' + CroSpill.value + '&CroFire=' + CroFire.value +
+                    '&CroNM=' + CroNM.value + '&CroFAC=' + CroFAC.value + '&CroMTC=' + CroMTC.value + '&CroRWC=' + CroRWC.value + '&CroLTI=' + CroLTI.value + '&CroFTL=' + CroFTL.value + '&CroTRI=' + CroTRI.value + 
+                    '&SubWorkers=' + SubWorkers.value + '&SubManHours=' + SubManHours.value + '&SubKm=' + SubKm.value + '&SubSWA=' + SubSWA.value + '&SubLSR=' + SubLSR.value + '&SubAlco=' + SubAlco.value +
+                    '&SubNII=' + SubNII.value + '&SubRTI=' + SubRTI.value + '&SubRTA=' + SubRTA.value + '&SubLOPC=' + SubLOPC.value + '&SubSpill=' + SubSpill.value + '&SubFire=' + SubFire.value +
+                    '&SubNM=' + SubNM.value + '&SubFAC=' + SubFAC.value + '&SubMTC=' + SubMTC.value + '&SubRWC=' + SubRWC.value + '&SubLTI=' + SubLTI.value + '&SubFTL=' + SubFTL.value + '&SubTRI=' + SubTRI.value + 
+                    '&RdWorkers=' + RdWorkers.value + '&RdManHours=' + RdManHours.value + '&RdKm=' + RdKm.value + '&RdSWA=' + RdSWA.value + '&RdLSR=' + RdLSR.value + '&RdAlco=' + RdAlco.value +
+                    '&RdNII=' + RdNII.value + '&RdRTI=' + RdRTI.value + '&RdRTA=' + RdRTA.value + '&RdLOPC=' + RdLOPC.value + '&RdSpill=' + RdSpill.value + '&RdFire=' + RdFire.value +
+                    '&RdNM=' + RdNM.value + '&RdFAC=' + RdFAC.value + '&RdMTC=' + RdMTC.value + '&RdRWC=' + RdRWC.value + '&RdLTI=' + RdLTI.value + '&RdFTL=' + RdFTL.value + '&RdTRI=' + RdTRI.value + 
+                    '&DrillH2S=' + DrillH2S.value + '&DrillEvac=' + DrillEvac.value + '&DrillBOP=' + DrillBOP.value + '&DrillFire=' + DrillFire.value + '&DrillRescue=' + DrillRescue.value + '&DrillSpill=' + DrillSpill.value +
+                    '&DrillOther=' + DrillOther.value + '&DrillComent=' + DrillComent.value;   
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open('Get', 'InsertHS.aspx?opr=InsertHS', false);
+                //xmlhttp.open('Get', 'InsertHS.aspx?opr=InsertHS&HSLocacija='+HSLocacija+'&HSOperator='+HSOperator+'&HSStatus='+HSStatus+'&HsDatum='+HsDatum, false);
+                xmlhttp.open('Get', insertString, false);
                 xmlhttp.send(null);
                 HsDatum.value = '';
                 CroWorkers.value = '';
