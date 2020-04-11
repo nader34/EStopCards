@@ -274,7 +274,7 @@
 				</tr>
                 <tr class="classtr">
 					<td colspan="1" class="classtd"><div id="UnosHS"><input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()" /></div></td>
-                    <td colspan="1" class="classtd"><input id="ZadnjiRed" class="classinput" type="button" value="Zadnji red"/></td>
+                    <td colspan="1" class="classtd"><input id="ZadnjiRed" class="classinput" type="button" value="Zadnji red" onclick="ZadnjiRedClick()"/></td>
                     <td colspan="1" class="classlb"><label>Datum: </label></td>
 					<td colspan="2" class="classtd"><input id="HSdate" class="classinput" type="date"/></td>
                     <td colspan="1" class="classlb"><label>Lokacija: </label></td>
@@ -407,27 +407,25 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        function display() {
-
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('Get', 'InsertHS.aspx?opr=display', false);
-            xmlhttp.send(null);
-            var resultText = xmlhttp.responseText;
-            //document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
-            document.getElementById("HS").lastElementChild.innerHTML = resultText;
-
-           // if (xmlhttp.readyState == 4) {
-           //    if (xmlhttp.status == 200) {
-           //        var resultText = xmlhttp.responseText;
-           //        document.getElementById("myHSTable").innerHTML = resultText;
-           //        if ($.fn.DataTable.isDataTable(".mydatatable")) {
-           //            $('.mydatatable').DataTable().clear().destroy();
-           //            $('.mydatatable').DataTable();
-           //        } else {
-           //            $('.mydatatable').DataTable();
-           //        }
-           //    }
-           //}
+        function ZadnjiRedClick() {
+            var a = $('.mydatatable').DataTable();
+            var idxLast = a.rows()[length].length - 1;
+            //var b =  a.cells(idxLast,1).data()[0];
+            //var c =b.substring(6,b.length-7);
+            for (var x = 8; x < 11; x++) {
+                var b = a.cells(idxLast, x).data()[0];
+                var c = b.substring(6, b.length - 7);
+                var HSform = $('#WorkersData tr');
+                if (x == 8) {
+                    HSform[6].cells[5].firstChild.value = c;
+                }
+                else if (x==9) {
+                    HSform[6].cells[7].firstChild.value = c;
+                }
+                else if (x==10) {
+                    HSform[6].cells[9].firstChild.value = c;
+                }
+            }
         }
     </script>
     <script>
@@ -488,7 +486,7 @@
             var myTable = myTableHead + resultText;
             //document.getElementById("ContentPlaceHolder1_HStbody").innerHTML = resultText;
             document.getElementById("HS").innerHTML = myTable;
-            a = $('.mydatatable').DataTable();
+            var a = $('.mydatatable').DataTable();
             a.destroy();
             $('.mydatatable').DataTable();
             var hsTable = document.getElementById('HS_wrapper');
@@ -723,8 +721,7 @@
             $(document).on('blur', '.mydatatable input', function () {
                 $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
                 inputValue = this.value;
-                //alert("HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + this.value);
-                var sve = "HSid: " + HSid + ", CloumnName: " + YName + ", NewValue: " + inputValue;   
+                  
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open('Get', 'InsertHS.aspx?hsid=' + HSid + '&CloumnName=' + YName + '&NewValue=' + inputValue + '&opr=update', false);
                 xmlhttp.send(null);
