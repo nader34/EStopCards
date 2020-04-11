@@ -412,18 +412,52 @@
             var idxLast = a.rows()[length].length - 1;
             //var b =  a.cells(idxLast,1).data()[0];
             //var c =b.substring(6,b.length-7);
-            for (var x = 8; x < 11; x++) {
+            for (var x = 8; x < 80; x++) {
                 var b = a.cells(idxLast, x).data()[0];
                 var c = b.substring(6, b.length - 7);
                 var HSform = $('#WorkersData tr');
                 if (x == 8) {
                     HSform[6].cells[5].firstChild.value = c;
                 }
-                else if (x==9) {
+                else if (x == 9) {
                     HSform[6].cells[7].firstChild.value = c;
                 }
-                else if (x==10) {
+                else if (x == 10) {
                     HSform[6].cells[9].firstChild.value = c;
+                }
+                else if (x > 10 && x < 14) {
+                    var j = x - 10;
+                    HSform[j].cells[1].firstElementChild.valueAsNumber = c;
+                }
+                else if (x > 14 && x < 18) {
+                    j = x - 14;
+                    HSform[j].cells[2].firstElementChild.valueAsNumber = c;
+                }
+                else if (x > 18 && x < 22) {
+                    j = x - 18;
+                    HSform[j].cells[3].firstElementChild.valueAsNumber = c;
+                }
+                else if (x > 22 && x < 39) {
+                    j = x - 19;
+                    HSform[1].cells[j].firstElementChild.valueAsNumber= c;
+                }
+                else if (x > 38 && x < 55) {
+                    j = x - 35;
+                    HSform[2].cells[j].firstElementChild.valueAsNumber=c;
+                }
+                else if (x > 54 && x < 71) {
+                    j = x - 51;
+                    HSform[3].cells[j].firstElementChild.valueAsNumber= c;
+                }
+                 else if (x > 70 && x < 78) {
+                    j = x - 71;
+                    HSform[5].cells[j].firstElementChild.valueAsNumber= c;
+                }
+                else if (x==78) {                    
+                    HSform[5].cells[7].firstElementChild.value= c;
+                }
+                else if (x==79) {
+                    HSform[5].cells[8].firstElementChild.valueAsNumber= parseInt(c) + 1;
                 }
             }
         }
