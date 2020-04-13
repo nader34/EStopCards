@@ -80,7 +80,7 @@
                             Kolovoz
                         </th>
                          <th>
-                            Rujanj
+                             Rujan
                         </th>
                          <th>
                             Q3
@@ -111,7 +111,7 @@
                                 01. Dani rada
                             </th>
                             <td>
-                                31
+                                <span id="Dani1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -790,7 +790,7 @@
                         </tr>
                         <tr>
                             <th>
-                                12. Zatvorene nesigurne uvjete
+                                12. Zatvoreni nesigurni uvjeti
                             </th>
                             <td>
                                 <span id="UCClosed1" runat="server"></span>
@@ -855,7 +855,7 @@
                                 13. Broj radnika
                             </th>
                             <td>
-                                31
+                                <span id="NoWorkers1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -1208,7 +1208,7 @@
                             Kolovoz
                         </th>
                          <th>
-                            Rujanj
+                             Rujan
                         </th>
                          <th>
                             Q3
@@ -3701,7 +3701,7 @@
                             Kolovoz
                         </th>
                          <th>
-                            Rujanj
+                             Rujan
                         </th>
                          <th>
                             Q3

@@ -28,7 +28,7 @@ namespace CroscoStopCard
         private string SqlString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null && Session["UserRole"] == null) Response.Redirect("Home.aspx");
             //SqlCommand command;
             //string sql = null;
             //sql = ("SELECT COUNT (EStopCardID) FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'");
@@ -370,6 +370,55 @@ namespace CroscoStopCard
                 }
 
             }
+
+            DataTable dtHS = new DataTable();
+            //DataRow ro1 = new DataRow();
+            //DataColumn col = new DataColumn();
+            dtHS = this.GetHSReportPrvi();
+            int WorkersCro = 0, WorkersSub = 0, WorkersRd = 0, SumWorker=0;
+            for (int x = 0; x < dtHS.Rows.Count; x++)
+            {
+                for (int y = 0; y < dtHS.Columns.Count; y++)
+                {
+                    DataColumn KolHead = dtHS.Columns[y];
+                    string header = KolHead.ToString();
+                    object cell = dtHS.Rows[x].ItemArray[y];
+                    int broj;
+                    //var isNumeric = int.TryParse(cell, out broj);
+                    //int borj = Convert.ToInt32(cell);
+                    //object Negative
+
+                    if (header == "ManNoCrosco")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        WorkersCro +=broj;
+                        
+                    }
+                    else if (header == "ManNoContracori")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        WorkersSub += broj;
+                    }
+                    else if (header == "ManNoThirdParty")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        WorkersRd += broj;
+                    }
+                    else if (header == "SumNo" )
+                    {
+                        broj = Convert.ToInt32(cell);
+                        SumWorker += broj;
+                    }
+                    
+                }
+
+            }
+            //Dani
+            DataTable HSDani = new DataTable();
+            HSDani = this.GetHSDaniPrvi();
+            Dani1.InnerText = (HSDani.Rows.Count).ToString();
+
+            NoWorkers1.InnerText = (WorkersCro + WorkersSub).ToString();
             positive1.InnerText = sigurne.ToString();
             negative1.InnerText = nesigurne.ToString();
             UA1.InnerText = UA.ToString();
@@ -495,7 +544,82 @@ namespace CroscoStopCard
                 }
             }
         }
+        private DataTable GetHSReportPrvi()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    SqlString = "SELECT * FROM HS WHERE DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    SqlString = "SELECT * FROM HS WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    SqlString = "SELECT * FROM HS WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    SqlString = "SELECT * FROM HS WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                using (SqlCommand cmd = new SqlCommand(SqlString))
+                //using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                //    "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
+                //    "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
+                //    "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
 
-        
+        private DataTable GetHSDaniPrvi()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    SqlString = "SELECT DISTINCT DateCreated FROM HS WHERE DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    SqlString = "SELECT DISTINCT DateCreated FROM HS WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    SqlString = "SELECT DISTINCT DateCreated FROM HS WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                else if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    SqlString = "SELECT DISTINCT DateCreated FROM HS WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
+                }
+                using (SqlCommand cmd = new SqlCommand(SqlString))
+                
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

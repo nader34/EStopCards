@@ -31,6 +31,15 @@ namespace CroscoStopCard {
         protected global::System.Web.UI.WebControls.Panel StopAnaliza;
         
         /// <summary>
+        /// Dani1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Dani1;
+        
+        /// <summary>
         /// K1 control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace CroscoStopCard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl UCClosed1;
+        
+        /// <summary>
+        /// NoWorkers1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NoWorkers1;
         
         /// <summary>
         /// ElmentiTable control.
