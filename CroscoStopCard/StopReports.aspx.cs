@@ -376,6 +376,11 @@ namespace CroscoStopCard
             //DataColumn col = new DataColumn();
             dtHS = this.GetHSReportPrvi();
             int WorkersCro = 0, WorkersSub = 0, WorkersRd = 0, SumWorker=0;
+            int HoursCro = 0, HoursSub = 0, HoursRd = 0, SumHours = 0;
+            int CRoSWA = 0, CRoLSRV = 0, CRoAlco = 0, CRoNII = 0, CRoRTI=0, CRoRTA = 0, CRoLOPC = 0, CRoSPILL = 0, CRoFIRE = 0, CRoNM = 0, CRoFAC = 0, CRoMTC = 0, CRoRWC = 0, CRoLTI = 0, CRoFTL = 0, CRoTRI = 0;
+            int ConSWA = 0, ConLSRV = 0, ConAlco = 0, ConNII = 0, ConRTI = 0, ConRTA = 0, ConLOPC = 0, ConSPILL = 0, ConFIRE = 0, ConNM = 0, ConFAC = 0, ConMTC = 0, ConRWC = 0, ConLTI = 0, ConFTL = 0, ConTRI = 0;
+            int ThrdSWA = 0, ThrdLSRV = 0, ThrdAlco = 0, ThrdNII = 0, ThrdRTI = 0, ThrdRTA = 0, ThrdLOPC = 0, ThrdSPILL = 0, ThrdFIRE = 0, ThrdNM = 0, ThrdFAC = 0, ThrdMTC = 0, ThrdRWC = 0, ThrdLTI = 0, ThrdFTL = 0, ThrdTRI = 0;
+
             for (int x = 0; x < dtHS.Rows.Count; x++)
             {
                 for (int y = 0; y < dtHS.Columns.Count; y++)
@@ -409,7 +414,268 @@ namespace CroscoStopCard
                         broj = Convert.ToInt32(cell);
                         SumWorker += broj;
                     }
-                    
+                    else if (header == "ManHoursCrosco")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        HoursCro += broj;
+                    }
+                    else if (header == "ManHoursContracori")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        HoursSub += broj;
+                    }
+                    else if (header == "ManHoursThirdParty")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        HoursRd += broj;
+                    }
+                    else if (header == "SumManHours")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        SumHours += broj;
+                    }
+                    else if (header == "CRoSWA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoSWA += broj;
+                    }
+                    else if (header == "CRoLSRV")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoLSRV += broj;
+                    }
+                    else if (header == "CRoAlco")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoAlco += broj;
+                    }
+                    else if (header == "CRoNII")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoNII += broj;
+                    }
+                    else if (header == "CRoRTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoRTI += broj;
+                    }
+                    else if (header == "CRoRTA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoRTA += broj;
+                    }
+                    else if (header == "CRoLOPC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoLOPC += broj;
+                    }
+                    else if (header == "CRoSPILL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoSPILL += broj;
+                    }
+                    else if (header == "CRoFIRE")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoFIRE += broj;
+                    }
+                    else if (header == "CRoNM")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoNM += broj;
+                    }
+                    else if (header == "CRoFAC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoFAC += broj;
+                    }
+                    else if (header == "CRoMTC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoMTC += broj;
+                    }
+                    else if (header == "CRoRWC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoRWC += broj;
+                    }
+                    else if (header == "CRoLTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoLTI += broj;
+                    }
+                    else if (header == "CRoFTL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoFTL += broj;
+                    }
+                    else if (header == "CRoTRI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoTRI += broj;
+                    }
+
+                    else if (header == "ConSWA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConSWA += broj;
+                    }
+                    else if (header == "ConLSRV")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConLSRV += broj;
+                    }
+                    else if (header == "ConAlco")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConAlco += broj;
+                    }
+                    else if (header == "ConNII")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConNII += broj;
+                    }
+                    else if (header == "ConRTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConRTI += broj;
+                    }
+                    else if (header == "ConRTA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConRTA += broj;
+                    }
+                    else if (header == "ConLOPC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConLOPC += broj;
+                    }
+                    else if (header == "ConSPILL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        CRoSPILL += broj;
+                    }
+                    else if (header == "ConFIRE")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConFIRE += broj;
+                    }
+                    else if (header == "ConNM")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConNM += broj;
+                    }
+                    else if (header == "ConFAC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConFAC += broj;
+                    }
+                    else if (header == "ConMTC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConMTC += broj;
+                    }
+                    else if (header == "ConRWC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConRWC += broj;
+                    }
+                    else if (header == "ConLTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConLTI += broj;
+                    }
+                    else if (header == "ConFTL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConFTL += broj;
+                    }
+                    else if (header == "ConTRI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ConTRI += broj;
+                    }
+
+                    else if (header == "ThrdSWA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdSWA += broj;
+                    }
+                    else if (header == "ThrdLSRV")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdLSRV += broj;
+                    }
+                    else if (header == "ThrdAlco")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdAlco += broj;
+                    }
+                    else if (header == "ThrdNII")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdNII += broj;
+                    }
+                    else if (header == "ThrdRTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdRTI += broj;
+                    }
+                    else if (header == "ThrdRTA")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdRTA += broj;
+                    }
+                    else if (header == "ThrdLOPC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdLOPC += broj;
+                    }
+                    else if (header == "ThrdSPILL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdSPILL += broj;
+                    }
+                    else if (header == "ThrdFIRE")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdFIRE += broj;
+                    }
+                    else if (header == "ThrdNM")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdNM += broj;
+                    }
+                    else if (header == "ThrdFAC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdFAC += broj;
+                    }
+                    else if (header == "ThrdMTC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdMTC += broj;
+                    }
+                    else if (header == "ThrdRWC")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdRWC += broj;
+                    }
+                    else if (header == "ThrdLTI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdLTI += broj;
+                    }
+                    else if (header == "ThrdFTL")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdFTL += broj;
+                    }
+                    else if (header == "ThrdTRI")
+                    {
+                        broj = Convert.ToInt32(cell);
+                        ThrdTRI += broj;
+                    }
                 }
 
             }
@@ -417,8 +683,26 @@ namespace CroscoStopCard
             DataTable HSDani = new DataTable();
             HSDani = this.GetHSDaniPrvi();
             Dani1.InnerText = (HSDani.Rows.Count).ToString();
-
+            
             NoWorkers1.InnerText = (WorkersCro + WorkersSub).ToString();
+            Sati1.InnerText = SumHours.ToString();
+            SWA1.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
+            TPS1.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
+            Alco1.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
+            NII1.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
+            RTI1.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
+            RTA1.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
+            LOPC1.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
+            Spill1.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
+            Fire1.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
+            NM1.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
+            FAC1.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
+            MTC1.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
+            RWC1.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
+            LTI1.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
+            FTL1.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
+            TRI1.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
+
             positive1.InnerText = sigurne.ToString();
             negative1.InnerText = nesigurne.ToString();
             UA1.InnerText = UA.ToString();

@@ -917,7 +917,7 @@
                                 14. Kartice po osobi
                             </th>
                             <td>
-                                31
+                                <span id="K1POsobi"></span>
                             </td>
                             <td>
                                 29
@@ -979,7 +979,7 @@
                                 15. Kartice po osobi po dani rada
                             </th>
                             <td>
-                                31
+                                <span id="MjesPOsobi1"></span>
                             </td>
                             <td>
                                 29
@@ -1041,7 +1041,7 @@
                                 16. Negativne kartice po osobi
                             </th>
                             <td>
-                                31
+                                <span id="BrojNegKarPoOsobi1"></span>
                             </td>
                             <td>
                                 29
@@ -1103,7 +1103,7 @@
                                 17. Negativne kartice po osobi po dani rada
                             </th>
                             <td>
-                                31
+                                <span id="MjesNegKarPoOsobi1"></span>
                             </td>
                             <td>
                                 29
@@ -3725,7 +3725,6 @@
                             Godina
                         </th>
                     </tr>
-
                     </thead>
                     <tbody>
                         <tr>
@@ -3733,7 +3732,7 @@
                                 01. Sati rada
                             </th>
                             <td>
-                                31
+                                <span id="Sati1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3792,10 +3791,10 @@
                         </tr>
                         <tr>
                             <th>
-                                02. FTL
+                                02. TRI
                             </th>
                             <td>
-                                31
+                                <span id="TRI1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3854,10 +3853,10 @@
                         </tr>
                         <tr>
                             <th>
-                                03. LTI
+                                03. FTL
                             </th>
                             <td>
-                                31
+                                <span id="FTL1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3916,10 +3915,10 @@
                         </tr>
                         <tr>
                             <th>
-                                04. RWC
+                                04. LTI
                             </th>
                             <td>
-                                31
+                                <span id="LTI1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -3978,10 +3977,10 @@
                         </tr>
                         <tr>
                             <th>
-                                05. MTC
+                                05. RWC
                             </th>
                             <td>
-                                31
+                                <span id="RWC1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4040,10 +4039,10 @@
                         </tr>
                         <tr>
                             <th>
-                                06. FAC
+                                06. MTC
                             </th>
                             <td>
-                                31
+                                <span id="MTC1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4102,10 +4101,10 @@
                         </tr>
                         <tr>
                             <th>
-                                07. NM
+                                07. FAC
                             </th>
                             <td>
-                                31
+                                <span id="FAC1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4164,10 +4163,10 @@
                         </tr>
                         <tr>
                             <th>
-                                08. RTA
+                                08. NM
                             </th>
                             <td>
-                                31
+                                <span id="NM1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4226,10 +4225,9 @@
                         </tr>
                         <tr>
                             <th>
-                                09. RTI
-                            </th>
+                                09. FIRE</th>
                             <td>
-                                31
+                                <span id="Fire1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4288,10 +4286,9 @@
                         </tr>
                         <tr>
                             <th>
-                                10. NII
-                            </th>
+                                10. SPILL</th>
                             <td>
-                                31
+                                <span id="Spill1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4350,10 +4347,10 @@
                         </tr>
                         <tr>
                             <th>
-                                11. SWA
+                                11. LOPC
                             </th>
                             <td>
-                                31
+                                <span id="LOPC1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4412,10 +4409,10 @@
                         </tr>
                         <tr>
                             <th>
-                                12. TPS
+                                12. RTA
                             </th>
                             <td>
-                                31
+                                <span id="RTA1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4474,10 +4471,10 @@
                         </tr>
                         <tr>
                             <th>
-                                13. Broj Alkotestiranja
+                                13. RTI
                             </th>
                             <td>
-                                31
+                                <span id="RTI1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4536,10 +4533,10 @@
                         </tr>
                         <tr>
                             <th>
-                                14. LTIF
+                                14. NII
                             </th>
                             <td>
-                                31
+                                <span id="NII1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4598,10 +4595,10 @@
                         </tr>
                         <tr>
                             <th>
-                                15. LTI rate
+                                15. SWA
                             </th>
                             <td>
-                                31
+                                <span id="SWA1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4660,10 +4657,10 @@
                         </tr>
                         <tr>
                             <th>
-                                16. TRIF
+                                16. TPS
                             </th>
                             <td>
-                                31
+                                <span id="TPS1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4722,10 +4719,10 @@
                         </tr>
                         <tr>
                             <th>
-                                17. TRI rate
+                                17. Broj Alkotestiranja
                             </th>
                             <td>
-                                31
+                                <span id="Alco1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4784,10 +4781,10 @@
                         </tr>
                         <tr>
                             <th>
-                                18. NMF
+                                18. LTIF
                             </th>
                             <td>
-                                31
+                                <span id="LTIF1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4846,10 +4843,10 @@
                         </tr>
                         <tr>
                             <th>
-                                19. NM rate
+                                19. LTI rate
                             </th>
                             <td>
-                                31
+                                <span id="LTIR1" runat="server"></span>
                             </td>
                             <td>
                                 29
@@ -4906,18 +4903,286 @@
                                 Year
                             </td>
                         </tr>
-
+                        <tr>
+                            <th>
+                                20. TRIF
+                            </th>
+                            <td>
+                                <span id="TRIF1" runat="server"></span>
+                            </td>
+                            <td>
+                                29
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q1
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q2
+                            </td>
+                            <td>
+                                H1
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q3
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q4
+                            </td>
+                            <td>
+                                H2
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                21. TRI rate
+                            </th>
+                            <td>
+                                <span id="TRIR1" runat="server"></span>
+                            </td>
+                            <td>
+                                29
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q1
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q2
+                            </td>
+                            <td>
+                                H1
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q3
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q4
+                            </td>
+                            <td>
+                                H2
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                22. NMF
+                            </th>
+                            <td>
+                                <span id="NMF1" runat="server"></span>
+                            </td>
+                            <td>
+                                29
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q1
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q2
+                            </td>
+                            <td>
+                                H1
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q3
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q4
+                            </td>
+                            <td>
+                                H2
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                23. NM rate
+                            </th>
+                            <td>
+                                <span id="NMR1" runat="server"></span>
+                            </td>
+                            <td>
+                                29
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q1
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q2
+                            </td>
+                            <td>
+                                H1
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                Q3
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                30
+                            </td>
+                            <td>
+                                31
+                            </td>
+                            <td>
+                                Q4
+                            </td>
+                            <td>
+                                H2
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </asp:Panel>
             <p><span id="poruka" runat="server"></span></p>
             <script>
                 $(document).ready(function () {
+                    SA();
                     $('.mydatatable').DataTable();
+                    
                     //$('#SAtb1').DataTable();
                     //$('#ElmentiTable1').DataTable();
                     //$('#HStable1').DataTable();
                 });
+            </script>
+            <script>
+                function SA() {
+                    var BrojKartica= document.getElementById('K1').innerText;
+                    var BrojRadnika = document.getElementById('NoWorkers1').innerText;
+                    var BrojDana = document.getElementById('Dani1').innerText;
+                    var BrojNegKartica = document.getElementById('negative1').innerText;
+                    var KpoOsobi = parseInt(BrojKartica) / parseInt(BrojRadnika);
+                    var MjesPoOsobi = KpoOsobi * parseInt(BrojDana);
+                    var BrojNegPoOsobi = parseInt(BrojNegKartica) / parseInt(BrojRadnika);
+                    var MejsNegPoOsobi = BrojNegPoOsobi * parseInt(BrojDana);
+                    document.getElementById('K1POsobi').innerText = KpoOsobi.toFixed(4);
+                    document.getElementById('MjesPOsobi1').innerText = MjesPoOsobi.toFixed(4);
+                    document.getElementById('BrojNegKarPoOsobi1').innerText = BrojNegPoOsobi.toFixed(4);
+                    document.getElementById('MjesNegKarPoOsobi1').innerText = MejsNegPoOsobi.toFixed(4);
+
+                    
+                }
+
             </script>
         </div>
     </form>
