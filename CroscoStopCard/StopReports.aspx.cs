@@ -49,7 +49,7 @@ namespace CroscoStopCard
 
         }
         public static string prvi;
-
+        public static string drugi;
         protected void LoadPrvi()
         {
             DataTable dt = new DataTable();
@@ -1412,23 +1412,23 @@ namespace CroscoStopCard
             Dani2.InnerText = (HSDani.Rows.Count).ToString();
 
             NoWorkers2.InnerText = (WorkersCro + WorkersSub).ToString();
-            //Sati1.InnerText = SumHours.ToString();
-            //SWA1.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
-            //TPS1.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
-            //Alco1.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
-            //NII1.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
-            //RTI1.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
-            //RTA1.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
-            //LOPC1.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
-            //Spill1.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
-            //Fire1.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
-            //NM1.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
-            //FAC1.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
-            //MTC1.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
-            //RWC1.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
-            //LTI1.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
-            //FTL1.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
-            //TRI1.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
+            Sati2.InnerText = SumHours.ToString();
+            SWA2.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
+            TPS2.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
+            Alco2.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
+            NII2.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
+            RTI2.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
+            RTA2.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
+            LOPC2.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
+            Spill2.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
+            Fire2.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
+            NM2.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
+            FAC2.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
+            MTC2.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
+            RWC2.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
+            LTI2.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
+            FTL2.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
+            TRI2.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
 
             positive2.InnerText = sigurne.ToString();
             negative2.InnerText = nesigurne.ToString();
@@ -1436,74 +1436,77 @@ namespace CroscoStopCard
             UC2.InnerText = UC.ToString();
             open2.InnerText = open.ToString();
             ongoing2.InnerText = ongoing.ToString();
-            close1.InnerText = closed.ToString();
+            close2.InnerText = closed.ToString();
             NegativeClosed2.InnerText = negativClosed.ToString();
             UAClosed2.InnerText = UAclosed.ToString();
             UCClosed2.InnerText = UCclosed.ToString();
 
-            //P1Reak1.InnerText = PodReak1.ToString();
-            //P1Reak2.InnerText = PodReak2.ToString();
-            //P1Reak3.InnerText = PodReak3.ToString();
-            //P1Reak4.InnerText = PodReak4.ToString();
-            //P1Reak5.InnerText = PodReak5.ToString();
-            //P1Reak6.InnerText = PodReak6.ToString();
-            //string E1Reak = (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
-            //P1Reak.InnerText = E1Reak;
+            P2Reak1.InnerText = PodReak1.ToString();
+            P2Reak2.InnerText = PodReak2.ToString();
+            P2Reak3.InnerText = PodReak3.ToString();
+            P2Reak4.InnerText = PodReak4.ToString();
+            P2Reak5.InnerText = PodReak5.ToString();
+            P2Reak6.InnerText = PodReak6.ToString();
+            string E2Reak = (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
+            P2Reak.InnerText = E2Reak;
 
-            //P1ozo1.InnerText = PodOzo1.ToString();
-            //P1ozo2.InnerText = PodOzo2.ToString();
-            //P1ozo3.InnerText = PodOzo3.ToString();
-            //P1ozo4.InnerText = PodOzo4.ToString();
-            //P1ozo5.InnerText = PodOzo5.ToString();
-            //P1ozo6.InnerText = PodOzo6.ToString();
-            //P1ozo7.InnerText = PodOzo7.ToString();
-            //string E1Ozo = (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
-            //P1ozo.InnerText = E1Ozo;
+            P2ozo1.InnerText = PodOzo1.ToString();
+            P2ozo2.InnerText = PodOzo2.ToString();
+            P2ozo3.InnerText = PodOzo3.ToString();
+            P2ozo4.InnerText = PodOzo4.ToString();
+            P2ozo5.InnerText = PodOzo5.ToString();
+            P2ozo6.InnerText = PodOzo6.ToString();
+            P2ozo7.InnerText = PodOzo7.ToString();
+            string E2Ozo = (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
+            P2ozo.InnerText = E2Ozo;
 
-            //P1polo1.InnerText = PodPolo1.ToString();
-            //P1polo2.InnerText = PodPolo2.ToString();
-            //P1polo3.InnerText = PodPolo3.ToString();
-            //P1polo4.InnerText = PodPolo4.ToString();
-            //P1polo5.InnerText = PodPolo5.ToString();
-            //P1polo6.InnerText = PodPolo6.ToString();
-            //P1polo7.InnerText = PodPolo7.ToString();
-            //P1polo8.InnerText = PodPolo8.ToString();
-            //P1polo9.InnerText = PodPolo9.ToString();
-            //P1polo10.InnerText = PodPolo10.ToString();
-            //P1polo11.InnerText = PodPolo11.ToString();
-            //P1polo12.InnerText = PodPolo12.ToString();
-            //string E1Polo = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
-            //P1polo.InnerText = E1Polo;
+            P2polo1.InnerText = PodPolo1.ToString();
+            P2polo2.InnerText = PodPolo2.ToString();
+            P2polo3.InnerText = PodPolo3.ToString();
+            P2polo4.InnerText = PodPolo4.ToString();
+            P2polo5.InnerText = PodPolo5.ToString();
+            P2polo6.InnerText = PodPolo6.ToString();
+            P2polo7.InnerText = PodPolo7.ToString();
+            P2polo8.InnerText = PodPolo8.ToString();
+            P2polo9.InnerText = PodPolo9.ToString();
+            P2polo10.InnerText = PodPolo10.ToString();
+            P2polo11.InnerText = PodPolo11.ToString();
+            P2polo12.InnerText = PodPolo12.ToString();
+            string E2Polo = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            P2polo.InnerText = E2Polo;
 
-            //P1alat1.InnerText = PodAlati1.ToString();
-            //P1alat2.InnerText = PodAlati2.ToString();
-            //P1alat3.InnerText = PodAlati3.ToString();
-            //string E1Alati = (PodAlati1 + PodAlati2 + PodAlati3).ToString();
-            //P1alat.InnerText = E1Alati;
+            P2alat1.InnerText = PodAlati1.ToString();
+            P2alat2.InnerText = PodAlati2.ToString();
+            P2alat3.InnerText = PodAlati3.ToString();
+            string E2Alati = (PodAlati1 + PodAlati2 + PodAlati3).ToString();
+            P2alat.InnerText = E2Alati;
 
-            //P1proce1.InnerText = PodProce1.ToString();
-            //P1proce2.InnerText = PodProce2.ToString();
-            //P1proce3.InnerText = PodProce3.ToString();
-            //P1proce4.InnerText = PodProce4.ToString();
-            //P1proce5.InnerText = PodProce5.ToString();
-            //P1proce6.InnerText = PodProce6.ToString();
-            //string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
-            //P1proce.InnerText = E1Proce;
-            //string str1 = sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + closed + ", " + open + ", " + ongoing + ", " + negativClosed + ", " + UAclosed + ", " + UCclosed;
+            P2proce1.InnerText = PodProce1.ToString();
+            P2proce2.InnerText = PodProce2.ToString();
+            P2proce3.InnerText = PodProce3.ToString();
+            P2proce4.InnerText = PodProce4.ToString();
+            P2proce5.InnerText = PodProce5.ToString();
+            P2proce6.InnerText = PodProce6.ToString();
+            string E2Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            P2proce.InnerText = E2Proce;
+            string str1 = sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + closed + ", " + open + ", " + ongoing + ", " + negativClosed + ", " + UAclosed + ", " + UCclosed;
 
-            //string str2 = PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E1Reak + ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " +
-            //    PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E1Ozo + ", " + PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " +
-            //    PodPolo7 + ", " + PodPolo8 + ", " + PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E1Polo + ", " + PodAlati1 + ", " +
-            //    PodAlati2 + ", " + PodAlati3 + ", " + E1Alati + ", " + PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " + E1Proce;
+            string str2 = PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E2Reak + ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " +
+                PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E2Ozo + ", " + PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " +
+                PodPolo7 + ", " + PodPolo8 + ", " + PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E2Polo + ", " + PodAlati1 + ", " +
+                PodAlati2 + ", " + PodAlati3 + ", " + E2Alati + ", " + PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " + E2Proce;
 
-            //prvi = str1 + ", " + str2;
+            drugi = str1 + ", " + str2;
 
         }
 
 
         protected void Kvartalno()
         {
-            poruka.InnerText = prvi;
+            poruka.InnerText = prvi + drugi;
+            string[] s1 = prvi.Split(',');
+            string[] s2 = drugi.Split(',');
+            DaniQ1.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0])).ToString();
         }
 
         private DataTable GetReportPrvi()
@@ -1515,28 +1518,28 @@ namespace CroscoStopCard
                     SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                        "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                        "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
                 }
                 else if ((string)Session["UserRole"] == "Manager")
                 {
                     SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                        "PodProce6 FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                        "PodProce6 FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
                 }
                 else if ((string)Session["UserRole"] == "Admin")
                 {
                     SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                        "PodProce6 FROM EStopCards WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                        "PodProce6 FROM EStopCards WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
                 }
                 else if ((string)Session["UserRole"] == "LocalAdmin")
                 {
                     SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                        "PodProce6 FROM EStopCards WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2019.1.1' AND '2019.1.31'";
+                        "PodProce6 FROM EStopCards WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
                 }
                 using (SqlCommand cmd = new SqlCommand(SqlString))
                 
@@ -1575,10 +1578,6 @@ namespace CroscoStopCard
                     SqlString = "SELECT * FROM HS WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN '2020.1.1' AND '2020.1.31'";
                 }
                 using (SqlCommand cmd = new SqlCommand(SqlString))
-                //using (SqlCommand cmd = new SqlCommand("SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
-                //    "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
-                //    "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                //    "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN '2019.1.1' AND '2019.1.31'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
