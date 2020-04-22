@@ -179,10 +179,10 @@
                                 <span id="K2" runat="server"></span>
                             </td>
                             <td>
-                                <span id="K3"></span>
+                                <span id="K3" runat="server"></span>
                             </td>
                             <td>
-                                <span id="KQ1"></span>
+                                <span id="KQ1" runat="server"></span>
                             </td>
                             <td>
                                 <span id="K4" runat="server"></span>
@@ -5180,6 +5180,22 @@
                     document.getElementById('BrojNegKarPoOsobi1').innerText = BrojNegPoOsobi.toFixed(4);
                     document.getElementById('MjesNegKarPoOsobi1').innerText = MejsNegPoOsobi.toFixed(4);
 
+                    //BrojLTI*1000000/Satirada
+                    var stai1 = document.getElementById('Sati1').innerText;
+                    var FTL1= document.getElementById('FTL1').innerText;
+                    var LTI1 = document.getElementById('LTI1').innerText;
+                    var TRI1 = document.getElementById('TRI1').innerText;
+                    var NM1= document.getElementById('NM1').innerText;
+                    var LTIF1 = (parseInt(LTI1) + parseInt(FTL1)) * 1000000 / parseInt(stai1);
+                    var TRIF1 = parseInt(TRI1) * 1000000 / parseInt(stai1);
+                    var NMF1=parseInt(NM1) * 1000000 / parseInt(stai1);
+                    document.getElementById('LTIF1').innerText = LTIF1.toFixed(4);
+                    document.getElementById('LTIR1').innerText = (LTIF1 / 5).toFixed(4);
+                    document.getElementById('TRIF1').innerText = TRIF1.toFixed(4);
+                    document.getElementById('TRIR1').innerText = (TRIF1 / 5).toFixed(4);
+                    document.getElementById('NMF1').innerText = NMF1.toFixed(4);
+                    document.getElementById('NMR1').innerText = (NMF1/5).toFixed(4);
+
                     //drugi
                     var BrojKartica2= document.getElementById('K2').innerText;
                     var BrojRadnika2 = document.getElementById('NoWorkers2').innerText;
@@ -5193,7 +5209,79 @@
                     document.getElementById('MjesPOsobi2').innerText = MjesPoOsobi2.toFixed(4);
                     document.getElementById('BrojNegKarPoOsobi2').innerText = BrojNegPoOsobi2.toFixed(4);
                     document.getElementById('MjesNegKarPoOsobi2').innerText = MejsNegPoOsobi2.toFixed(4);
-                    
+
+                    var stai2 = document.getElementById('Sati2').innerText;
+                    var FTL2= document.getElementById('FTL2').innerText;
+                    var LTI2 = document.getElementById('LTI2').innerText;
+                    var TRI2 = document.getElementById('TRI2').innerText;
+                    var NM2= document.getElementById('NM2').innerText;
+                    var LTIF2 = (parseInt(LTI2) + parseInt(FTL2)) * 1000000 / parseInt(stai2);
+                    var TRIF2 = parseInt(TRI2) * 1000000 / parseInt(stai2);
+                    var NMF2=parseInt(NM2) * 1000000 / parseInt(stai2);
+                    document.getElementById('LTIF2').innerText = LTIF2.toFixed(4);
+                    document.getElementById('LTIR2').innerText = (LTIF2 / 5).toFixed(4);
+                    document.getElementById('TRIF2').innerText = TRIF2.toFixed(4);
+                    document.getElementById('TRIR2').innerText = (TRIF2 / 5).toFixed(4);
+                    document.getElementById('NMF2').innerText = NMF2.toFixed(4);
+                    document.getElementById('NMR2').innerText = (NMF2 / 5).toFixed(4);
+
+                    //treci
+                    var BrojKartica3= document.getElementById('K3').innerText;
+                    var BrojRadnika3 = document.getElementById('NoWorkers3').innerText;
+                    var BrojDana3 = document.getElementById('Dani3').innerText;
+                    var BrojNegKartica3 = document.getElementById('negative3').innerText;
+                    var KpoOsobi3 = parseInt(BrojKartica3) / parseInt(BrojRadnika3);
+                    var MjesPoOsobi3 = KpoOsobi3 * parseInt(BrojDana3);
+                    var BrojNegPoOsobi3 = parseInt(BrojNegKartica3) / parseInt(BrojRadnika3);
+                    var MejsNegPoOsobi3 = BrojNegPoOsobi3 * parseInt(BrojDana3);
+                    document.getElementById('K3POsobi').innerText = KpoOsobi3.toFixed(4);
+                    document.getElementById('MjesPOsobi3').innerText = MjesPoOsobi3.toFixed(4);
+                    document.getElementById('BrojNegKarPoOsobi3').innerText = BrojNegPoOsobi3.toFixed(4);
+                    document.getElementById('MjesNegKarPoOsobi3').innerText = MejsNegPoOsobi3.toFixed(4);
+
+                    var stai3 = document.getElementById('Sati3').innerText;
+                    var FTL3= document.getElementById('FTL3').innerText;
+                    var LTI3 = document.getElementById('LTI3').innerText;
+                    var TRI3 = document.getElementById('TRI3').innerText;
+                    var NM3= document.getElementById('NM3').innerText;
+                    var LTIF3 = (parseInt(LTI3) + parseInt(FTL3)) * 1000000 / parseInt(stai3);
+                    var TRIF3 = parseInt(TRI3) * 1000000 / parseInt(stai3);
+                    var NMF3=parseInt(NM3) * 1000000 / parseInt(stai3);
+                    document.getElementById('LTIF3').innerText = LTIF3.toFixed(4);
+                    document.getElementById('LTIR3').innerText = (LTIF3 / 5).toFixed(4);
+                    document.getElementById('TRIF3').innerText = TRIF3.toFixed(4);
+                    document.getElementById('TRIR3').innerText = (TRIF3 / 5).toFixed(4);
+                    document.getElementById('NMF3').innerText = NMF3.toFixed(4);
+                    document.getElementById('NMR3').innerText = (NMF3 / 5).toFixed(4);
+
+                    //Q1
+                    var BrojKarticaQ1= document.getElementById('KQ1').innerText;
+                    var BrojRadnikaQ1 = document.getElementById('NoWorkersQ1').innerText;
+                    var BrojDanaQ1 = document.getElementById('DaniQ1').innerText;
+                    var BrojNegKarticaQ1 = document.getElementById('negativeQ1').innerText;
+                    var KpoOsobiQ1 = parseInt(BrojKarticaQ1) / parseInt(BrojRadnikaQ1);
+                    var MjesPoOsobiQ1 = KpoOsobiQ1 * parseInt(BrojDanaQ1);
+                    var BrojNegPoOsobiQ1 = parseInt(BrojNegKarticaQ1) / parseInt(BrojRadnikaQ1);
+                    var MejsNegPoOsobiQ1 = BrojNegPoOsobiQ1 * parseInt(BrojDanaQ1);
+                    document.getElementById('KQ1POsobi').innerText = KpoOsobiQ1.toFixed(4);
+                    document.getElementById('MjesPOsobiQ1').innerText = MjesPoOsobiQ1.toFixed(4);
+                    document.getElementById('BrojNegKarPoOsobiQ1').innerText = BrojNegPoOsobiQ1.toFixed(4);
+                    document.getElementById('MjesNegKarPoOsobiQ1').innerText = MejsNegPoOsobiQ1.toFixed(4);
+
+                    var staiQ1 = document.getElementById('SatiQ1').innerText;
+                    var FTLQ1= document.getElementById('FTLQ1').innerText;
+                    var LTIQ1 = document.getElementById('LTIQ1').innerText;
+                    var TRIQ1 = document.getElementById('TRIQ1').innerText;
+                    var NMQ1= document.getElementById('NMQ1').innerText;
+                    var LTIFQ1 = (parseInt(LTIQ1) + parseInt(FTLQ1)) * 1000000 / parseInt(staiQ1);
+                    var TRIFQ1 = parseInt(TRIQ1) * 1000000 / parseInt(staiQ1);
+                    var NMFQ1=parseInt(NMQ1) * 1000000 / parseInt(staiQ1);
+                    document.getElementById('LTIFQ1').innerText = LTIFQ1.toFixed(4);
+                    document.getElementById('LTIRQ1').innerText = (LTIFQ1 / 5).toFixed(4);
+                    document.getElementById('TRIFQ1').innerText = TRIFQ1.toFixed(4);
+                    document.getElementById('TRIRQ1').innerText = (TRIFQ1 / 5).toFixed(4);
+                    document.getElementById('NMFQ1').innerText = NMFQ1.toFixed(4);
+                    document.getElementById('NMRQ1').innerText = (NMFQ1/5).toFixed(4);
                 }
 
             </script>

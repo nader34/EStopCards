@@ -220,6 +220,24 @@ namespace CroscoStopCard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl K2;
         
         /// <summary>
+        /// K3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl K3;
+        
+        /// <summary>
+        /// KQ1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl KQ1;
+        
+        /// <summary>
         /// K4 control.
         /// </summary>
         /// <remarks>
