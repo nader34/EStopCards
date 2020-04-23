@@ -38,12 +38,18 @@ namespace CroscoStopCard
             LoadSedmi();
             LoadOsmi();
             LoadDeveti();
-            Kvartalno();
-
-
-
+            LoadDeseti();
+            LoadJedanesti();
+            LoadDvanesti();
+            PrviKvartal();
+            DrugiKvartal();
+            TreciKvartal();
+            CetvrtiKvartal();
+            PrvaPlovica();
+            DrugaPlovica();
+            Godisnji();
         }
-        public static string prvi, drugi, treci, cetvrti, peti, sesti, sedmi, osmi, deveti, desti, jedanesti, dvanesti;
+        public static string prvi, drugi, treci, cetvrti, peti, sesti, sedmi, osmi, deveti, deseti, jedanesti, dvanesti, Q1, Q2, Q3, Q4, H1, H2, Godina;
         public int sigurne, nesigurne, UA, UC, closed, open, ongoing, negativClosed, UAclosed, UCclosed;
         public int PodReak1, PodReak2, PodReak3, PodReak4, PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, 
             PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, 
@@ -52,8 +58,6 @@ namespace CroscoStopCard
         public int CRoSWA, CRoLSRV, CRoAlco, CRoNII, CRoRTI, CRoRTA, CRoLOPC, CRoSPILL, CRoFIRE, CRoNM, CRoFAC, CRoMTC, CRoRWC, CRoLTI, CRoFTL, CRoTRI,
             ConSWA, ConLSRV, ConAlco, ConNII, ConRTI, ConRTA, ConLOPC, ConSPILL, ConFIRE, ConNM, ConFAC, ConMTC, ConRWC, ConLTI, ConFTL, ConTRI,
             ThrdSWA, ThrdLSRV, ThrdAlco, ThrdNII, ThrdRTI, ThrdRTA, ThrdLOPC, ThrdSPILL, ThrdFIRE, ThrdNM, ThrdFAC, ThrdMTC, ThrdRWC, ThrdLTI, ThrdFTL, ThrdTRI;
-
-
 
 
         protected void LoadPrvi()
@@ -1095,6 +1099,359 @@ namespace CroscoStopCard
 
         }
 
+
+        protected void LoadDeseti()
+        {
+            string pd = "'2020.10.1'";
+            string kd = "'2020.10.31'";
+
+            DataTable dt1 = new DataTable();
+
+            dt1 = this.GetReport(pd, kd);
+            int NoK1 = dt1.Rows.Count;
+            K10.InnerText = (dt1.Rows.Count).ToString();
+            //Dani
+            DataTable HSDani = new DataTable();
+            HSDani = this.GetHSDani(pd, kd);
+            int HSDani1 = HSDani.Rows.Count;
+            Dani10.InnerText = (HSDani.Rows.Count).ToString();
+
+            LoopData(pd, kd);
+
+            NoWorkers10.InnerText = (WorkersCro + WorkersSub).ToString();
+            Sati10.InnerText = SumHours.ToString();
+            SWA10.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
+            TPS10.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
+            Alco10.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
+            NII10.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
+            RTI10.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
+            RTA10.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
+            LOPC10.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
+            Spill10.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
+            Fire10.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
+            NM10.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
+            FAC10.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
+            MTC10.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
+            RWC10.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
+            LTI10.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
+            FTL10.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
+            TRI10.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
+
+            positive10.InnerText = sigurne.ToString();
+            negative10.InnerText = nesigurne.ToString();
+            UA10.InnerText = UA.ToString();
+            UC10.InnerText = UC.ToString();
+            open10.InnerText = open.ToString();
+            ongoing10.InnerText = ongoing.ToString();
+            close10.InnerText = closed.ToString();
+            NegativeClosed10.InnerText = negativClosed.ToString();
+            UAClosed10.InnerText = UAclosed.ToString();
+            UCClosed10.InnerText = UCclosed.ToString();
+
+            P10Reak1.InnerText = PodReak1.ToString();
+            P10Reak2.InnerText = PodReak2.ToString();
+            P10Reak3.InnerText = PodReak3.ToString();
+            P10Reak4.InnerText = PodReak4.ToString();
+            P10Reak5.InnerText = PodReak5.ToString();
+            P10Reak6.InnerText = PodReak6.ToString();
+            string E1Reak = (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
+            P10Reak.InnerText = E1Reak;
+
+            P10ozo1.InnerText = PodOzo1.ToString();
+            P10ozo2.InnerText = PodOzo2.ToString();
+            P10ozo3.InnerText = PodOzo3.ToString();
+            P10ozo4.InnerText = PodOzo4.ToString();
+            P10ozo5.InnerText = PodOzo5.ToString();
+            P10ozo6.InnerText = PodOzo6.ToString();
+            P10ozo7.InnerText = PodOzo7.ToString();
+            string E1Ozo = (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
+            P10ozo.InnerText = E1Ozo;
+
+            P10polo1.InnerText = PodPolo1.ToString();
+            P10polo2.InnerText = PodPolo2.ToString();
+            P10polo3.InnerText = PodPolo3.ToString();
+            P10polo4.InnerText = PodPolo4.ToString();
+            P10polo5.InnerText = PodPolo5.ToString();
+            P10polo6.InnerText = PodPolo6.ToString();
+            P10polo7.InnerText = PodPolo7.ToString();
+            P10polo8.InnerText = PodPolo8.ToString();
+            P10polo9.InnerText = PodPolo9.ToString();
+            P10polo10.InnerText = PodPolo10.ToString();
+            P10polo11.InnerText = PodPolo11.ToString();
+            P10polo12.InnerText = PodPolo12.ToString();
+            string E1Polo = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            P10polo.InnerText = E1Polo;
+
+            P10alat1.InnerText = PodAlati1.ToString();
+            P10alat2.InnerText = PodAlati2.ToString();
+            P10alat3.InnerText = PodAlati3.ToString();
+            string E1Alati = (PodAlati1 + PodAlati2 + PodAlati3).ToString();
+            P10alat.InnerText = E1Alati;
+
+            P10proce1.InnerText = PodProce1.ToString();
+            P10proce2.InnerText = PodProce2.ToString();
+            P10proce3.InnerText = PodProce3.ToString();
+            P10proce4.InnerText = PodProce4.ToString();
+            P10proce5.InnerText = PodProce5.ToString();
+            P10proce6.InnerText = PodProce6.ToString();
+            string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            P10proce.InnerText = E1Proce;
+            string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
+                negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
+
+            string str2 = E1Reak + ", " + PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E1Ozo +
+                ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " + PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E1Polo + ", " +
+                PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " + PodPolo7 + ", " + PodPolo8 + ", " +
+                PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E1Alati + ", " + PodAlati1 + ", " + PodAlati2 + ", " + PodAlati3 +
+                ", " + E1Proce + ", " + PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " +
+                SumHours + ", " + (CRoTRI + ConTRI + ThrdTRI) + ", " + (CRoFTL + ConFTL + ThrdFTL) + ", " + (CRoLTI + ConLTI + ThrdLTI) + ", " +
+                (CRoRWC + ConRWC + ThrdRWC) + ", " + (CRoMTC + ConMTC + ThrdMTC) + ", " + (CRoFAC + ConFAC + ThrdFAC) + ", " + (CRoNM + ConNM + ThrdNM) +
+                ", " + (CRoFIRE + ConFIRE + ThrdFIRE) + ", " + (CRoSPILL + ConSPILL + ThrdSPILL) + ", " + (CRoLOPC + ConLOPC + ThrdLOPC) + ", " +
+                (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
+                ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
+
+
+
+            deseti = str1 + ", " + str2;
+
+
+        }
+
+        protected void LoadJedanesti()
+        {
+            string pd = "'2020.11.1'";
+            string kd = "'2020.11.30'";
+
+            DataTable dt1 = new DataTable();
+
+            dt1 = this.GetReport(pd, kd);
+            int NoK1 = dt1.Rows.Count;
+            K11.InnerText = (dt1.Rows.Count).ToString();
+            //Dani
+            DataTable HSDani = new DataTable();
+            HSDani = this.GetHSDani(pd, kd);
+            int HSDani1 = HSDani.Rows.Count;
+            Dani11.InnerText = (HSDani.Rows.Count).ToString();
+
+            LoopData(pd, kd);
+
+            NoWorkers11.InnerText = (WorkersCro + WorkersSub).ToString();
+            Sati11.InnerText = SumHours.ToString();
+            SWA11.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
+            TPS11.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
+            Alco11.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
+            NII11.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
+            RTI11.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
+            RTA11.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
+            LOPC11.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
+            Spill11.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
+            Fire11.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
+            NM11.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
+            FAC11.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
+            MTC11.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
+            RWC11.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
+            LTI11.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
+            FTL11.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
+            TRI11.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
+
+            positive11.InnerText = sigurne.ToString();
+            negative11.InnerText = nesigurne.ToString();
+            UA11.InnerText = UA.ToString();
+            UC11.InnerText = UC.ToString();
+            open11.InnerText = open.ToString();
+            ongoing11.InnerText = ongoing.ToString();
+            close11.InnerText = closed.ToString();
+            NegativeClosed11.InnerText = negativClosed.ToString();
+            UAClosed11.InnerText = UAclosed.ToString();
+            UCClosed11.InnerText = UCclosed.ToString();
+
+            P11Reak1.InnerText = PodReak1.ToString();
+            P11Reak2.InnerText = PodReak2.ToString();
+            P11Reak3.InnerText = PodReak3.ToString();
+            P11Reak4.InnerText = PodReak4.ToString();
+            P11Reak5.InnerText = PodReak5.ToString();
+            P11Reak6.InnerText = PodReak6.ToString();
+            string E1Reak = (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
+            P11Reak.InnerText = E1Reak;
+
+            P11ozo1.InnerText = PodOzo1.ToString();
+            P11ozo2.InnerText = PodOzo2.ToString();
+            P11ozo3.InnerText = PodOzo3.ToString();
+            P11ozo4.InnerText = PodOzo4.ToString();
+            P11ozo5.InnerText = PodOzo5.ToString();
+            P11ozo6.InnerText = PodOzo6.ToString();
+            P11ozo7.InnerText = PodOzo7.ToString();
+            string E1Ozo = (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
+            P11ozo.InnerText = E1Ozo;
+
+            P11polo1.InnerText = PodPolo1.ToString();
+            P11polo2.InnerText = PodPolo2.ToString();
+            P11polo3.InnerText = PodPolo3.ToString();
+            P11polo4.InnerText = PodPolo4.ToString();
+            P11polo5.InnerText = PodPolo5.ToString();
+            P11polo6.InnerText = PodPolo6.ToString();
+            P11polo7.InnerText = PodPolo7.ToString();
+            P11polo8.InnerText = PodPolo8.ToString();
+            P11polo9.InnerText = PodPolo9.ToString();
+            P11polo10.InnerText = PodPolo10.ToString();
+            P11polo11.InnerText = PodPolo11.ToString();
+            P11polo12.InnerText = PodPolo12.ToString();
+            string E1Polo = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            P11polo.InnerText = E1Polo;
+
+            P11alat1.InnerText = PodAlati1.ToString();
+            P11alat2.InnerText = PodAlati2.ToString();
+            P11alat3.InnerText = PodAlati3.ToString();
+            string E1Alati = (PodAlati1 + PodAlati2 + PodAlati3).ToString();
+            P11alat.InnerText = E1Alati;
+
+            P11proce1.InnerText = PodProce1.ToString();
+            P11proce2.InnerText = PodProce2.ToString();
+            P11proce3.InnerText = PodProce3.ToString();
+            P11proce4.InnerText = PodProce4.ToString();
+            P11proce5.InnerText = PodProce5.ToString();
+            P11proce6.InnerText = PodProce6.ToString();
+            string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            P11proce.InnerText = E1Proce;
+            string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
+                negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
+
+            string str2 = E1Reak + ", " + PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E1Ozo +
+                ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " + PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E1Polo + ", " +
+                PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " + PodPolo7 + ", " + PodPolo8 + ", " +
+                PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E1Alati + ", " + PodAlati1 + ", " + PodAlati2 + ", " + PodAlati3 +
+                ", " + E1Proce + ", " + PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " +
+                SumHours + ", " + (CRoTRI + ConTRI + ThrdTRI) + ", " + (CRoFTL + ConFTL + ThrdFTL) + ", " + (CRoLTI + ConLTI + ThrdLTI) + ", " +
+                (CRoRWC + ConRWC + ThrdRWC) + ", " + (CRoMTC + ConMTC + ThrdMTC) + ", " + (CRoFAC + ConFAC + ThrdFAC) + ", " + (CRoNM + ConNM + ThrdNM) +
+                ", " + (CRoFIRE + ConFIRE + ThrdFIRE) + ", " + (CRoSPILL + ConSPILL + ThrdSPILL) + ", " + (CRoLOPC + ConLOPC + ThrdLOPC) + ", " +
+                (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
+                ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
+
+
+
+            jedanesti = str1 + ", " + str2;
+
+
+        }
+
+        protected void LoadDvanesti()
+        {
+            string pd = "'2020.12.1'";
+            string kd = "'2020.12.31'";
+
+            DataTable dt1 = new DataTable();
+
+            dt1 = this.GetReport(pd, kd);
+            int NoK1 = dt1.Rows.Count;
+            K12.InnerText = (dt1.Rows.Count).ToString();
+            //Dani
+            DataTable HSDani = new DataTable();
+            HSDani = this.GetHSDani(pd, kd);
+            int HSDani1 = HSDani.Rows.Count;
+            Dani12.InnerText = (HSDani.Rows.Count).ToString();
+
+            LoopData(pd, kd);
+
+            NoWorkers12.InnerText = (WorkersCro + WorkersSub).ToString();
+            Sati12.InnerText = SumHours.ToString();
+            SWA12.InnerText = (CRoSWA + ConSWA + ThrdSWA).ToString();
+            TPS12.InnerText = (CRoLSRV + ConLSRV + ThrdLSRV).ToString();
+            Alco12.InnerText = (CRoAlco + ConAlco + ThrdAlco).ToString();
+            NII12.InnerText = (CRoNII + ConNII + ThrdNII).ToString();
+            RTI12.InnerText = (CRoRTI + ConRTI + ThrdRTI).ToString();
+            RTA12.InnerText = (CRoRTA + ConRTA + ThrdRTA).ToString();
+            LOPC12.InnerText = (CRoLOPC + ConLOPC + ThrdLOPC).ToString();
+            Spill12.InnerText = (CRoSPILL + ConSPILL + ThrdSPILL).ToString();
+            Fire12.InnerText = (CRoFIRE + ConFIRE + ThrdFIRE).ToString();
+            NM12.InnerText = (CRoNM + ConNM + ThrdNM).ToString();
+            FAC12.InnerText = (CRoFAC + ConFAC + ThrdFAC).ToString();
+            MTC12.InnerText = (CRoMTC + ConMTC + ThrdMTC).ToString();
+            RWC12.InnerText = (CRoRWC + ConRWC + ThrdRWC).ToString();
+            LTI12.InnerText = (CRoLTI + ConLTI + ThrdLTI).ToString();
+            FTL12.InnerText = (CRoFTL + ConFTL + ThrdFTL).ToString();
+            TRI12.InnerText = (CRoTRI + ConTRI + ThrdTRI).ToString();
+
+            positive12.InnerText = sigurne.ToString();
+            negative12.InnerText = nesigurne.ToString();
+            UA12.InnerText = UA.ToString();
+            UC12.InnerText = UC.ToString();
+            open12.InnerText = open.ToString();
+            ongoing12.InnerText = ongoing.ToString();
+            close12.InnerText = closed.ToString();
+            NegativeClosed12.InnerText = negativClosed.ToString();
+            UAClosed12.InnerText = UAclosed.ToString();
+            UCClosed12.InnerText = UCclosed.ToString();
+
+            P12Reak1.InnerText = PodReak1.ToString();
+            P12Reak2.InnerText = PodReak2.ToString();
+            P12Reak3.InnerText = PodReak3.ToString();
+            P12Reak4.InnerText = PodReak4.ToString();
+            P12Reak5.InnerText = PodReak5.ToString();
+            P12Reak6.InnerText = PodReak6.ToString();
+            string E1Reak = (PodReak1 + PodReak2 + PodReak3 + PodReak4 + PodReak5 + PodReak6).ToString();
+            P12Reak.InnerText = E1Reak;
+
+            P12ozo1.InnerText = PodOzo1.ToString();
+            P12ozo2.InnerText = PodOzo2.ToString();
+            P12ozo3.InnerText = PodOzo3.ToString();
+            P12ozo4.InnerText = PodOzo4.ToString();
+            P12ozo5.InnerText = PodOzo5.ToString();
+            P12ozo6.InnerText = PodOzo6.ToString();
+            P11ozo7.InnerText = PodOzo7.ToString();
+            string E1Ozo = (PodOzo1 + PodOzo2 + PodOzo3 + PodOzo4 + PodOzo5 + PodOzo6 + PodOzo7).ToString();
+            P12ozo.InnerText = E1Ozo;
+
+            P12polo1.InnerText = PodPolo1.ToString();
+            P12polo2.InnerText = PodPolo2.ToString();
+            P12polo3.InnerText = PodPolo3.ToString();
+            P12polo4.InnerText = PodPolo4.ToString();
+            P12polo5.InnerText = PodPolo5.ToString();
+            P12polo6.InnerText = PodPolo6.ToString();
+            P12polo7.InnerText = PodPolo7.ToString();
+            P12polo8.InnerText = PodPolo8.ToString();
+            P12polo9.InnerText = PodPolo9.ToString();
+            P12polo10.InnerText = PodPolo10.ToString();
+            P12polo11.InnerText = PodPolo11.ToString();
+            P12polo12.InnerText = PodPolo12.ToString();
+            string E1Polo = (PodPolo1 + PodPolo2 + PodPolo3 + PodPolo4 + PodPolo5 + PodPolo6 + PodPolo7 + PodPolo8 + PodPolo9 + PodPolo10 + PodPolo11 + PodPolo12).ToString();
+            P12polo.InnerText = E1Polo;
+
+            P12alat1.InnerText = PodAlati1.ToString();
+            P12alat2.InnerText = PodAlati2.ToString();
+            P12alat3.InnerText = PodAlati3.ToString();
+            string E1Alati = (PodAlati1 + PodAlati2 + PodAlati3).ToString();
+            P12alat.InnerText = E1Alati;
+
+            P12proce1.InnerText = PodProce1.ToString();
+            P12proce2.InnerText = PodProce2.ToString();
+            P12proce3.InnerText = PodProce3.ToString();
+            P12proce4.InnerText = PodProce4.ToString();
+            P12proce5.InnerText = PodProce5.ToString();
+            P12proce6.InnerText = PodProce6.ToString();
+            string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
+            P12proce.InnerText = E1Proce;
+
+            string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
+                negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
+
+            string str2 = E1Reak + ", " + PodReak1 + ", " + PodReak2 + ", " + PodReak3 + ", " + PodReak4 + ", " + PodReak5 + ", " + PodReak6 + ", " + E1Ozo +
+                ", " + PodOzo1 + ", " + PodOzo2 + ", " + PodOzo3 + ", " + PodOzo4 + ", " + PodOzo5 + ", " + PodOzo6 + ", " + PodOzo7 + ", " + E1Polo + ", " +
+                PodPolo1 + ", " + PodPolo2 + ", " + PodPolo3 + ", " + PodPolo4 + ", " + PodPolo5 + ", " + PodPolo6 + ", " + PodPolo7 + ", " + PodPolo8 + ", " +
+                PodPolo9 + ", " + PodPolo10 + ", " + PodPolo11 + ", " + PodPolo12 + ", " + E1Alati + ", " + PodAlati1 + ", " + PodAlati2 + ", " + PodAlati3 +
+                ", " + E1Proce + ", " + PodProce1 + ", " + PodProce2 + ", " + PodProce3 + ", " + PodProce4 + ", " + PodProce5 + ", " + PodProce6 + ", " +
+                SumHours + ", " + (CRoTRI + ConTRI + ThrdTRI) + ", " + (CRoFTL + ConFTL + ThrdFTL) + ", " + (CRoLTI + ConLTI + ThrdLTI) + ", " +
+                (CRoRWC + ConRWC + ThrdRWC) + ", " + (CRoMTC + ConMTC + ThrdMTC) + ", " + (CRoFAC + ConFAC + ThrdFAC) + ", " + (CRoNM + ConNM + ThrdNM) +
+                ", " + (CRoFIRE + ConFIRE + ThrdFIRE) + ", " + (CRoSPILL + ConSPILL + ThrdSPILL) + ", " + (CRoLOPC + ConLOPC + ThrdLOPC) + ", " +
+                (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
+                ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
+
+
+
+            dvanesti = str1 + ", " + str2;
+
+
+        }
+
         protected void LoopData(string pd, string kd)
         {
             sigurne = 0; nesigurne = 0; UA = 0; UC =0; closed = 0; open = 0; ongoing = 0; negativClosed = 0; UAclosed = 0; UCclosed = 0;
@@ -1138,13 +1495,13 @@ namespace CroscoStopCard
                         else
                         {
                             nesigurne++;
-                            if ((dt.Rows[x].ItemArray[y + 1]).ToString() == "Flase")
+                            if ((dt.Rows[x].ItemArray[y + 1]).ToString() == "False")
                             {
-                                UC++;
+                                UA++;
                             }
                             else
                             {
-                                UA++;
+                                UC++;
                             }
 
                         }
@@ -1727,7 +2084,7 @@ namespace CroscoStopCard
 
         }
 
-        protected void Kvartalno()
+        protected void PrviKvartal()
         {
             //poruka.InnerText = prvi + drugi;
             string[] s1 = prvi.Split(',');
@@ -1735,12 +2092,12 @@ namespace CroscoStopCard
             string[] s3 = treci.Split(',');
             DaniQ1.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0]) + int.Parse(s3[0])).ToString();
             KQ1.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1]) + int.Parse(s3[1])).ToString();
-            positiveQ1.InnerText= (int.Parse(s1[2]) + int.Parse(s2[2]) + +int.Parse(s3[2])).ToString();
+            positiveQ1.InnerText= (int.Parse(s1[2]) + int.Parse(s2[2]) + int.Parse(s3[2])).ToString();
             negativeQ1.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3]) + int.Parse(s3[3])).ToString();
             UAQ1.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4]) + int.Parse(s3[4])).ToString();
             UCQ1.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5]) + int.Parse(s3[5])).ToString();
             openQ1.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6]) + int.Parse(s3[6])).ToString();
-            ongoingQ1.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7]) + +int.Parse(s3[7])).ToString();
+            ongoingQ1.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7]) + int.Parse(s3[7])).ToString();
             closeQ1.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8]) + int.Parse(s3[8])).ToString();
             NegativeClosedQ1.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9]) + int.Parse(s3[9])).ToString();
             UAClosedQ1.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10]) + int.Parse(s3[10])).ToString();
@@ -1804,9 +2161,525 @@ namespace CroscoStopCard
             SWAQ1.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
             TPSQ1.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
             AlcoQ1.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q1 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
+                Q1 += LoopQ + ",";
+            }
+            Q1 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
         }
 
- 
+        protected void DrugiKvartal()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = cetvrti.Split(',');
+            string[] s2 = peti.Split(',');
+            string[] s3 = sesti.Split(',');
+            DaniQ2.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0]) + int.Parse(s3[0])).ToString();
+            KQ2.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1]) + int.Parse(s3[1])).ToString();
+            positiveQ2.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2]) + int.Parse(s3[2])).ToString();
+            negativeQ2.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3]) + int.Parse(s3[3])).ToString();
+            UAQ2.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4]) + int.Parse(s3[4])).ToString();
+            UCQ2.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5]) + int.Parse(s3[5])).ToString();
+            openQ2.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6]) + int.Parse(s3[6])).ToString();
+            ongoingQ2.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7]) + int.Parse(s3[7])).ToString();
+            closeQ2.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8]) + int.Parse(s3[8])).ToString();
+            NegativeClosedQ2.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9]) + int.Parse(s3[9])).ToString();
+            UAClosedQ2.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10]) + int.Parse(s3[10])).ToString();
+            UCClosedQ2.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11]) + int.Parse(s3[11])).ToString();
+            NoWorkersQ2.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12]) + int.Parse(s3[12])).ToString();
+
+            PQ2Reak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13]) + int.Parse(s3[13])).ToString();
+            PQ2Reak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14]) + int.Parse(s3[14])).ToString();
+            PQ2Reak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15]) + int.Parse(s3[15])).ToString();
+            PQ2Reak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16]) + int.Parse(s3[16])).ToString();
+            PQ2Reak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17]) + int.Parse(s3[17])).ToString();
+            PQ2Reak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18]) + int.Parse(s3[18])).ToString();
+            PQ2Reak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19]) + int.Parse(s3[19])).ToString();
+            PQ2ozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20]) + int.Parse(s3[20])).ToString();
+            PQ2ozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21]) + int.Parse(s3[21])).ToString();
+            PQ2ozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22]) + int.Parse(s3[22])).ToString();
+            PQ2ozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23]) + int.Parse(s3[23])).ToString();
+            PQ2ozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24]) + int.Parse(s3[24])).ToString();
+            PQ2ozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25]) + int.Parse(s3[25])).ToString();
+            PQ2ozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26]) + int.Parse(s3[26])).ToString();
+            PQ2ozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27]) + int.Parse(s3[27])).ToString();
+            PQ2polo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28]) + int.Parse(s3[28])).ToString();
+            PQ2polo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29]) + int.Parse(s3[29])).ToString();
+            PQ2polo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30]) + int.Parse(s3[30])).ToString();
+            PQ2polo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31]) + int.Parse(s3[31])).ToString();
+            PQ2polo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32]) + int.Parse(s3[32])).ToString();
+            PQ2polo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33]) + int.Parse(s3[33])).ToString();
+            PQ2polo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34]) + int.Parse(s3[34])).ToString();
+            PQ2polo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35]) + int.Parse(s3[35])).ToString();
+            PQ2polo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36]) + int.Parse(s3[36])).ToString();
+            PQ2polo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37]) + int.Parse(s3[37])).ToString();
+            PQ2polo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38]) + int.Parse(s3[38])).ToString();
+            PQ2polo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39]) + int.Parse(s3[39])).ToString();
+            PQ2polo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40]) + int.Parse(s3[40])).ToString();
+            PQ2alat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41]) + int.Parse(s3[41])).ToString();
+            PQ2alat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42]) + int.Parse(s3[42])).ToString();
+            PQ2alat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43]) + int.Parse(s3[43])).ToString();
+            PQ2alat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44]) + int.Parse(s3[44])).ToString();
+            PQ2proce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45]) + int.Parse(s3[45])).ToString();
+            PQ2proce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46]) + int.Parse(s3[46])).ToString();
+            PQ2proce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47]) + int.Parse(s3[47])).ToString();
+            PQ2proce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48]) + int.Parse(s3[48])).ToString();
+            PQ2proce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49]) + int.Parse(s3[49])).ToString();
+            PQ2proce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50]) + int.Parse(s3[50])).ToString();
+            PQ2proce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51]) + int.Parse(s3[51])).ToString();
+
+            SatiQ2.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52]) + int.Parse(s3[52])).ToString();
+            TRIQ2.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53]) + int.Parse(s3[53])).ToString();
+            FTLQ2.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54]) + int.Parse(s3[54])).ToString();
+            LTIQ2.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55]) + int.Parse(s3[55])).ToString();
+            RWCQ2.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56]) + int.Parse(s3[56])).ToString();
+            MTCQ2.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57]) + int.Parse(s3[57])).ToString();
+            FACQ2.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58]) + int.Parse(s3[58])).ToString();
+            NMQ2.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59]) + int.Parse(s3[59])).ToString();
+            FireQ2.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60]) + int.Parse(s3[60])).ToString();
+            SpillQ2.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61]) + int.Parse(s3[61])).ToString();
+            LOPCQ2.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62]) + int.Parse(s3[62])).ToString();
+            RTAQ2.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63]) + int.Parse(s3[63])).ToString();
+            RTIQ2.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64]) + int.Parse(s3[64])).ToString();
+            NIIQ2.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65]) + int.Parse(s3[65])).ToString();
+            SWAQ2.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
+            TPSQ2.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
+            AlcoQ2.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q2 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
+                Q2 += LoopQ + ",";
+            }
+            Q2 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+        }
+
+        protected void TreciKvartal()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = sedmi.Split(',');
+            string[] s2 = osmi.Split(',');
+            string[] s3 = deveti.Split(',');
+            DaniQ3.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0]) + int.Parse(s3[0])).ToString();
+            KQ3.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1]) + int.Parse(s3[1])).ToString();
+            positiveQ3.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2]) + int.Parse(s3[2])).ToString();
+            negativeQ3.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3]) + int.Parse(s3[3])).ToString();
+            UAQ3.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4]) + int.Parse(s3[4])).ToString();
+            UCQ3.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5]) + int.Parse(s3[5])).ToString();
+            openQ3.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6]) + int.Parse(s3[6])).ToString();
+            ongoingQ3.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7]) + int.Parse(s3[7])).ToString();
+            closeQ3.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8]) + int.Parse(s3[8])).ToString();
+            NegativeClosedQ3.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9]) + int.Parse(s3[9])).ToString();
+            UAClosedQ3.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10]) + int.Parse(s3[10])).ToString();
+            UCClosedQ3.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11]) + int.Parse(s3[11])).ToString();
+            NoWorkersQ3.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12]) + int.Parse(s3[12])).ToString();
+
+            PQ3Reak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13]) + int.Parse(s3[13])).ToString();
+            PQ3Reak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14]) + int.Parse(s3[14])).ToString();
+            PQ3Reak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15]) + int.Parse(s3[15])).ToString();
+            PQ3Reak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16]) + int.Parse(s3[16])).ToString();
+            PQ3Reak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17]) + int.Parse(s3[17])).ToString();
+            PQ3Reak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18]) + int.Parse(s3[18])).ToString();
+            PQ3Reak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19]) + int.Parse(s3[19])).ToString();
+            PQ3ozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20]) + int.Parse(s3[20])).ToString();
+            PQ3ozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21]) + int.Parse(s3[21])).ToString();
+            PQ3ozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22]) + int.Parse(s3[22])).ToString();
+            PQ3ozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23]) + int.Parse(s3[23])).ToString();
+            PQ3ozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24]) + int.Parse(s3[24])).ToString();
+            PQ3ozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25]) + int.Parse(s3[25])).ToString();
+            PQ3ozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26]) + int.Parse(s3[26])).ToString();
+            PQ3ozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27]) + int.Parse(s3[27])).ToString();
+            PQ3polo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28]) + int.Parse(s3[28])).ToString();
+            PQ3polo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29]) + int.Parse(s3[29])).ToString();
+            PQ3polo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30]) + int.Parse(s3[30])).ToString();
+            PQ3polo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31]) + int.Parse(s3[31])).ToString();
+            PQ3polo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32]) + int.Parse(s3[32])).ToString();
+            PQ3polo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33]) + int.Parse(s3[33])).ToString();
+            PQ3polo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34]) + int.Parse(s3[34])).ToString();
+            PQ3polo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35]) + int.Parse(s3[35])).ToString();
+            PQ3polo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36]) + int.Parse(s3[36])).ToString();
+            PQ3polo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37]) + int.Parse(s3[37])).ToString();
+            PQ3polo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38]) + int.Parse(s3[38])).ToString();
+            PQ3polo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39]) + int.Parse(s3[39])).ToString();
+            PQ3polo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40]) + int.Parse(s3[40])).ToString();
+            PQ3alat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41]) + int.Parse(s3[41])).ToString();
+            PQ3alat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42]) + int.Parse(s3[42])).ToString();
+            PQ3alat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43]) + int.Parse(s3[43])).ToString();
+            PQ3alat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44]) + int.Parse(s3[44])).ToString();
+            PQ3proce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45]) + int.Parse(s3[45])).ToString();
+            PQ3proce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46]) + int.Parse(s3[46])).ToString();
+            PQ3proce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47]) + int.Parse(s3[47])).ToString();
+            PQ3proce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48]) + int.Parse(s3[48])).ToString();
+            PQ3proce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49]) + int.Parse(s3[49])).ToString();
+            PQ3proce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50]) + int.Parse(s3[50])).ToString();
+            PQ3proce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51]) + int.Parse(s3[51])).ToString();
+
+            SatiQ3.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52]) + int.Parse(s3[52])).ToString();
+            TRIQ3.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53]) + int.Parse(s3[53])).ToString();
+            FTLQ3.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54]) + int.Parse(s3[54])).ToString();
+            LTIQ3.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55]) + int.Parse(s3[55])).ToString();
+            RWCQ3.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56]) + int.Parse(s3[56])).ToString();
+            MTCQ3.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57]) + int.Parse(s3[57])).ToString();
+            FACQ3.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58]) + int.Parse(s3[58])).ToString();
+            NMQ3.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59]) + int.Parse(s3[59])).ToString();
+            FireQ3.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60]) + int.Parse(s3[60])).ToString();
+            SpillQ3.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61]) + int.Parse(s3[61])).ToString();
+            LOPCQ3.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62]) + int.Parse(s3[62])).ToString();
+            RTAQ3.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63]) + int.Parse(s3[63])).ToString();
+            RTIQ3.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64]) + int.Parse(s3[64])).ToString();
+            NIIQ3.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65]) + int.Parse(s3[65])).ToString();
+            SWAQ3.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
+            TPSQ3.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
+            AlcoQ3.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q3 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
+                Q3 += LoopQ + ",";
+            }
+            Q3 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+        }
+
+        protected void CetvrtiKvartal()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = deseti.Split(',');
+            string[] s2 = jedanesti.Split(',');
+            string[] s3 = dvanesti.Split(',');
+            DaniQ4.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0]) + int.Parse(s3[0])).ToString();
+            KQ4.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1]) + int.Parse(s3[1])).ToString();
+            positiveQ4.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2]) + int.Parse(s3[2])).ToString();
+            negativeQ4.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3]) + int.Parse(s3[3])).ToString();
+            UAQ4.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4]) + int.Parse(s3[4])).ToString();
+            UCQ4.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5]) + int.Parse(s3[5])).ToString();
+            openQ4.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6]) + int.Parse(s3[6])).ToString();
+            ongoingQ4.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7]) + int.Parse(s3[7])).ToString();
+            closeQ4.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8]) + int.Parse(s3[8])).ToString();
+            NegativeClosedQ4.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9]) + int.Parse(s3[9])).ToString();
+            UAClosedQ4.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10]) + int.Parse(s3[10])).ToString();
+            UCClosedQ4.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11]) + int.Parse(s3[11])).ToString();
+            NoWorkersQ4.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12]) + int.Parse(s3[12])).ToString();
+
+            PQ4Reak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13]) + int.Parse(s3[13])).ToString();
+            PQ4Reak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14]) + int.Parse(s3[14])).ToString();
+            PQ4Reak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15]) + int.Parse(s3[15])).ToString();
+            PQ4Reak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16]) + int.Parse(s3[16])).ToString();
+            PQ4Reak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17]) + int.Parse(s3[17])).ToString();
+            PQ4Reak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18]) + int.Parse(s3[18])).ToString();
+            PQ4Reak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19]) + int.Parse(s3[19])).ToString();
+            PQ4ozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20]) + int.Parse(s3[20])).ToString();
+            PQ4ozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21]) + int.Parse(s3[21])).ToString();
+            PQ4ozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22]) + int.Parse(s3[22])).ToString();
+            PQ4ozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23]) + int.Parse(s3[23])).ToString();
+            PQ4ozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24]) + int.Parse(s3[24])).ToString();
+            PQ4ozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25]) + int.Parse(s3[25])).ToString();
+            PQ4ozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26]) + int.Parse(s3[26])).ToString();
+            PQ4ozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27]) + int.Parse(s3[27])).ToString();
+            PQ4polo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28]) + int.Parse(s3[28])).ToString();
+            PQ4polo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29]) + int.Parse(s3[29])).ToString();
+            PQ4polo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30]) + int.Parse(s3[30])).ToString();
+            PQ4polo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31]) + int.Parse(s3[31])).ToString();
+            PQ4polo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32]) + int.Parse(s3[32])).ToString();
+            PQ4polo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33]) + int.Parse(s3[33])).ToString();
+            PQ4polo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34]) + int.Parse(s3[34])).ToString();
+            PQ4polo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35]) + int.Parse(s3[35])).ToString();
+            PQ4polo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36]) + int.Parse(s3[36])).ToString();
+            PQ4polo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37]) + int.Parse(s3[37])).ToString();
+            PQ4polo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38]) + int.Parse(s3[38])).ToString();
+            PQ4polo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39]) + int.Parse(s3[39])).ToString();
+            PQ4polo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40]) + int.Parse(s3[40])).ToString();
+            PQ4alat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41]) + int.Parse(s3[41])).ToString();
+            PQ4alat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42]) + int.Parse(s3[42])).ToString();
+            PQ4alat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43]) + int.Parse(s3[43])).ToString();
+            PQ4alat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44]) + int.Parse(s3[44])).ToString();
+            PQ4proce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45]) + int.Parse(s3[45])).ToString();
+            PQ4proce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46]) + int.Parse(s3[46])).ToString();
+            PQ4proce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47]) + int.Parse(s3[47])).ToString();
+            PQ4proce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48]) + int.Parse(s3[48])).ToString();
+            PQ4proce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49]) + int.Parse(s3[49])).ToString();
+            PQ4proce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50]) + int.Parse(s3[50])).ToString();
+            PQ4proce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51]) + int.Parse(s3[51])).ToString();
+
+            SatiQ4.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52]) + int.Parse(s3[52])).ToString();
+            TRIQ4.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53]) + int.Parse(s3[53])).ToString();
+            FTLQ4.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54]) + int.Parse(s3[54])).ToString();
+            LTIQ4.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55]) + int.Parse(s3[55])).ToString();
+            RWCQ4.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56]) + int.Parse(s3[56])).ToString();
+            MTCQ4.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57]) + int.Parse(s3[57])).ToString();
+            FACQ4.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58]) + int.Parse(s3[58])).ToString();
+            NMQ4.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59]) + int.Parse(s3[59])).ToString();
+            FireQ4.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60]) + int.Parse(s3[60])).ToString();
+            SpillQ4.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61]) + int.Parse(s3[61])).ToString();
+            LOPCQ4.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62]) + int.Parse(s3[62])).ToString();
+            RTAQ4.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63]) + int.Parse(s3[63])).ToString();
+            RTIQ4.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64]) + int.Parse(s3[64])).ToString();
+            NIIQ4.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65]) + int.Parse(s3[65])).ToString();
+            SWAQ4.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
+            TPSQ4.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
+            AlcoQ4.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+
+            Q4 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
+                Q4 += LoopQ + ",";
+            }
+            Q4 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+        }
+
+        protected void PrvaPlovica()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = Q1.Split(',');
+            string[] s2 = Q2.Split(',');
+            
+            DaniH1.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0])).ToString();
+            KH1.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1])).ToString();
+            positiveH1.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2])).ToString();
+            negativeH1.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3])).ToString();
+            UAH1.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4])).ToString();
+            UCH1.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5])).ToString();
+            openH1.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6])).ToString();
+            ongoingH1.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7])).ToString();
+            closeH1.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8])).ToString();
+            NegativeClosedH1.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9])).ToString();
+            UAClosedH1.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10])).ToString();
+            UCClosedH1.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11])).ToString();
+            NoWorkersH1.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12])).ToString();
+
+            PH1Reak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13])).ToString();
+            PH1Reak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14])).ToString();
+            PH1Reak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15])).ToString();
+            PH1Reak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16])).ToString();
+            PH1Reak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17])).ToString();
+            PH1Reak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18])).ToString();
+            PH1Reak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19])).ToString();
+            PH1ozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20])).ToString();
+            PH1ozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21])).ToString();
+            PH1ozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22])).ToString();
+            PH1ozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23])).ToString();
+            PH1ozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24])).ToString();
+            PH1ozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25])).ToString();
+            PH1ozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26])).ToString();
+            PH1ozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27])).ToString();
+            PH1polo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28])).ToString();
+            PH1polo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29])).ToString();
+            PH1polo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30])).ToString();
+            PH1polo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31])).ToString();
+            PH1polo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32])).ToString();
+            PH1polo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33])).ToString();
+            PH1polo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34])).ToString();
+            PH1polo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35])).ToString();
+            PH1polo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36])).ToString();
+            PH1polo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37])).ToString();
+            PH1polo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38])).ToString();
+            PH1polo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39])).ToString();
+            PH1polo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40])).ToString();
+            PH1alat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41])).ToString();
+            PH1alat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42])).ToString();
+            PH1alat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43])).ToString();
+            PH1alat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44])).ToString();
+            PH1proce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45])).ToString();
+            PH1proce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46])).ToString();
+            PH1proce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47])).ToString();
+            PH1proce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48])).ToString();
+            PH1proce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49])).ToString();
+            PH1proce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50])).ToString();
+            PH1proce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51])).ToString();
+
+            SatiH1.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52])).ToString();
+            TRIH1.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53])).ToString();
+            FTLH1.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54])).ToString();
+            LTIH1.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55])).ToString();
+            RWCH1.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56])).ToString();
+            MTCH1.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57])).ToString();
+            FACH1.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58])).ToString();
+            NMH1.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59])).ToString();
+            FireH1.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60])).ToString();
+            SpillH1.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61])).ToString();
+            LOPCH1.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62])).ToString();
+            RTAH1.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63])).ToString();
+            RTIH1.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64])).ToString();
+            NIIH1.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65])).ToString();
+            SWAH1.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
+            TPSH1.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
+            AlcoH1.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+            H1 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopH = (int.Parse(s1[x]) + int.Parse(s2[x])).ToString();
+                H1 += LoopH + ",";
+            }
+            H1+= (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+        }
+
+        protected void DrugaPlovica()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = Q3.Split(',');
+            string[] s2 = Q4.Split(',');
+
+            DaniH2.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0])).ToString();
+            KH2.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1])).ToString();
+            positiveH2.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2])).ToString();
+            negativeH2.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3])).ToString();
+            UAH2.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4])).ToString();
+            UCH2.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5])).ToString();
+            openH2.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6])).ToString();
+            ongoingH2.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7])).ToString();
+            closeH2.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8])).ToString();
+            NegativeClosedH2.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9])).ToString();
+            UAClosedH2.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10])).ToString();
+            UCClosedH2.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11])).ToString();
+            NoWorkersH2.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12])).ToString();
+
+            PH2Reak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13])).ToString();
+            PH2Reak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14])).ToString();
+            PH2Reak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15])).ToString();
+            PH2Reak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16])).ToString();
+            PH2Reak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17])).ToString();
+            PH2Reak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18])).ToString();
+            PH2Reak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19])).ToString();
+            PH2ozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20])).ToString();
+            PH2ozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21])).ToString();
+            PH2ozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22])).ToString();
+            PH2ozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23])).ToString();
+            PH2ozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24])).ToString();
+            PH2ozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25])).ToString();
+            PH2ozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26])).ToString();
+            PH2ozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27])).ToString();
+            PH2polo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28])).ToString();
+            PH2polo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29])).ToString();
+            PH2polo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30])).ToString();
+            PH2polo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31])).ToString();
+            PH2polo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32])).ToString();
+            PH2polo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33])).ToString();
+            PH2polo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34])).ToString();
+            PH2polo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35])).ToString();
+            PH2polo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36])).ToString();
+            PH2polo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37])).ToString();
+            PH2polo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38])).ToString();
+            PH2polo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39])).ToString();
+            PH2polo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40])).ToString();
+            PH2alat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41])).ToString();
+            PH2alat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42])).ToString();
+            PH2alat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43])).ToString();
+            PH2alat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44])).ToString();
+            PH2proce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45])).ToString();
+            PH2proce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46])).ToString();
+            PH2proce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47])).ToString();
+            PH2proce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48])).ToString();
+            PH2proce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49])).ToString();
+            PH2proce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50])).ToString();
+            PH2proce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51])).ToString();
+
+            SatiH2.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52])).ToString();
+            TRIH2.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53])).ToString();
+            FTLH2.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54])).ToString();
+            LTIH2.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55])).ToString();
+            RWCH2.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56])).ToString();
+            MTCH2.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57])).ToString();
+            FACH2.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58])).ToString();
+            NMH2.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59])).ToString();
+            FireH2.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60])).ToString();
+            SpillH2.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61])).ToString();
+            LOPCH2.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62])).ToString();
+            RTAH2.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63])).ToString();
+            RTIH2.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64])).ToString();
+            NIIH2.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65])).ToString();
+            SWAH2.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
+            TPSH2.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
+            AlcoH2.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+            H2 = "";
+            for (int x = 0; x < 68; x++)
+            {
+                string LoopH = (int.Parse(s1[x]) + int.Parse(s2[x])).ToString();
+                H2 += LoopH + ",";
+            }
+            H2 += (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+        }
+
+        protected void Godisnji()
+        {
+            //poruka.InnerText = prvi + drugi;
+            string[] s1 = H1.Split(',');
+            string[] s2 = H2.Split(',');
+
+            DaniY.InnerText = (int.Parse(s1[0]) + int.Parse(s2[0])).ToString();
+            KY.InnerText = (int.Parse(s1[1]) + int.Parse(s2[1])).ToString();
+            positiveY.InnerText = (int.Parse(s1[2]) + int.Parse(s2[2])).ToString();
+            negativeY.InnerText = (int.Parse(s1[3]) + int.Parse(s2[3])).ToString();
+            UAY.InnerText = (int.Parse(s1[4]) + int.Parse(s2[4])).ToString();
+            UCY.InnerText = (int.Parse(s1[5]) + int.Parse(s2[5])).ToString();
+            openY.InnerText = (int.Parse(s1[6]) + int.Parse(s2[6])).ToString();
+            ongoingY.InnerText = (int.Parse(s1[7]) + int.Parse(s2[7])).ToString();
+            closeY.InnerText = (int.Parse(s1[8]) + int.Parse(s2[8])).ToString();
+            NegativeClosedY.InnerText = (int.Parse(s1[9]) + int.Parse(s2[9])).ToString();
+            UAClosedY.InnerText = (int.Parse(s1[10]) + int.Parse(s2[10])).ToString();
+            UCClosedY.InnerText = (int.Parse(s1[11]) + int.Parse(s2[11])).ToString();
+            NoWorkersY.InnerText = (int.Parse(s1[12]) + int.Parse(s2[12])).ToString();
+
+            PYReak.InnerText = (int.Parse(s1[13]) + int.Parse(s2[13])).ToString();
+            PYReak1.InnerText = (int.Parse(s1[14]) + int.Parse(s2[14])).ToString();
+            PYReak2.InnerText = (int.Parse(s1[15]) + int.Parse(s2[15])).ToString();
+            PYReak3.InnerText = (int.Parse(s1[16]) + int.Parse(s2[16])).ToString();
+            PYReak4.InnerText = (int.Parse(s1[17]) + int.Parse(s2[17])).ToString();
+            PYReak5.InnerText = (int.Parse(s1[18]) + int.Parse(s2[18])).ToString();
+            PYReak6.InnerText = (int.Parse(s1[19]) + int.Parse(s2[19])).ToString();
+            PYozo.InnerText = (int.Parse(s1[20]) + int.Parse(s2[20])).ToString();
+            PYozo1.InnerText = (int.Parse(s1[21]) + int.Parse(s2[21])).ToString();
+            PYozo2.InnerText = (int.Parse(s1[22]) + int.Parse(s2[22])).ToString();
+            PYozo3.InnerText = (int.Parse(s1[23]) + int.Parse(s2[23])).ToString();
+            PYozo4.InnerText = (int.Parse(s1[24]) + int.Parse(s2[24])).ToString();
+            PYozo5.InnerText = (int.Parse(s1[25]) + int.Parse(s2[25])).ToString();
+            PYozo6.InnerText = (int.Parse(s1[26]) + int.Parse(s2[26])).ToString();
+            PYozo7.InnerText = (int.Parse(s1[27]) + int.Parse(s2[27])).ToString();
+            PYpolo.InnerText = (int.Parse(s1[28]) + int.Parse(s2[28])).ToString();
+            PYpolo1.InnerText = (int.Parse(s1[29]) + int.Parse(s2[29])).ToString();
+            PYpolo2.InnerText = (int.Parse(s1[30]) + int.Parse(s2[30])).ToString();
+            PYpolo3.InnerText = (int.Parse(s1[31]) + int.Parse(s2[31])).ToString();
+            PYpolo4.InnerText = (int.Parse(s1[32]) + int.Parse(s2[32])).ToString();
+            PYpolo5.InnerText = (int.Parse(s1[33]) + int.Parse(s2[33])).ToString();
+            PYpolo6.InnerText = (int.Parse(s1[34]) + int.Parse(s2[34])).ToString();
+            PYpolo7.InnerText = (int.Parse(s1[35]) + int.Parse(s2[35])).ToString();
+            PYpolo8.InnerText = (int.Parse(s1[36]) + int.Parse(s2[36])).ToString();
+            PYpolo9.InnerText = (int.Parse(s1[37]) + int.Parse(s2[37])).ToString();
+            PYpolo10.InnerText = (int.Parse(s1[38]) + int.Parse(s2[38])).ToString();
+            PYpolo11.InnerText = (int.Parse(s1[39]) + int.Parse(s2[39])).ToString();
+            PYpolo12.InnerText = (int.Parse(s1[40]) + int.Parse(s2[40])).ToString();
+            PYalat.InnerText = (int.Parse(s1[41]) + int.Parse(s2[41])).ToString();
+            PYalat1.InnerText = (int.Parse(s1[42]) + int.Parse(s2[42])).ToString();
+            PYalat2.InnerText = (int.Parse(s1[43]) + int.Parse(s2[43])).ToString();
+            PYalat3.InnerText = (int.Parse(s1[44]) + int.Parse(s2[44])).ToString();
+            PYproce.InnerText = (int.Parse(s1[45]) + int.Parse(s2[45])).ToString();
+            PYproce1.InnerText = (int.Parse(s1[46]) + int.Parse(s2[46])).ToString();
+            PYproce2.InnerText = (int.Parse(s1[47]) + int.Parse(s2[47])).ToString();
+            PYproce3.InnerText = (int.Parse(s1[48]) + int.Parse(s2[48])).ToString();
+            PYproce4.InnerText = (int.Parse(s1[49]) + int.Parse(s2[49])).ToString();
+            PYproce5.InnerText = (int.Parse(s1[50]) + int.Parse(s2[50])).ToString();
+            PYproce6.InnerText = (int.Parse(s1[51]) + int.Parse(s2[51])).ToString();
+
+            SatiY.InnerText = (int.Parse(s1[52]) + int.Parse(s2[52])).ToString();
+            TRIY.InnerText = (int.Parse(s1[53]) + int.Parse(s2[53])).ToString();
+            FTLY.InnerText = (int.Parse(s1[54]) + int.Parse(s2[54])).ToString();
+            LTIY.InnerText = (int.Parse(s1[55]) + int.Parse(s2[55])).ToString();
+            RWCY.InnerText = (int.Parse(s1[56]) + int.Parse(s2[56])).ToString();
+            MTCY.InnerText = (int.Parse(s1[57]) + int.Parse(s2[57])).ToString();
+            FACY.InnerText = (int.Parse(s1[58]) + int.Parse(s2[58])).ToString();
+            NMY.InnerText = (int.Parse(s1[59]) + int.Parse(s2[59])).ToString();
+            FireY.InnerText = (int.Parse(s1[60]) + int.Parse(s2[60])).ToString();
+            SpillY.InnerText = (int.Parse(s1[61]) + int.Parse(s2[61])).ToString();
+            LOPCY.InnerText = (int.Parse(s1[62]) + int.Parse(s2[62])).ToString();
+            RTAY.InnerText = (int.Parse(s1[63]) + int.Parse(s2[63])).ToString();
+            RTIY.InnerText = (int.Parse(s1[64]) + int.Parse(s2[64])).ToString();
+            NIIY.InnerText = (int.Parse(s1[65]) + int.Parse(s2[65])).ToString();
+            SWAY.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
+            TPSY.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
+            AlcoY.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+        }
+
         private DataTable GetReport(string pd,string kd)
         {
             using (SqlConnection con = new SqlConnection(constr))

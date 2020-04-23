@@ -7537,13 +7537,13 @@ namespace CroscoStopCard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl P12alat2;
         
         /// <summary>
-        /// Q4alat2 control.
+        /// PQ4alat2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Q4alat2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PQ4alat2;
         
         /// <summary>
         /// PH2alat2 control.
