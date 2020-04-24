@@ -12,17 +12,18 @@
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
     --%>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
-   <%-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.0.1/css/searchPanes.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"/>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
     
-    <%--<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
@@ -30,7 +31,10 @@
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>--%>
+    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+
+
+
     <link href="css/Reports.css" rel="stylesheet" />
 </head>
 <body>
@@ -1165,7 +1169,7 @@
                 </table>
             </asp:Panel>
             <h1>
-                Elementi promatranja
+                Elementi i podelementi promatranja
             </h1>
             <asp:Panel ID="ElmentiTable" runat="server" Width="100%" HorizontalAlign="Center">
                 <table id="ElmentiTable1" class="display mydatatable" style="width:100%">
@@ -3658,6 +3662,452 @@
             </asp:Panel>
 
             <h1>
+                Pozitivni elementi promatranja
+            </h1>
+            <asp:Panel ID="PositiveElmentiTable" runat="server" Width="100%" HorizontalAlign="Center">
+                <table id="positiveElmentiTable1" class="display mydatatable" style="width:100%">
+                    <thead>
+                        <tr>
+                        <th>
+                            Podaci
+                        </th>
+                         <th>
+                            Siječanj
+                        </th>
+                         <th>
+                            Veljača
+                        </th>
+                         <th>
+                            Ožujak
+                        </th>
+                         <th>
+                            Q1
+                        </th>
+                        <th>
+                            Travanj
+                        </th>
+                         <th>
+                            Svibanj
+                        </th>
+                         <th>
+                            Lipanj
+                        </th>
+                         <th>
+                            Q2
+                        </th>
+                        <th>
+                            H1
+                        </th>
+                        <th>
+                            Srpanj
+                        </th>
+                         <th>
+                            Kolovoz
+                        </th>
+                         <th>
+                             Rujan
+                        </th>
+                         <th>
+                            Q3
+                        </th>
+                        <th>
+                            Listopad
+                        </th>
+                         <th>
+                            Studeni
+                        </th>
+                         <th>
+                            Prosinac
+                        </th>
+                         <th>
+                            Q4
+                        </th>
+                        <th>
+                            H2
+                        </th>
+                        <th>
+                            Godina
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                0. Broj Kartica
+                            </th>
+                            <td>
+                                <span id="BrojKartica1" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica2" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica3" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaQ1" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica4" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica5" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica6" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaQ2" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaH1" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica7" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica8" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica9" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaQ3" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica10" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica11" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKartica12" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaQ4" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaH2" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="BrojKarticaY" runat="server"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                1. Reakcija ljudi
+                            </th>
+                            <td>
+                                <span id="Pos1Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos2Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos3Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ1Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos4Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos5Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos6Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ2Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH1Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos7Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos8Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos9Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ3Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos10Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos11Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos12Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ4Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH2Reak" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosYReak" runat="server"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                2. OSOBNA ZAŠTITNA OPREMA
+                            </th>
+                            <td>
+                                <span id="Pos1ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos2ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos3ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ1ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos4ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos5ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos6ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ2ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH1ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos7ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos8ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos9ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ3ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos10ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos11ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos12ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ4ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH2ozo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosYozo" runat="server"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                3. POLOŽAJ LJUDI (uzroci ozljeda)
+                            </th>
+                            <td>
+                                <span id="Pos1polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos2polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos3polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ1polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos4polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos5polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos6polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ2polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH1polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos7polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos8polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos9polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ3polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos10polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos11polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos12polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ4polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH2polo" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosYpolo" runat="server"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                4. ALATI I OPREMA
+                            </th>
+                            <td>
+                                <span id="Pos1alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos2alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos3alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ1alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos4alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos5alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos6alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ2alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH1alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos7alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos8alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos9alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ3alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos10alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos11alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos12alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ4alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH2alat" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosYalat" runat="server"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                6. PROCEDURE POSTUPCI I UREDNOST
+                            </th>
+                            <td>
+                                <span id="Pos1proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos2proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos3proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ1proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos4proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos5proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos6proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ2proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH1proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos7proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos8proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos9proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ3proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos10proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos11proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="Pos12proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosQ4proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosH2proce" runat="server"></span>
+                            </td>
+                            <td>
+                                <span id="PosYproce" runat="server"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </asp:Panel>
+
+            <h1>
                 Podaci o incidentima
             </h1>
             <asp:Panel ID="HStable" runat="server" Width="100%" HorizontalAlign="Center">
@@ -5158,7 +5608,54 @@
             <script>
                 $(document).ready(function () {
                     SA();
-                    $('.mydatatable').DataTable();
+                    $('.mydatatable').DataTable({
+                        select: true,
+                        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        //search feature
+                        //searchPanes: {
+                        //    viewTotal: true,
+                        //},
+
+                        //dom: 'Bfrtip',
+                        "dom": '<"toolbar">lBfrtip',
+                        //buttons: [
+                        //    'colvis', 'copy', 'excel', 'pdf', 'print'  
+                        //],
+                        "buttons": [
+                                {
+                                    extend:    'copyHtml5',
+                                    text:      '<i class="fa fa-files-o"></i>',
+                                    titleAttr: 'Copy'
+                                },
+                                {
+                                    extend:    'excelHtml5',
+                                    text:      '<i class="fa fa-file-excel-o"></i>',
+                                    titleAttr: 'Excel'
+                                },
+                                {
+                                    extend:    'csvHtml5',
+                                    text:      '<i class="fa fa-file-text-o"></i>',
+                                    titleAttr: 'CSV'
+                                },
+                                {
+                                    extend:    'pdfHtml5',
+                                    text:      '<i class="fa fa-file-pdf-o"></i>',
+                                    titleAttr: 'PDF'
+                                },
+                                {
+                                    text: 'Add',
+                                    action: function ( e, dt, node, config ) {
+                                        alert( 'Button activated' );
+                                    }
+                                },
+                                {
+                                    extend: 'colvis',
+                                    text: 'Pokaži',
+
+                                }
+                        ]
+
+                    });
                     
                     //$('#SAtb1').DataTable();
                     //$('#ElmentiTable1').DataTable();

@@ -54,6 +54,7 @@ namespace CroscoStopCard
         public int PodReak1, PodReak2, PodReak3, PodReak4, PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, 
             PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, 
             PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, PodProce6;
+        public int BrojK1, PositiveReak, PositiveOzo, PositivePolozaj, PositiveAlati, PositiveProcedure;
         public int WorkersCro, WorkersSub, WorkersRd, SumWorker, HoursCro, HoursSub, HoursRd, SumHours;
         public int CRoSWA, CRoLSRV, CRoAlco, CRoNII, CRoRTI, CRoRTA, CRoLOPC, CRoSPILL, CRoFIRE, CRoNM, CRoFAC, CRoMTC, CRoRWC, CRoLTI, CRoFTL, CRoTRI,
             ConSWA, ConLSRV, ConAlco, ConNII, ConRTI, ConRTA, ConLOPC, ConSPILL, ConFIRE, ConNM, ConFAC, ConMTC, ConRWC, ConLTI, ConFTL, ConTRI,
@@ -151,6 +152,14 @@ namespace CroscoStopCard
             P1proce4.InnerText = PodProce4.ToString();
             P1proce5.InnerText = PodProce5.ToString();
             P1proce6.InnerText = PodProce6.ToString();
+
+            BrojKartica1.InnerText = BrojK1.ToString();
+            Pos1Reak.InnerText = PositiveReak.ToString();
+            Pos1ozo.InnerText = PositiveOzo.ToString();
+            Pos1polo.InnerText = PositivePolozaj.ToString();
+            Pos1alat.InnerText= PositiveAlati.ToString();
+            Pos1proce.InnerText = PositiveProcedure.ToString();
+
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P1proce.InnerText = E1Proce;
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
@@ -167,9 +176,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            prvi = str1 + ", " + str2;
+            prvi = str1 + ", " + str2 + "," + str3;
 
         }
 
@@ -266,6 +275,14 @@ namespace CroscoStopCard
             P2proce6.InnerText = PodProce6.ToString();
             string E2Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P2proce.InnerText = E2Proce;
+
+            BrojKartica2.InnerText = BrojK1.ToString();
+            Pos2Reak.InnerText = PositiveReak.ToString();
+            Pos2ozo.InnerText = PositiveOzo.ToString();
+            Pos2polo.InnerText = PositivePolozaj.ToString();
+            Pos2alat.InnerText = PositiveAlati.ToString();
+            Pos2proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -280,7 +297,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
-            drugi = str1 + ", " + str2;
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
+
+            drugi = str1 + ", " + str2 + "," + str3;
 
         }
 
@@ -378,6 +397,14 @@ namespace CroscoStopCard
             P3proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P3proce.InnerText = E1Proce;
+
+            BrojKartica3.InnerText = BrojK1.ToString();
+            Pos3Reak.InnerText = PositiveReak.ToString();
+            Pos3ozo.InnerText = PositiveOzo.ToString();
+            Pos3polo.InnerText = PositivePolozaj.ToString();
+            Pos3alat.InnerText = PositiveAlati.ToString();
+            Pos3proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -392,9 +419,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            treci = str1 + ", " + str2;
+            treci = str1 + ", " + str2 + "," + str3;
 
         }
 
@@ -492,6 +519,14 @@ namespace CroscoStopCard
             P4proce4.InnerText = PodProce4.ToString();
             P4proce5.InnerText = PodProce5.ToString();
             P4proce6.InnerText = PodProce6.ToString();
+
+            BrojKartica4.InnerText = BrojK1.ToString();
+            Pos4Reak.InnerText = PositiveReak.ToString();
+            Pos4ozo.InnerText = PositiveOzo.ToString();
+            Pos4polo.InnerText = PositivePolozaj.ToString();
+            Pos4alat.InnerText = PositiveAlati.ToString();
+            Pos4proce.InnerText = PositiveProcedure.ToString();
+
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P4proce.InnerText = E1Proce;
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
@@ -508,9 +543,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            cetvrti = str1 + ", " + str2;
+            cetvrti = str1 + ", " + str2 + "," + str3;
 
         }
 
@@ -610,6 +645,14 @@ namespace CroscoStopCard
             P5proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P5proce.InnerText = E1Proce;
+
+            BrojKartica5.InnerText = BrojK1.ToString();
+            Pos5Reak.InnerText = PositiveReak.ToString();
+            Pos5ozo.InnerText = PositiveOzo.ToString();
+            Pos5polo.InnerText = PositivePolozaj.ToString();
+            Pos5alat.InnerText = PositiveAlati.ToString();
+            Pos5proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -624,9 +667,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            peti = str1 + ", " + str2;
+            peti = str1 + ", " + str2 +","+ str3;
 
         }
 
@@ -726,6 +769,14 @@ namespace CroscoStopCard
             P6proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P6proce.InnerText = E1Proce;
+
+            BrojKartica6.InnerText = BrojK1.ToString();
+            Pos6Reak.InnerText = PositiveReak.ToString();
+            Pos6ozo.InnerText = PositiveOzo.ToString();
+            Pos6polo.InnerText = PositivePolozaj.ToString();
+            Pos6alat.InnerText = PositiveAlati.ToString();
+            Pos6proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -740,9 +791,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            sesti = str1 + ", " + str2;
+            sesti = str1 + ", " + str2 + "," + str3;
 
 
         }
@@ -844,6 +895,14 @@ namespace CroscoStopCard
             P7proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P7proce.InnerText = E1Proce;
+
+            BrojKartica7.InnerText = BrojK1.ToString();
+            Pos7Reak.InnerText = PositiveReak.ToString();
+            Pos7ozo.InnerText = PositiveOzo.ToString();
+            Pos7polo.InnerText = PositivePolozaj.ToString();
+            Pos7alat.InnerText = PositiveAlati.ToString();
+            Pos7proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -858,9 +917,10 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
 
-            sedmi = str1 + ", " + str2;
+            sedmi = str1 + ", " + str2 + "," + str3;
 
 
         }
@@ -959,6 +1019,14 @@ namespace CroscoStopCard
             P8proce4.InnerText = PodProce4.ToString();
             P8proce5.InnerText = PodProce5.ToString();
             P8proce6.InnerText = PodProce6.ToString();
+
+            BrojKartica8.InnerText = BrojK1.ToString();
+            Pos8Reak.InnerText = PositiveReak.ToString();
+            Pos8ozo.InnerText = PositiveOzo.ToString();
+            Pos8polo.InnerText = PositivePolozaj.ToString();
+            Pos8alat.InnerText = PositiveAlati.ToString();
+            Pos8proce.InnerText = PositiveProcedure.ToString();
+
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P8proce.InnerText = E1Proce;
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
@@ -975,9 +1043,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            osmi = str1 + ", " + str2;
+            osmi = str1 + ", " + str2 + "," + str3;
 
 
         }
@@ -1078,6 +1146,14 @@ namespace CroscoStopCard
             P9proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P9proce.InnerText = E1Proce;
+
+            BrojKartica9.InnerText = BrojK1.ToString();
+            Pos9Reak.InnerText = PositiveReak.ToString();
+            Pos9ozo.InnerText = PositiveOzo.ToString();
+            Pos9polo.InnerText = PositivePolozaj.ToString();
+            Pos9alat.InnerText = PositiveAlati.ToString();
+            Pos9proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -1092,9 +1168,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            deveti = str1 + ", " + str2;
+            deveti = str1 + ", " + str2 +"," + str3;
 
 
         }
@@ -1196,6 +1272,14 @@ namespace CroscoStopCard
             P10proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P10proce.InnerText = E1Proce;
+
+            BrojKartica10.InnerText = BrojK1.ToString();
+            Pos10Reak.InnerText = PositiveReak.ToString();
+            Pos10ozo.InnerText = PositiveOzo.ToString();
+            Pos10polo.InnerText = PositivePolozaj.ToString();
+            Pos10alat.InnerText = PositiveAlati.ToString();
+            Pos10proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -1210,9 +1294,9 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            deseti = str1 + ", " + str2;
+            deseti = str1 + ", " + str2 + "," + str3;
 
 
         }
@@ -1313,6 +1397,14 @@ namespace CroscoStopCard
             P11proce6.InnerText = PodProce6.ToString();
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P11proce.InnerText = E1Proce;
+
+            BrojKartica11.InnerText = BrojK1.ToString();
+            Pos11Reak.InnerText = PositiveReak.ToString();
+            Pos11ozo.InnerText = PositiveOzo.ToString();
+            Pos11polo.InnerText = PositivePolozaj.ToString();
+            Pos11alat.InnerText = PositiveAlati.ToString();
+            Pos11proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -1327,9 +1419,10 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
 
-            jedanesti = str1 + ", " + str2;
+            jedanesti = str1 + ", " + str2 + ","+str3;
 
 
         }
@@ -1431,6 +1524,13 @@ namespace CroscoStopCard
             string E1Proce = (PodProce1 + PodProce2 + PodProce3 + PodProce4 + PodProce5 + PodProce6).ToString();
             P12proce.InnerText = E1Proce;
 
+            BrojKartica12.InnerText = BrojK1.ToString();
+            Pos12Reak.InnerText = PositiveReak.ToString();
+            Pos12ozo.InnerText = PositiveOzo.ToString();
+            Pos12polo.InnerText = PositivePolozaj.ToString();
+            Pos12alat.InnerText = PositiveAlati.ToString();
+            Pos12proce.InnerText = PositiveProcedure.ToString();
+
             string str1 = HSDani1 + ", " + NoK1 + ", " + sigurne + ", " + nesigurne + ", " + UA + ", " + UC + ", " + open + ", " + ongoing + ", " + closed + ", " +
                 negativClosed + ", " + UAclosed + ", " + UCclosed + ", " + (WorkersCro + WorkersSub);
 
@@ -1445,12 +1545,13 @@ namespace CroscoStopCard
                 (CRoRTA + ConRTA + ThrdRTA) + ", " + (CRoRTI + ConRTI + ThrdRTI) + ", " + (CRoNII + ConNII + ThrdNII) + ", " + (CRoSWA + ConSWA + ThrdSWA) +
                 ", " + (CRoLSRV + ConLSRV + ThrdLSRV) + ", " + (CRoAlco + ConAlco + ThrdAlco);
 
+            string str3 = BrojK1 + ", " + PositiveReak + ", " + PositiveOzo + ", " + PositivePolozaj + ", " + PositiveAlati + ", " + PositiveProcedure;
 
-
-            dvanesti = str1 + ", " + str2;
+           dvanesti = str1 + ", " + str2 + ", " + str3;
 
 
         }
+
 
         protected void LoopData(string pd, string kd)
         {
@@ -1459,6 +1560,8 @@ namespace CroscoStopCard
             PodOzo5 = 0; PodOzo6 = 0; PodOzo7 = 0; PodPolo1 = 0; PodPolo2 = 0; PodPolo3 = 0; PodPolo4 = 0; PodPolo5 = 0; PodPolo6 = 0; PodPolo7 = 0;
             PodPolo8 = 0; PodPolo9 = 0; PodPolo10 = 0; PodPolo11 = 0; PodPolo12 = 0; PodAlati1 = 0; PodAlati2 = 0; PodAlati3 = 0; PodProce1 = 0;
             PodProce2 = 0; PodProce3 = 0; PodProce4 = 0; PodProce5 = 0; PodProce6 = 0;
+
+            BrojK1 = 0; PositiveReak = 0; PositiveOzo = 0; PositivePolozaj = 0; PositiveAlati = 0; PositiveProcedure = 0;
 
             WorkersCro = 0; WorkersSub = 0; WorkersRd = 0; SumWorker = 0; HoursCro = 0; HoursSub = 0; HoursRd = 0; SumHours = 0;
             CRoSWA = 0; CRoLSRV = 0; CRoAlco = 0; CRoNII = 0; CRoRTI = 0; CRoRTA = 0; CRoLOPC = 0; CRoSPILL = 0; CRoFIRE = 0; CRoNM = 0; CRoFAC = 0; CRoMTC = 0;
@@ -1494,6 +1597,7 @@ namespace CroscoStopCard
                         }
                         else
                         {
+
                             nesigurne++;
                             if ((dt.Rows[x].ItemArray[y + 1]).ToString() == "False")
                             {
@@ -1502,6 +1606,13 @@ namespace CroscoStopCard
                             else
                             {
                                 UC++;
+                            }
+
+                            if (((dt.Rows[x].ItemArray[y + 2]).ToString() == "True") || ((dt.Rows[x].ItemArray[y + 3]).ToString() == "True") ||
+                            ((dt.Rows[x].ItemArray[y + 4]).ToString() == "True") || ((dt.Rows[x].ItemArray[y + 5]).ToString() == "True") ||
+                            ((dt.Rows[x].ItemArray[y + 6]).ToString() == "True"))
+                            {
+                                BrojK1++;
                             }
 
                         }
@@ -1776,6 +1887,31 @@ namespace CroscoStopCard
                             PodProce6++;
                         }
                     }
+
+                   
+                    else if ((header == "ReakcijaLjudi") && (cell.ToString() == "True"))
+                    {
+                        PositiveReak++;
+                        
+                    }
+                    else if ((header == "Ozo") && (cell.ToString() == "True"))
+                    {
+                        PositiveOzo++;                       
+                    }
+                    else if ((header == "polozajLjudi") && (cell.ToString() == "True"))
+                    {
+                        PositivePolozaj++;
+                    }
+                    else if ((header == "alatioOprema") && (cell.ToString() == "True"))
+                    {
+                        PositiveAlati++;
+                    }
+                    else if ((header == "ProcedureiUrednosti") && (cell.ToString() == "True"))
+                    {
+                        PositiveProcedure++;
+                    }
+
+
                 }
 
             }
@@ -2084,6 +2220,7 @@ namespace CroscoStopCard
 
         }
 
+
         protected void PrviKvartal()
         {
             //poruka.InnerText = prvi + drugi;
@@ -2161,13 +2298,20 @@ namespace CroscoStopCard
             SWAQ1.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
             TPSQ1.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
             AlcoQ1.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+
+            BrojKarticaQ1.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69]) + int.Parse(s3[69])).ToString();
+            PosQ1Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70]) + int.Parse(s3[70])).ToString();
+            PosQ1ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71]) + int.Parse(s3[71])).ToString();
+            PosQ1polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72]) + int.Parse(s3[72])).ToString();
+            PosQ1alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73]) + int.Parse(s3[73])).ToString();
+            PosQ1proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
             Q1 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
                 Q1 += LoopQ + ",";
             }
-            Q1 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q1 += (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
         }
 
         protected void DrugiKvartal()
@@ -2247,13 +2391,20 @@ namespace CroscoStopCard
             SWAQ2.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
             TPSQ2.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
             AlcoQ2.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+
+            BrojKarticaQ2.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69]) + int.Parse(s3[69])).ToString();
+            PosQ2Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70]) + int.Parse(s3[70])).ToString();
+            PosQ2ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71]) + int.Parse(s3[71])).ToString();
+            PosQ2polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72]) + int.Parse(s3[72])).ToString();
+            PosQ2alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73]) + int.Parse(s3[73])).ToString();
+            PosQ2proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
             Q2 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
                 Q2 += LoopQ + ",";
             }
-            Q2 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q2 += (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
         }
 
         protected void TreciKvartal()
@@ -2333,13 +2484,20 @@ namespace CroscoStopCard
             SWAQ3.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66]) + int.Parse(s3[66])).ToString();
             TPSQ3.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
             AlcoQ3.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+
+            BrojKarticaQ3.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69]) + int.Parse(s3[69])).ToString();
+            PosQ3Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70]) + int.Parse(s3[70])).ToString();
+            PosQ3ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71]) + int.Parse(s3[71])).ToString();
+            PosQ3polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72]) + int.Parse(s3[72])).ToString();
+            PosQ3alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73]) + int.Parse(s3[73])).ToString();
+            PosQ3proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
             Q3 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
                 Q3 += LoopQ + ",";
             }
-            Q3 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q3 += (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
         }
 
         protected void CetvrtiKvartal()
@@ -2420,13 +2578,20 @@ namespace CroscoStopCard
             TPSQ4.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67]) + int.Parse(s3[67])).ToString();
             AlcoQ4.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
 
+            BrojKarticaQ4.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69]) + int.Parse(s3[69])).ToString();
+            PosQ4Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70]) + int.Parse(s3[70])).ToString();
+            PosQ4ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71]) + int.Parse(s3[71])).ToString();
+            PosQ4polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72]) + int.Parse(s3[72])).ToString();
+            PosQ4alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73]) + int.Parse(s3[73])).ToString();
+            PosQ4proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
+
             Q4 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopQ = (int.Parse(s1[x]) + int.Parse(s2[x]) + int.Parse(s3[x])).ToString();
                 Q4 += LoopQ + ",";
             }
-            Q4 += (int.Parse(s1[68]) + int.Parse(s2[68]) + int.Parse(s3[68])).ToString();
+            Q4 += (int.Parse(s1[74]) + int.Parse(s2[74]) + int.Parse(s3[74])).ToString();
         }
 
         protected void PrvaPlovica()
@@ -2506,13 +2671,20 @@ namespace CroscoStopCard
             SWAH1.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
             TPSH1.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
             AlcoH1.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+
+            BrojKarticaH1.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69])).ToString();
+            PosH1Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70])).ToString();
+            PosH1ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71])).ToString();
+            PosH1polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72])).ToString();
+            PosH1alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73])).ToString();
+            PosH1proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74])).ToString();
             H1 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopH = (int.Parse(s1[x]) + int.Parse(s2[x])).ToString();
                 H1 += LoopH + ",";
             }
-            H1+= (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+            H1+= (int.Parse(s1[74]) + int.Parse(s2[74])).ToString();
         }
 
         protected void DrugaPlovica()
@@ -2592,13 +2764,20 @@ namespace CroscoStopCard
             SWAH2.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
             TPSH2.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
             AlcoH2.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+
+            BrojKarticaH2.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69])).ToString();
+            PosH2Reak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70])).ToString();
+            PosH2ozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71])).ToString();
+            PosH2polo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72])).ToString();
+            PosH2alat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73])).ToString();
+            PosH2proce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74])).ToString();
             H2 = "";
-            for (int x = 0; x < 68; x++)
+            for (int x = 0; x < 74; x++)
             {
                 string LoopH = (int.Parse(s1[x]) + int.Parse(s2[x])).ToString();
                 H2 += LoopH + ",";
             }
-            H2 += (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+            H2 += (int.Parse(s1[74]) + int.Parse(s2[74])).ToString();
         }
 
         protected void Godisnji()
@@ -2678,6 +2857,13 @@ namespace CroscoStopCard
             SWAY.InnerText = (int.Parse(s1[66]) + int.Parse(s2[66])).ToString();
             TPSY.InnerText = (int.Parse(s1[67]) + int.Parse(s2[67])).ToString();
             AlcoY.InnerText = (int.Parse(s1[68]) + int.Parse(s2[68])).ToString();
+
+            BrojKarticaY.InnerText = (int.Parse(s1[69]) + int.Parse(s2[69])).ToString();
+            PosYReak.InnerText = (int.Parse(s1[70]) + int.Parse(s2[70])).ToString();
+            PosYozo.InnerText = (int.Parse(s1[71]) + int.Parse(s2[71])).ToString();
+            PosYpolo.InnerText = (int.Parse(s1[72]) + int.Parse(s2[72])).ToString();
+            PosYalat.InnerText = (int.Parse(s1[73]) + int.Parse(s2[73])).ToString();
+            PosYproce.InnerText = (int.Parse(s1[74]) + int.Parse(s2[74])).ToString();
         }
 
         private DataTable GetReport(string pd,string kd)
@@ -2686,28 +2872,29 @@ namespace CroscoStopCard
             {
                 if ((string)Session["UserRole"] == "MasterAdmin")
                 {
-                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
-                        "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
-                        "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
-                        "PodProce6 FROM EStopCards WHERE DateCreated BETWEEN " + pd + " AND " + kd;
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, ReakcijaLjudi, Ozo, polozajLjudi, alatioOprema, " +
+                        "ProcedureiUrednosti, PodReak1, PodReak2, PodReak3, PodReak4, PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, " +
+                        "PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, " +
+                        "PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, PodProce6 FROM EStopCards WHERE DateCreated " +
+                        "BETWEEN " + pd + " AND " + kd;
                 }
                 else if ((string)Session["UserRole"] == "Manager")
                 {
-                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, ReakcijaLjudi, Ozo, polozajLjudi, alatioOprema, ProcedureiUrednosti, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
                         "PodProce6 FROM EStopCards WHERE OJ = '" + (string)Session["OJ"] + "' AND DateCreated BETWEEN " + pd + " AND " + kd;
                 }
                 else if ((string)Session["UserRole"] == "Admin")
                 {
-                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, ReakcijaLjudi, Ozo, polozajLjudi, alatioOprema, ProcedureiUrednosti, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
                         "PodProce6 FROM EStopCards WHERE SubOJ = '" + (string)Session["SubOJ"] + "' AND DateCreated BETWEEN " + pd + " AND " + kd;
                 }
                 else if ((string)Session["UserRole"] == "LocalAdmin")
                 {
-                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, PodReak1, PodReak2, PodReak3, PodReak4, " +
+                    SqlString = "SELECT EStopCardID, SigNesigPostupak, NesigRadnjaUvijet, CardStatus, ReakcijaLjudi, Ozo, polozajLjudi, alatioOprema, ProcedureiUrednosti, PodReak1, PodReak2, PodReak3, PodReak4, " +
                         "PodReak5, PodReak6, PodOzo1, PodOzo2, PodOzo3, PodOzo4, PodOzo5, PodOzo6, PodOzo7, PodPolo1, PodPolo2, PodPolo3, PodPolo4, PodPolo5, PodPolo6, " +
                         "PodPolo7, PodPolo8, PodPolo9, PodPolo10, PodPolo11, PodPolo12, PodAlati1, PodAlati2, PodAlati3, PodProce1, PodProce2, PodProce3, PodProce4, PodProce5, " +
                         "PodProce6 FROM EStopCards WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "' AND DateCreated BETWEEN " + pd + " AND " + kd; 
