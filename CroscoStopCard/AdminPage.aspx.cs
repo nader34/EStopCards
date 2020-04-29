@@ -367,7 +367,7 @@ namespace CroscoStopCard
             using (var SCDB = new CroscoStopCardEntities())
             {
                 DataTable dt = new DataTable();
-                for (int i = 0; i < 9; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     DataColumn column = null;
                     switch (i)
@@ -588,7 +588,7 @@ namespace CroscoStopCard
                         }
 
                         ++cellIndex;
-                        if (cellIndex == 9) cellIndex = 0;
+                        if (cellIndex == 10) cellIndex = 0;
                     }
                     ++rowIndex;
                 }

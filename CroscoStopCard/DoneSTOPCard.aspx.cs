@@ -75,65 +75,58 @@ namespace CroscoStopCard
                     dt = this.GetData();
 
                     // Building an HTML string.
-                    StringBuilder html = new StringBuilder();
+                    //StringBuilder html = new StringBuilder();
 
-                    // Table start.
-                    // html.Append("<table id='mytb1' border = '1' cellspacing='1' class='tablesorter'>")
-                    html.Append("<table id='mytb2' Class='table table-striped table-bordered' style='width:100%'>");
-                    // Building the Header row.
-                    html.Append("<thead>");
-                    html.Append("<tr>");
-                    int i = 0;
-                    foreach (DataColumn column in dt.Columns)
-                    {
-                        string stri;
-                        stri = "<th style='cursor:pointer'>";
-                        // stri = "<th onclick='sortTable(" & i & ")'>"
+                   
+                    //html.Append("<table id='mytb2' Class='table table-striped table-bordered' style='width:100%'>");
+                   
+                    //html.Append("<thead>");
+                    //html.Append("<tr>");
+                    //int i = 0;
+                    //foreach (DataColumn column in dt.Columns)
+                    //{
+                    //    string stri;
+                    //    stri = "<th style='cursor:pointer'>";
+                       
+                    //    html.Append(stri);
+                    //    i = i + 1;
+                    //    html.Append(column.ColumnName);
+                    //    html.Append("</th>");
+                    //}
+                    //html.Append("<th style='cursor:pointer'>");
+                    //html.Append("Fun");
+                    //html.Append("</th>");
+                    //html.Append("</tr>");
+                    //html.Append("</thead>");
+                    
+                    //foreach (DataRow row in dt.Rows)
+                    //{
+                    //    html.Append("<tr class='item'>");
+                    //    foreach (DataColumn column in dt.Columns)
+                    //    {
+                    //        html.Append("<td Class='txtBox'>");
+                    //        html.Append("<span>");
+                    //        html.Append(row[column.ColumnName]);
+                    //        html.Append("</span>");
+                    //        html.Append("</td>");
+                    //    }
+                    //    html.Append("<td Class='btn'>");
+                    //    html.Append("<input type='button' value='Kartica' onclick='deleteRow();' />");
+                    //    html.Append("</td>");
+                    //    html.Append("<td Class='btn'>");
+                    //    html.Append("<a href='DoneSTOPCard.aspx' onclick='ShowStop();' target='_blank'>Done Stop Card</a>");
+                    //    html.Append("</td>");
+                    //    html.Append("</tr>");
+                    //}
+                   
+                    //html.Append("</table>");
+                   
+                    //tablicaSTOP1.Controls.Add(new Literal()
+                    //{
+                    //    Text = html.ToString()
+                    //});
 
 
-
-                        // stri = "<th onclick="
-                        // stri = stri & "w3.sortHTML("
-                        // stri = stri & "'" & "#tb1" & "','.item'," & "'td:nth-child(" & i & ")')' " & "style='cursor:pointer'>"
-                        html.Append(stri);
-                        i = i + 1;
-                        html.Append(column.ColumnName);
-                        html.Append("</th>");
-                    }
-                    html.Append("<th style='cursor:pointer'>");
-                    html.Append("Fun");
-                    html.Append("</th>");
-                    html.Append("</tr>");
-                    html.Append("</thead>");
-                    // html.Append("<tbody id='myTable'>")
-                    // Building the Data rows.
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        html.Append("<tr class='item'>");
-                        foreach (DataColumn column in dt.Columns)
-                        {
-                            html.Append("<td Class='txtBox'>");
-                            html.Append("<span>");
-                            html.Append(row[column.ColumnName]);
-                            html.Append("</span>");
-                            html.Append("</td>");
-                        }
-                        html.Append("<td Class='btn'>");
-                        html.Append("<input type='button' value='Kartica' onclick='deleteRow();' />");
-                        html.Append("</td>");
-                        html.Append("<td Class='btn'>");
-                        html.Append("<a href='DoneSTOPCard.aspx' onclick='ShowStop();' target='_blank'>Done Stop Card</a>");
-                        html.Append("</td>");
-                        html.Append("</tr>");
-                    }
-                    // html.Append("</tbody>")
-                    // Table end.
-                    html.Append("</table>");
-                    // Append the HTML string to Placeholder.
-                    tablicaSTOP1.Controls.Add(new Literal()
-                    {
-                        Text = html.ToString()
-                    });
                     DataTable dt1 = new DataTable();
                     //DataRow ro1 = new DataRow();
                     //DataColumn col = new DataColumn();

@@ -375,10 +375,10 @@
                 </table>
                 
             </td>
-            <td style="width:25%">
+            <%--<td style="width:25%">
                 <asp:Panel ID="tablicaSTOP1" runat="server">
                 </asp:Panel>
-            </td>
+            </td>--%>
         </tr>
     </table>
      

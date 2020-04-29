@@ -406,7 +406,7 @@ namespace CroscoStopCard
                                     polo7.Checked = false;
                                 }
                             }
-                            else if (header == "PodPolo5")
+                            else if (header == "PodPolo8")
                             {
                                 if (cell.ToString() == "True")
                                 {
@@ -561,6 +561,11 @@ namespace CroscoStopCard
                                 }
                                 
                             }
+                            else if (header == "EStopCardID")
+                            {
+                                STOPid1.Value = cell.ToString(); 
+                            }
+                            
                             else if ((header == "FirstName") || (header == "LastName"))
                             {
 

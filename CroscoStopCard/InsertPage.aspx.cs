@@ -28,7 +28,7 @@ namespace CroscoStopCard
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
         string opr, opis, DateCreated, DatumOtvaranja, korekcija, AnalizaUzroka, OdgovornaOsoba, RokZaRijesavanja, Komentar, Status, DatumZatvaranja, STOPCheckBoxes, UaUc;
         int UserID;
-        string STOPID, OrgJed, SubOrgJed, SubOrgJedDva;
+        string Stopid1, STOPID, OrgJed, SubOrgJed, SubOrgJedDva;
         protected void Page_Load(object sender, EventArgs e)
         {
             //EStopCard eStopCard = new EStopCard();
@@ -62,6 +62,7 @@ namespace CroscoStopCard
             Komentar = Request.QueryString["Komentar"];
             Status = Request.QueryString["Status"];
             DatumZatvaranja = Request.QueryString["DatumZatvaranja"];
+
             //if (DatumOtvaranja != null)
             //{
                 //var d1 = DateTime.Parse(DatumOtvaranja).ToString("yyyy-MM-dd");
@@ -254,11 +255,12 @@ namespace CroscoStopCard
             {
 
                 Session["STOPID"] = Request.QueryString["STOPID"];
+                Stopid1 = Request.QueryString["STOPid1"];
                 //var DateCreated1 = DateTime.Parse(DatumOtvaranja1).ToString("yyyy-MM-dd");
                 SqlCommand command;
                 string sql = null;
                 sql = ("UPDATE EStopCards SET Komentar = '" + Komentar.ToString() + "', " + "CardStatus = '" + Status.ToString() + "', " + "lastModifiedID = '" + UserID + "', " + "lastModifiedName = '" + FName + "', " + 
-                    "lastModifiedLastName = '" + LName + "' WHERE EStopCardID = " + STOPID);
+                    "lastModifiedLastName = '" + LName + "' WHERE EStopCardID = " + Stopid1.ToString());
 
                 //sql = ("UPDATE EStopCards SET Komentar = ,CardStatus,lastModifiedID,lastModifiedName,lastModifiedLastName= '" + Komentar.ToString() +
                 //    "', '" + Status.ToString() + "', '" + UserID + "', '" + FName + "', '" + LName + "' WHERE EStopCardID = " + STOPID);

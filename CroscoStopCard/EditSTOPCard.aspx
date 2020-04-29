@@ -443,6 +443,12 @@
                         </tr>
                         <tr>
                             <td>
+                                <label>STOP id:</label><br />
+                                <input type="text" id="STOPid1" runat="server" name="IDSTOP" style="width: 80%" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <div id="STOPSubmit">
                                     <label>Podnesi karticu</label><br />
                                     <input type="submit" id="podnesi" runat="server" name="UnosKartice" class="btn btn-success" style="width: 80%" onclick="Provjera()" />
@@ -736,7 +742,8 @@
             let DatumZatvaranjamje = DatumZatvaranjaid.getMonth();
             let DatumZatvaranjagod = DatumZatvaranjaid.getFullYear();
             let DatumZatvaranja = DatumZatvaranjadani + '/' + (DatumZatvaranjamje + 1) + '/' + DatumZatvaranjagod;
-            
+
+            var STOPid1 = document.getElementById('STOPid1');
 
             if (opis.value == "" || korekcija.value == "") {
                 alert('Potrebno je unositi opis kartice');
@@ -750,7 +757,7 @@
                 alert(' Unesenoice');
                 if (Safe.checked) {
                     var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.open('Get', 'InsertPage.aspx?UaUc=' + UCUAIzbbornik.selectedIndex + '&STOPCheckBoxes=' + STOPCheckBoxes + '&opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&opr=update', false);
+                    xmlhttp.open('Get', 'InsertPage.aspx?UaUc=' + UCUAIzbbornik.selectedIndex + '&STOPCheckBoxes=' + STOPCheckBoxes + '&opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&STOPid1=' + STOPid1.value + '&opr=update', false);
                     xmlhttp.send(null);
                     //var xmlhttp = new XMLHttpRequest();
                     //xmlhttp.open('Get', 'InsertPage.aspx?opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&opr=Safe', false);
@@ -788,7 +795,7 @@
                     alert(STOPCheckBoxes + " uauc " + UCUAIzb);
 
                     var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.open('Get', 'InsertPage.aspx?UaUc=' + UCUAIzbbornik.selectedIndex + '&STOPCheckBoxes=' + STOPCheckBoxes + '&opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&opr=update', false);
+                    xmlhttp.open('Get', 'InsertPage.aspx?UaUc=' + UCUAIzbbornik.selectedIndex + '&STOPCheckBoxes=' + STOPCheckBoxes + '&opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&STOPid1=' + STOPid1.value + '&opr=update', false);
                     xmlhttp.send(null);
 
                     //location.reload(true);
