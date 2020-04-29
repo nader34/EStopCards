@@ -48,282 +48,193 @@
         <asp:Panel ID="MasterTablicaSTOP" runat="server">
 
         </asp:Panel>
+        
     </div>
 
    <%-- <script src="https://cdnjs.cloudflare.com/ajax/libspopper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap//4.3.1/js/bootstrap.min.js"></script>--%>
 
-    <script>
-        $(document).ready(function () {
-            //search feature
-            //$('#mytb1 tfoot th').each(function () {
-            //    var title = $(this).text();
-            //    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-            //});
-            $('#mytb1').DataTable({
-                
-                select: true,
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        <script>
+            $(document).ready(function () {
                 //search feature
-                //searchPanes: {
-                //    viewTotal: true,
-                //},
+                //$('#mytb1 tfoot th').each(function () {
+                //    var title = $(this).text();
+                //    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+                //});
+                $('#mytb1').DataTable({
+                
+                    select: true,
+                    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    //search feature
+                    //searchPanes: {
+                    //    viewTotal: true,
+                    //},
 
-                //dom: 'Bfrtip',
-                "dom": '<"toolbar">lBfrtip',
-                //buttons: [
-                //    'colvis', 'copy', 'excel', 'pdf', 'print'  
-                //],
-                "buttons": [
-                        {
-                            extend:    'copyHtml5',
-                            text:      '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
-                        },
-                        {
-                            extend:    'excelHtml5',
-                            text:      '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
-                        },
-                        {
-                            extend:    'csvHtml5',
-                            text:      '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
-                        },
-                        {
-                            extend:    'pdfHtml5',
-                            text:      '<i class="fa fa-file-pdf-o"></i>',
-                            titleAttr: 'PDF'
-                        },
-                        {
-                            text: 'Add',
-                            action: function ( e, dt, node, config ) {
-                                alert( 'Button activated' );
+                    //dom: 'Bfrtip',
+                    "dom": '<"toolbar">lBfrtip',
+                    //buttons: [
+                    //    'colvis', 'copy', 'excel', 'pdf', 'print'  
+                    //],
+                    "buttons": [
+                            {
+                                extend:    'copyHtml5',
+                                text:      '<i class="fa fa-files-o"></i>',
+                                titleAttr: 'Copy'
+                            },
+                            {
+                                extend:    'excelHtml5',
+                                text:      '<i class="fa fa-file-excel-o"></i>',
+                                titleAttr: 'Excel'
+                            },
+                            {
+                                extend:    'csvHtml5',
+                                text:      '<i class="fa fa-file-text-o"></i>',
+                                titleAttr: 'CSV'
+                            },
+                            {
+                                extend:    'pdfHtml5',
+                                text:      '<i class="fa fa-file-pdf-o"></i>',
+                                titleAttr: 'PDF'
+                            },
+                            {
+                                text: 'Add',
+                                action: function ( e, dt, node, config ) {
+                                    alert( 'Button activated' );
+                                }
+                            },
+                            {
+                                extend: 'colvis',
+                                text: 'Pokaži',
+
                             }
-                        },
-                        {
-                            extend: 'colvis',
-                            text: 'Pokaži',
+                    ],
+                    "columnDefs": [
+                            {
+                                "targets": -1,
+                                "data": null,
+                                "defaultContent": "<button class='btn btn-danger DeleteRow'>Delete!</button>"
+                            }
+                            //{
+                            //    "targets": -2,
+                            //    "data": null,
+                            //    "defaultContent": "<button class='btn btn-success'>Prvo mjesto!</button>"
+                            //}
+                    ]            
+                });
 
-                        }
-                ],
-                "columnDefs": [
-                        {
-                            "targets": -1,
-                            "data": null,
-                            "defaultContent": "<button class='btn btn-danger DeleteRow'>Delete!</button>"
-                        }
-                        //{
-                        //    "targets": -2,
-                        //    "data": null,
-                        //    "defaultContent": "<button class='btn btn-success'>Prvo mjesto!</button>"
-                        //}
-                ]            
+                UpdateSTOP();
+                DeleteKarticu();
+                //var table = $('#mytb1').DataTable({
+                //    //searchPanes: {
+                //    //    viewTotal: true,
+                //    //},
+                //    //dom: 'Pfrtip',
+                //});
+
+                //search feature
+                //var table5 = $('#mytb1').DataTable();
+                //table5.columns().every(function () {
+                //    var that = this;
+                //    $('input', this.footer()).on('keyup change', function () {
+                //        if (that.search() !== this.value) {
+                //            that
+                //                .search(this.value)
+                //                .draw();
+                //        }
+                //    });
+                //});
+
+
+                //$(document).on('click', '#mytb1 td', function () {
+                //    var html = $(this).text()
+                //    var text1 = $(this).closest("tr").find('td:first').text();
+                //    alert(text1);
+                //    alert(html);
+                //});
             });
+            //window.addEventListener('DOMContentLoaded', function () {
+            //    //$('#mytb1').DataTable();
+            //    $('.mydatatable').DataTable();
+            //});
+      
+        </script>
+        <script>
+            function UpdateSTOP() {
+                var inputValue;
+                var STOPid, YName;
+                $(document).on('blur', '.mydatatable input', function () {
+                    $(this).replaceWith('<td class="txtBox"><span>' + this.value + '</span></td>');
+                    inputValue = this.value;
+
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + STOPid + '&ched=' + YName + '&newva=' + inputValue + '&opr=update', false);
+                    xmlhttp.send(null);
+                    inputValue = "";
+                    STOPid = "";
+                    YName = "";
+                });
+                
+
+                 function returnInputValue() {
+                     return inputValue;
+                 }
+                var table1= $('#mytb1').DataTable();
+                $(document).on('click', '.mydatatable td', function () {
+                    var idx = $(this).index();
+
+                    YName = table1.column(idx).header().textContent;
+                    //alert(YName);
+                    STOPid= $(this).parent().children()[0].innerText;
+                     //var idx = table3.cell(this).index().column;
+                 
+                    if (idx >= 0 && idx < 8) {
+
+
+                    }
+                    else if ((idx > 7 && idx < 11) || idx == 78) {
+                        var html = $(this).text();
+                         var input = $('<input type="text" />');
+                         input.val(html);
+                         $(this).replaceWith(input);
+                         $('.mydatatable input').focus();
+                    }
+                    else {
+                        var html = $(this).text();
+                        var input = $('<input type="number" />');
+                        input.val(html);
+                        $(this).replaceWith(input);
+                        $('.mydatatable input').focus();
+                    }
+                });
             
-            //var table = $('#mytb1').DataTable({
-            //    //searchPanes: {
-            //    //    viewTotal: true,
-            //    //},
-            //    //dom: 'Pfrtip',
-            //});
-
-            //search feature
-            //var table5 = $('#mytb1').DataTable();
-            //table5.columns().every(function () {
-            //    var that = this;
-            //    $('input', this.footer()).on('keyup change', function () {
-            //        if (that.search() !== this.value) {
-            //            that
-            //                .search(this.value)
-            //                .draw();
-            //        }
-            //    });
-            //});
-
-            //$('.mydatatable').DataTable();
-            var table1 = $('#mytb1').DataTable();
-
-            $('#mytb1 tbody').on('click', 'tr', function () {
-                var data = table1.row(this).data();
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
-                }
-                else {
-                    table1.$('tr.selected').removeClass('selected');
-                    $(this).addClass('selected');
-                }
-            });
-            //$('#DeleteRow').click(function () {
-            //    table1.row('.selected').remove().draw(false);
-            //    var thisro = getcolid();
-            //    var xmlhttp = new XMLHttpRequest();
-            //    xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + thisro + '&opr=delete', false);
-            //    xmlhttp.send(null);
-            //    redid = "";
-            //});
-            var table3 = $('#mytb1').DataTable();
-            $(document).on('click', '#mytb1 td', function () {
-                var idx = table3.cell(this).index().column;
-                if (idx >= 0 && idx < 7) {
-
-
-                }
-                else {
-                    var html = $(this).text();
-                    var input = $('<input type="text" />');
-                    input.val(html);
-                    $(this).replaceWith(input);
-                    $('#mytb1 input').focus();
-                }
-                                        
-            });
-
-            //get column head and Row id
-            var table2 = $('#mytb1').DataTable();
-            $('#mytb1 tbody').on('click', 'td', function () {
-                var idx = table2.cell(this).index().column;
-                var title = table2.column(idx).header();
-                var colhed1 = [];
-                var colhed;
-                var provjera = $(title).html();
-                if (provjera == undefined) {
-                    colhed = colhed1[0];
-                }
-                else {
-                    colhed1.shift();
-                    colhed1.push(provjera);
-                    colhed = colhed1[0];
-                }
-
-                getcolhed(colhed);
-                //alert('Column title clicked on: ' + $(title).html());
-                //alert( 'REd title clicked on: '+ idx );
-            });
-
-            $('#mytb1 tbody').on('click', 'tr', function () {
-                var data = table2.row(this).data();
-                //alert(data[0]);
-                var redid1 = [];
-                var redid;
-                if (data[0] == undefined) {
-                    redid = redid1[0];
-                }
-                else {
-                    redid1.push(data[0]);
-                    redid = redid1[0];
+            };
+        </script>
+        <script>
+            function DeleteKarticu() {
+                var table4 = $('#mytb1').DataTable();
+                $('#mytb1 tbody').on('click', 'button', function () {
+                    var data = table4.row($(this).parents('tr')).data();
+                    alert(data[0]);
+                    var redid = data[0];
                     var i = redid.length;
                     i = i - 13;
                     redid = redid.substr(6, i);
-                }
-
-
-                getcolid(redid);
-                //alert(redid);
-                //var xmlhttp = new XMLHttpRequest();
-                //xmlhttp.open('Get', 'InsertPage.aspx?id=' + redid + '&ched='+ colheadder + '&newva='+ newValueup + '&opr=update', false);
-                //xmlhttp.send(null);
-                //redid = "";
-
-
-                //display();
-                //window.location.reload();
-            });
-            var yhed1 = [];
-            var yhed;
-            function getcolhed(val) {                
-                if (val == undefined) {
-                    yhed = yhed1[0];
-                    //alert(yhed);
-                    return yhed;
-                }
-                else {
-                    yhed1.shift();
-                    yhed1.push(val);
-                    yhed = yhed1[0];
-                    //alert(yhed);
-                    return yhed;
-                }
-            }
-            var xhed1 = [];
-            var xhed;
-            function getcolid(val1) {
-                if (val1 == undefined) {
-                    xhed = xhed1[0];
-                    //alert(xhed);
-                    return xhed;
-                }
-                else {
-                    xhed1.shift();
-                    xhed1.push(val1);
-                    xhed = xhed1[0];
-                    //alert(xhed);
-                    return xhed;
-                }
-
-            }
-            
-
-            var newValuup1 = [];
-            var newValuup;
-            $(document).on('blur', '#mytb1 input', function () {
-
-                $(this).replaceWith('<td class="asset_value"><span>' + this.value + '</span></td>')
-                var provjera1 = this.value;
-                if (provjera1 == undefined) {
-                    newValuup = newValuup1[0];
-                }
-                else {
-                    newValuup1.shift();
-                    newValuup1.push(provjera1);
-                    newValuup = newValuup1[0];
-                }
-                var thiscol = getcolhed();
-                var thisro = getcolid();
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + thisro + '&ched=' + thiscol + '&newva=' + newValuup + '&opr=update', false);
-                xmlhttp.send(null);
-                newValuup = '';
-                thiscol = '';
-                thisro = '';
-
-            });
-
-            var table4 = $('#mytb1').DataTable();
-            $('#mytb1 tbody').on('click', 'button', function () {
-                var data = table4.row($(this).parents('tr')).data();
-                alert(data[0]);
-                var redid = data[0];
-                var i = redid.length;
-                i = i - 13;
-                redid = redid.substr(6, i);
-                var html = $(this).text()
-                alert(html);
-                if (html == "Delete!") {
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + redid + '&opr=delete', false);
-                    xmlhttp.send(null);
-                    redid = "";
-                    //provjeriti zašto table2 ne 4
-                    table2
-                        .row($(this).parents('tr'))
-                        .remove()
-                        .draw();
-                }
-            });
-            //$(document).on('click', '#mytb1 td', function () {
-            //    var html = $(this).text()
-            //    var text1 = $(this).closest("tr").find('td:first').text();
-            //    alert(text1);
-            //    alert(html);
-            //});
-        });
-        //window.addEventListener('DOMContentLoaded', function () {
-        //    //$('#mytb1').DataTable();
-        //    $('.mydatatable').DataTable();
-        //});
-      
-    </script>
+                    var html = $(this).text()
+                    alert(html);
+                    if (html == "Delete!") {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('Get', 'InsertSTOPBaza.aspx?id=' + redid + '&opr=delete', false);
+                        xmlhttp.send(null);
+                        redid = "";
+                        //provjeriti zašto table2 ne 4
+                        table2
+                            .row($(this).parents('tr'))
+                            .remove()
+                            .draw();
+                    }
+                });
+            }            
+        </script>
     </form>
 </body>
 </html>
