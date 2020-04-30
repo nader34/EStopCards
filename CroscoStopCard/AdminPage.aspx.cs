@@ -292,6 +292,7 @@ namespace CroscoStopCard
                                         MaticniBroj = Convert.ToInt32(dr["MaticniBroj"]),
                                         OJ = (string)Session["OJ"],
                                         SubOJ = dr["SubOJ"].ToString(),
+                                        SubOJDva = dr["SubOJDva"].ToString(),
                                         Email = dr["Email"].ToString(),
                                         UserRole = "User"
                                     });
@@ -308,6 +309,7 @@ namespace CroscoStopCard
                                         MaticniBroj = Convert.ToInt32(dr["MaticniBroj"]),
                                         OJ = dr["OJ"].ToString(),
                                         SubOJ = dr["SubOJ"].ToString(),
+                                        SubOJDva = dr["SubOJDva"].ToString(),
                                         Email = dr["Email"].ToString(),
                                         UserRole = dr["UserRole"].ToString()
                                     });
