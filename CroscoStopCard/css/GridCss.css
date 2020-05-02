@@ -3,6 +3,14 @@
     display: table-cell;
 }
 
+.UserTable {
+    width: 70%;
+    border: thick 2px black;
+    margin-left:20px;
+
+    text-align: left;
+}
+
 .mydatagrid
 {
 	width: 70%;
@@ -13,6 +21,7 @@
     flex-wrap:wrap;
     text-align:left;
 }
+
 .addUserID {
     /*width:auto;
     border:2px solid black;
@@ -163,7 +172,7 @@ img#ReportList, img#StopCycl, #tablicaSTOP{
     border-style: none;
     border-color: inherit;
     border-width: medium;
-width:96%;
+    width:96%;
     font-weight:700;
     font-size:large;
     display:inline-block;
