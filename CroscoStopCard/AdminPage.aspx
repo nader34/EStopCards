@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MyMaster.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="CroscoStopCard.MasterAdminPage" %>
+﻿<%@ Page Title="Admin page" Language="C#" MasterPageFile="~/MyMaster.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="CroscoStopCard.MasterAdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="Panel1" runat="server" Width="80%" HorizontalAlign="Center">
     <table>
         <tr>
-            <td class="UserTable">
+            <td>
                 <asp:GridView ID="GVUsers" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="UserID" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GVUsers_RowDataBound" OnRowUpdating="GVUsers_RowUpdating" CellSpacing="2" OnRowEditing="GVUsers_RowEditing" HorizontalAlign="Center">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
