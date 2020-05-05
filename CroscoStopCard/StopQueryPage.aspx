@@ -476,8 +476,8 @@
         $(document).on('click', 'td .STOPCardbtn', function () {
             var html = $(this).text()
             var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
+            //alert(text1);
+            //alert(html);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'DoneSTOPCard.aspx?opr=display' + '&STOPID=' + text1, false);
             xmlhttp.send(null);
@@ -724,7 +724,7 @@
             }
             else {
                 $("#STOPSubmit").unbind('click').click(); 
-                alert(' Unesenoice');
+                //alert(' Unesenoice');
                 if (Safe.checked) {
                     var xmlhttp = new XMLHttpRequest();
                     xmlhttp.open('Get', 'InsertPage.aspx?opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&opr=Safe', false);
@@ -757,7 +757,7 @@
                     }
                     var STOPform = document.querySelectorAll("#tb1 input");
                     var STOPCheckBoxes = loopForm(STOPform);
-                    alert(STOPCheckBoxes + " uauc " + UCUAIzb);
+                    //alert(STOPCheckBoxes + " uauc " + UCUAIzb);
                     var xmlhttp = new XMLHttpRequest();
                     xmlhttp.open('Get', 'InsertPage.aspx?UaUc=' + UCUAIzbbornik.selectedIndex + '&STOPCheckBoxes=' + STOPCheckBoxes + '&opis=' + opis.value + '&korekcija=' + korekcija.value + '&DatumOtvaranja=' + DatumOtvaranja + '&AnalizaUzroka=' + AnalizaUzroka.value + '&OdgovornaOsoba=' + OdgovornaOsoba.value + '&RokZaRijesavanja=' + RokZaRijesavanja + '&Komentar=' + Komentar.value + '&Status=' + Status.value + '&DatumZatvaranja=' + DatumZatvaranja + '&opr=UNSafe', false);
                     xmlhttp.send(null);

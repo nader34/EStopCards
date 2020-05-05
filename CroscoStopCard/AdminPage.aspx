@@ -396,8 +396,8 @@
         $(document).on('click', 'td .STOPCardbtn', function () {
             var html = $(this).text()
             var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
+            //alert(text1);
+            //alert(html);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'DoneSTOPCard.aspx?opr=display' + '&STOPID=' + text1, false);
             xmlhttp.send(null);
@@ -415,8 +415,8 @@
         $(document).on('click', 'td .EditSTOPCardbtn', function () {
             var html = $(this).text()
             var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
+            //alert(text1);
+            //alert(html);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'EditSTOPCard.aspx?opr=Edit' + '&STOPID=' + text1, false);
             xmlhttp.send(null);
@@ -459,8 +459,8 @@
             $(this).closest("tr").find('td.txtBox')[4].innerHTML="<span>True</span>";
             var html = $(this).text()
             var text1 = $(this).closest("tr").find('td:first').text();
-            alert(text1);
-            alert(html);
+            //alert(text1);
+            //alert(html);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('Get', 'Insertpage.aspx?opr=UpdateNominacije' + '&STOPID=' + text1, false);
             xmlhttp.send(null);

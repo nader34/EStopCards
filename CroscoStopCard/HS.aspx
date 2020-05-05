@@ -273,6 +273,14 @@
 					<td colspan="1" class="classtd"><input id="DaysWout" class="classinput" type="number"/></td>
 				</tr>
                 <tr class="classtr">
+                    <td colspan="2" class="classlb"><label>Proces: </label></td>
+                    <td colspan="4" class="classtd"><select id="ProcesList" class="classinput" style="width:100%"><option></option><option value="Bušenje">Bušenje</option><option value="Remont">Remont</option><option value="Bušotinski servisi">Bušotinski servisi</option><option value="Održavanje">Održavanje</option></select></td>
+					<td colspan="2" class="classlb"><label>Servis: </label></td>
+                    <td colspan="5" class="classtd"><select id="ServisList" class="classinput" style="width:100%"><option value=""></option></select></td>
+                    <td colspan="2" class="classlb"><label>Tim/Postrojenja: </label></td>
+                    <td colspan="5" class="classtd"><select id="Timlist" class="classinput" style="width:100%"><option value=""></option></select></td>	
+                </tr>
+                <tr class="classtr">
 					<td colspan="1" class="classtd"><div id="UnosHS"><input id="UnosHSbtn" class="classinput" type="submit" value="Unos!" onclick="ProvjeraHSForm()" /></div></td>
                     <td colspan="1" class="classtd"><input id="ZadnjiRed" class="classinput" type="button" value="Zadnji red" onclick="ZadnjiRedClick()"/></td>
                     <td colspan="1" class="classlb"><label>Datum: </label></td>
@@ -286,6 +294,7 @@
 					<%--<td colspan="6" class="classtd"></td>--%>
 				</tr>
             </thead>
+           
         </table>
 	</div>
 	    
@@ -417,13 +426,13 @@
                 var c = b.substring(6, b.length - 7);
                 var HSform = $('#WorkersData tr');
                 if (x == 8) {
-                    HSform[6].cells[5].firstChild.value = c;
+                    HSform[7].cells[5].firstChild.value = c;
                 }
                 else if (x == 9) {
-                    HSform[6].cells[7].firstChild.value = c;
+                    HSform[7].cells[7].firstChild.value = c;
                 }
                 else if (x == 10) {
-                    HSform[6].cells[9].firstChild.value = c;
+                    HSform[7].cells[9].firstChild.value = c;
                 }
                 else if (x > 10 && x < 14) {
                     var j = x - 10;
@@ -460,6 +469,80 @@
                     HSform[5].cells[8].firstElementChild.valueAsNumber= parseInt(c) + 1;
                 }
             }
+        }
+        function OrgJedince() {
+            var proces = document.getElementById('ProcesList');
+            var servis = document.getElementById('ServisList');
+            var Tim = document.getElementById('Timlist');
+            proces.onchange = function () {
+                if (proces.value == "Bušenje") {
+                    servis.innerHTML = "<option value=''></option><option value='Bušaće operacije regionalne'>Bušaće operacije regionalne</option>" +
+                        "<option value='Bušaće operacije međunarodne'>Bušaće operacije međunarodne</option>";
+
+                } else if (proces.value == "Remont") {
+                    servis.innerHTML = "<option value=''></option><option value='Servis izvođenja remontnih radova'>Servis izvođenja remontnih radova</option>" +
+                        "<option value='Servis podrške remontnim radovima'>Servis podrške remontnim radovima</option>";
+
+                } else if (proces.value == "Bušotinski servisi") {
+                    servis.innerHTML = "<option value=''></option><option value='Servis bušotinskih mjerenja'>Servis bušotinskih mjerenja</option>" +
+                        "<option value = 'Servis cementacije i stimulacije'>Servis cementacije i stimulacije</option><option value='Specijalni servisi'>Specijalni servisi</option>" +
+                        "<option value='Servis bušotinske opreme i alata'>Servis bušotinske opreme i alata</option>";
+                } else if (proces.value == "Održavanje") {
+                    servis.innerHTML = "<option value=''></option><option value='Servis procesnih postrijenja'>Servis procesnih postrijenja</option>" +
+                        "<option value='Inženjering i sustav preventivnog održavanja'>Inženjering i sustav preventivnog održavanja</option>" +
+                        "<option value='Servis za energetiku'>Servis za energetiku</option>";
+                } else {
+                    servis.innerHTML = "<option value=''></option>";
+                }
+            };
+            servis.onchange = function () {
+                if (servis.value == "Bušaće operacije regionalne") {
+                    Tim.innerHTML="<option value='Labin'>Labin</option><option value='National 402'>National 402</option>";
+                  
+                } else if (servis.value == "Bušaće operacije međunarodne") {
+                    Tim.innerHTML = "<option value='Skytop 3'>Skytop 3</option><option value='Lyb 3'>Lyb 37</option><option value='Emsco 401'>Emsco 401</option>" +
+                        "<option value='Emsco 602'>Emsco 602</option><option value='Emsco 605'>Emsco 605</option><option value='R 69'>R 69</option><option value='Ideco 301'>Ideco 301</option>";
+                    
+                } else if (servis.value == "Servis izvođenja remontnih radova") {
+                    Tim.innerHTML = "<option value='IRI 1'>IRI 1</option><option value='IRI 2'>IRI 2</option><option value='IRI 3'>IRI 3</option><option value='Cardwell 1'>Cardwell 1</option>"+
+                        "<option value = 'Cardwell 3'>Cardwell 3</option><option value='Cardwell 4'>Cardwell 4</option><option value='Cardwell 5'>Cardwell 5</option>" +
+                        "<option value='Cardwell 7'>Cardwell 7</option><option value='Cardwell 8'>Cardwell 8</option><option value='Kraz 4'>Kraz 4</option><option value='Kraz 5'>Kraz 5</option>" +
+                        "<option value='National 3'>National 3</option><option value='RP 501'>RP 501</option>";
+                    
+                } else if (servis.value == "Servis podrške remontnim radovima") {
+                    Tim.innerHTML = "<option value='Pripremna brigada'>Pripremna brigada</option><option value='RIK Žutica'>RIK Žutica</option>";
+
+
+                } else if (servis.value == "Servis bušotinskih mjerenja") {
+                    Tim.innerHTML = "<option value='Elektrokarotaža'>Elektrokarotaža</option><option value='Radovi s žicom'>Radovi s žicom</option><option value='Protočna mjerenja'>Protočna mjerenja</option>";
+                    
+                } else if (servis.value == "Servis cementacije i stimulacije") {
+                    Tim.innerHTML = "<option value='CiS Hrvatska'>CiS Hrvatska</option><option value='CiS Albanija'>CiS Albanija</option><option value='CiS Ukrajina'>CiS Ukrajina</option>";
+                    
+                } else if (servis.value == "Specijalni servisi") {
+                    Tim.innerHTML = "<option value='H2S'>H2S</option><option value='Savitljivi tubing i dušk'>Savitljivi tubing i dušk</option>" +
+                        "<option value='Instrumentacije'>Instrumentacije</option><option value='Isplaka'>Isplaka</option>";
+                    
+                } else if (servis.value == "Servis bušotinske opreme i alata") {
+                    Tim.innerHTML = "<option value='Oprema za kontrolu tlaka'>Oprema za kontrolu tlaka</option><option value='Dubinske opreme'>Dubinske opreme</option>" +
+                        "<option value='Oprema na podištu tornja'>Oprema na podištu tornja</option><option value='Ugradnja cijevnog alata'>Ugradnja cijevnog alata</option>" +
+                        "<option value='Inspekcije i priprema cijevnog alata'>Inspekcije i priprema cijevnog alata</option>";
+                    
+                } else if (servis.value == "Servis procesnih postrijenja") {
+                    Tim.innerHTML = "<option value='Motori'>Motori</option><option value='Tim 2'>Tim 2</option>";
+
+
+                } else if (servis.value == "Inženjering i sustav preventivnog održavanja") {
+                    Tim.innerHTML = "<option value='ISPO'>ISPO</option><option value='IK Ivanić Grad'>IK Ivanić Grad</option><option value='IK Žutica'>IK Žutica</option>" +
+                        "<option value='IK Ivanićko Graberije'>Ivanićko Graberije</option><option value='CZO'>CZO</option>";
+
+
+                } else if (servis.value == "Servis za energetiku") {
+                    Tim.innerHTML = "<option value='Motori'>Motori</option><option value='Tim 2'>Tim 2</option>";
+
+
+                } 
+            };
         }
     </script>
     <script>
@@ -544,7 +627,8 @@
         $(document).ready(function () {
             display();
             UpdateHS();
-            Zbroj();        
+            Zbroj();  
+            OrgJedince();
         });
     </script>
     <script>
