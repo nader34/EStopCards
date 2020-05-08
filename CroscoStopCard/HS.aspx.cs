@@ -13,6 +13,7 @@ namespace CroscoStopCard
     public partial class HS : System.Web.UI.Page
     {
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
+        private string SqlString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] == null && Session["UserRole"] == null) Response.Redirect("Home.aspx");
@@ -59,7 +60,23 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  * FROM HS"))
+                if ((string)Session["UserRole"] == "MasterAdmin")
+                {
+                    SqlString = "Select * FROM HS";
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    SqlString = "Select * FROM HS WHERE Oj1 = '" + (string)Session["OJ"] + "'";
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    SqlString = "Select* FROM HS WHERE SubOj = '" + (string)Session["SubOJ"] + "'";
+                }
+                else if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    SqlString = "Select  * FROM HS WHERE SubOjDva = '" + (string)Session["SubOJDva"] + "'";
+                }
+                using (SqlCommand cmd = new SqlCommand(SqlString))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

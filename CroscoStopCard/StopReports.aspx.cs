@@ -38,7 +38,7 @@ namespace CroscoStopCard
             LoadSedmi();
             LoadOsmi();
             LoadDeveti();
-            LoadDeseti();
+            LoadDeseti(); 
             LoadJedanesti();
             LoadDvanesti();
             PrviKvartal();

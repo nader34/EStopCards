@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Baza STOP kartice</title>
 
-
+    <link rel="shortcut icon" type="image/ico" href="Resources/Logo.png" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.2.1.slim.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
