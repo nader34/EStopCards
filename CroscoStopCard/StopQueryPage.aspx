@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MyMaster.Master" AutoEventWireup="true" CodeBehind="StopQueryPage.aspx.cs" Inherits="CroscoStopCard.StopQueryPage" %>
+﻿<%@ Page Title="E STOP Card" Language="C#" MasterPageFile="~/MyMaster.Master" AutoEventWireup="true" CodeBehind="StopQueryPage.aspx.cs" Inherits="CroscoStopCard.StopQueryPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,11 +15,24 @@
                     <tr>
                         <td>
                             <div class="SPUP">
-                                <input type="radio" id="UnSafe" name="SafeUnsafePractice" value="UnsafePractice" onclick="UnsafeClick()"
+                                <%--<input type="radio" id="UnSafe" name="SafeUnsafePractice" value="UnsafePractice" onclick="UnsafeClick()"
                                     checked="checked" />
                                 <label for="UnSafe">Unsafe practice</label>
+                                <span class="Radiocheckmarkcheckmark"></span>
                                 <input type="radio" id="Safe" name="SafeUnsafePractice" value="SafePractice" onclick="SafeClick()" />
                                 <label for="Safe">Safe practice</label>
+                                <span class="Radiocheckmark"></span>--%>
+                                <label class="Radiocontainer">Unsafe practice
+                                    <input type="radio" id="UnSafe" name="SafeUnsafePractice" value="UnsafePractice" onclick="UnsafeClick()"
+                                        checked="checked" />
+                                
+                                    <span class="Radiocheckmark"></span>
+                                </label>
+                                <label class="Radiocontainer">Safe practice
+                                    <input type="radio" id="Safe" name="SafeUnsafePractice" value="SafePractice" onclick="SafeClick()" />
+                                
+                                    <span class="Radiocheckmark"></span>
+                                </label>
                             </div>
                         </td>
                     </tr>
@@ -38,54 +51,55 @@
                             <table id="listaPromatranje">
                                 <tr>
                                     <td class="elementi RLj">
-                                        <label for="ReakcijaLjudiId">Reakcija Ljudi</label>
-                                        <input type="checkbox" id="ReakcijaLjudiId" name="ReakcijaLjudi" value="ReakcijaLjudi" onclick="reakcija()" />                                  
+                                        <label  for="ReakcijaLjudiId">Reakcija Ljudi</label>
+                                        <input type="checkbox" id="ReakcijaLjudiId" name="ReakcijaLjudi" value="ReakcijaLjudi" onclick="reakcija()" />
+                                        
                                         <table id="el1">
                                             <tr>
-                                                <td class="RLjp podElement">
+                                                <td class="RLjp podElement containercheckboxes">
                                                     <label for="RLj1">Podešavanje osobne zaštitne opreme
-                                                    <input type="checkbox" id="RLj1" name="ReakcijaLjudip1" value="PodReak1" />
-                                                    <span class="checkmark"></span>
+                                                        <input type="checkbox" id="RLj1" name="ReakcijaLjudip1" value="PodReak1" />
+                                                        <span class="checkmarkNew"></span>
                                                     </label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="RLjp podElement">
+                                                <td class="RLjp podElement containercheckboxes">
                                                     <label for="RLj2">Promjena položaja
                                                     <input type="checkbox" id="RLj2" name="ReakcijaLjudip2" value="PodReak2" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     </label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="RLjp podElement">                                                    
+                                                <td class="RLjp podElement containercheckboxes">                                                    
                                                     <label for="RLj3">
                                                     <input type="checkbox" id="RLj3" name="ReakcijaLjudip3" value="PodReak3" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Obavljanje posla na drugi način</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="RLjp podElement">
+                                                <td class="RLjp podElement containercheckboxes">
                                                     <label for="RLj4">
                                                     <input type="checkbox" id="RLj4" name="ReakcijaLjudip4" value="PodReak4" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Prekidanje s poslom</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="RLjp podElement">
+                                                <td class="RLjp podElement containercheckboxes">
                                                     <label for="RLj5">
                                                     <input type="checkbox" id="RLj5" name="ReakcijaLjudip5" value="PodReak5" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Uzemljivanje</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="RLjp podElement">
+                                                <td class="RLjp podElement containercheckboxes">
                                                     <label for="RLj6">
                                                     <input type="checkbox" id="RLj6" name="ReakcijaLjudip6" value="PodReak6" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Isključivanje strojeva</label>
                                                 </td>
                                             </tr>
@@ -98,58 +112,58 @@
                                         <input type="checkbox" id="ozoElmnt" name="OsobnaZastitnaOprema" value="Ozo" onclick="ozoe()" />
                                         <table id="el2">
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo1">
                                                     <input type="checkbox" id="ozo1" name="Glava" value="PodOzo1" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Glava</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo2">
                                                     <input type="checkbox" id="ozo2" name="ociiLice" value="PodOzo2" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Oči i lice</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo3">
                                                     <input type="checkbox" id="ozo3" name="usi" value="PodOzo3" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Uši</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo4">
                                                     <input type="checkbox" id="ozo4" name="respiratornisustav" value="PodOzo4" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Respiratorni sustav</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo5">
                                                     <input type="checkbox" id="ozo5" name="Rukeisake" value="PodOzo5" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Ruke i šake</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ozopod podElement">
+                                                <td class="ozopod podElement containercheckboxes">
                                                     <label for="ozo6">
                                                     <input type="checkbox" id="ozo6" name="Torzo" value="PodOzo6" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Torzo</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement ozopod">
+                                                <td class="podElement ozopod containercheckboxes">
                                                     <label for="ozo7">
                                                     <input type="checkbox" id="ozo7" name="Nogeistopala" value="PodOzo7" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Noge i stopala</label>
                                                 </td>
                                             </tr>
@@ -162,98 +176,98 @@
                                         <input type="checkbox" id="polo" name="polozajljudi" value="polozajLjudi" onclick="polozaj()" />
                                         <table id="el3">
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement polopod containercheckboxes">
                                                     <label for="polo1">
                                                     <input type="checkbox" id="polo1" name="UdaranjeuNekiPredmet" value="PodPolo1" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Udaranje u neki predmet</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo2">
                                                     <input type="checkbox" id="polo2" name="UdarNekogPredmeta" value="PodPolo2" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Udar nekog predmeta</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo3">
                                                     <input type="checkbox" id="polo3" name="NaciseuNaIliIzmeđuPredmeta" value="PodPolo3" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Naći se u, na ili između predmeta</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo4">
                                                     <input type="checkbox" id="polo4" name="PadNaIstojRazličitojRazini" value="PodPolo4" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Pad na istoj/različitoj razini</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo5">
                                                     <input type="checkbox" id="polo5" name="DoticajsEkstremnimTemperaturama" value="PodPolo5" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Doticaj s ekstremnim temperaturama</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo6">
                                                     <input type="checkbox" id="polo6" name="DoticajsElektričnomStrujom" value="PodPolo6" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Doticaj s električnom strujom</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo7">
                                                     <input type="checkbox" id="polo7" name="DoticajsVisokimTlakovima" value="PodPolo7" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Doticaj s visokim tlakovima</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo8">
                                                     <input type="checkbox" id="polo8" name="UdisanjeOpasnihTvari" value="PodPolo8" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Udisanje opasnih tvari</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo9">
                                                     <input type="checkbox" id="polo9" name="ApsorbiranjeOpasnihTvari" value="PodPolo9" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Apsorbiranje opasnih tvari</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo10">
                                                     <input type="checkbox" id="polo10" name="PrevelikoNaprezanje" value="PodPolo10" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Preveliko naprezanje</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo11">
                                                     <input type="checkbox" id="polo11" name="PonavljanjePokreta" value="PodPolo11" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Ponavljanje pokreta</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement polopod">
+                                                <td class="podElement containercheckboxes polopod">
                                                     <label for="polo12">
                                                     <input type="checkbox" id="polo12" name="NespretniPolozajStaticnoDrzanje" value="PodPolo12" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Nespretni položaj/Statično držanje</label>
                                                 </td>
                                             </tr>
@@ -266,26 +280,26 @@
                                         <input type="checkbox" id="alati" name="alatiioprema" value="alatioOprema" onclick="alatiClick()" />
                                         <table id="el4">
                                             <tr>
-                                                <td class="podElement alatipod">
+                                                <td class="podElement containercheckboxes alatipod">
                                                     <label for="alati1">
                                                     <input type="checkbox" id="alati1" name="PogresniZaDoticniPosao" value="PodAlati1" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Pogrešni za dotični posao</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement alatipod">
+                                                <td class="podElement containercheckboxes alatipod">
                                                     <label for="alati2">
                                                     <input type="checkbox" id="alati2" name="NepravilnoKoristeni" value="PodAlati2" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Nepravilno korišteni</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement alatipod">
+                                                <td class="podElement containercheckboxes alatipod">
                                                     <label for="alati3">
                                                     <input type="checkbox" id="alati3" name="NeispravniAlatiIOprema" value="PodAlati3" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Neispravni alati i oprema</label>
                                                 </td>
                                             </tr>
@@ -298,50 +312,50 @@
                                         <input type="checkbox" id="proc" name="ProcedureIUrednosti" value="ProcedureiUrednosti" onclick="procedureClick()" />
                                         <table id="el5">
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc1">
                                                     <input type="checkbox" id="proc1" name="NeodgovarajuceProcedure" value="PodProce1" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Neodgovarajuće procedure</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc2">
                                                     <input type="checkbox" id="proc2" name="NeznanjeNerazumijevanjeProcedura" value="PodProce2" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Neznanje/Nerazumijevanje procedura</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc3">
                                                     <input type="checkbox" id="proc3" name="NepridrzavanjeProcedura" value="PodProce3" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Nepridržavanje procedura</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc4">
                                                     <input type="checkbox" id="proc4" name="NormeUrednostiNeodgovarajuce" value="PodProce4" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Norme urednosti neodgovarajuće</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc5">
                                                     <input type="checkbox" id="proc5" name="NeznanjeNerazumijevanjeNormiUrednosti" value="PodProce5" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Neznanje/Nerazumijevanje normi urednosti</label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="podElement procpod">
+                                                <td class="podElement containercheckboxes procpod">
                                                     <label for="proc6">
                                                     <input type="checkbox" id="proc6" name="NepridrzavanjeNormiUrednosti" value="PodProce6" />
-                                                    <span class="checkmark"></span>
+                                                    <span class="checkmarkNew"></span>
                                                     Nepridržavanje normi urednosti</label>
                                                 </td>
                                             </tr>

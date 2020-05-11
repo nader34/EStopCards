@@ -125,6 +125,7 @@
     <Content Include="History.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HS.aspx" />
+    <Content Include="HSELiga.aspx" />
     <Content Include="HTMLTemplates\PDFTemplateNeSig.html" />
     <Content Include="HTMLTemplates\PDFTemplateSig.html" />
     <Content Include="Images\img01.jpg" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="HS.aspx.designer.cs">
       <DependentUpon>HS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HSELiga.aspx.cs">
+      <DependentUpon>HSELiga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HSELiga.aspx.designer.cs">
+      <DependentUpon>HSELiga.aspx</DependentUpon>
     </Compile>
     <Compile Include="InsertHS.aspx.cs">
       <DependentUpon>InsertHS.aspx</DependentUpon>

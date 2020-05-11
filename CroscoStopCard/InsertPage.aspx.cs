@@ -26,6 +26,7 @@ namespace CroscoStopCard
     public partial class InsertPage : System.Web.UI.Page
     {
         private string constr = System.Configuration.ConfigurationManager.ConnectionStrings["CroscoStopCardConnectionString"].ConnectionString;
+        private string sqlgetAdmin;
         string opr, opis, DateCreated, DatumOtvaranja, korekcija, AnalizaUzroka, OdgovornaOsoba, RokZaRijesavanja, Komentar, Status, DatumZatvaranja, STOPCheckBoxes, UaUc;
         int UserID;
         string Stopid1, STOPID, OrgJed, SubOrgJed, SubOrgJedDva;
@@ -158,7 +159,7 @@ namespace CroscoStopCard
                     html.Append("<td Class='STOPCardbtn btn'>");
                     //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
-                    html.Append("Otvori");
+                    html.Append("Pregled");
                     html.Append("</span>");
                     html.Append("</td>");
 
@@ -173,8 +174,8 @@ namespace CroscoStopCard
             else if (opr == "displayAdmin")
             {
                 DataTable dt = new DataTable();
-               
                 
+
                 // Populating a DataTable from database.
                 dt = this.GetDataAdmin();
 
@@ -205,11 +206,11 @@ namespace CroscoStopCard
                     html.Append("</th>");
                 }
                 html.Append("<th style='cursor:pointer'>");
-                html.Append("Otvori");
+                html.Append("Pregled");
                 html.Append("</th>");
 
                 html.Append("<th style='cursor:pointer'>");
-                html.Append("Edit");
+                html.Append("Uredi");
                 html.Append("</th>");
 
                 html.Append("</tr>");
@@ -228,7 +229,7 @@ namespace CroscoStopCard
                         html.Append("</td>");
                     }
 
-                    html.Append("<td Class='STOPCardbtn btn'>");
+                    html.Append("<td Class='STOPCardbtn btn-primary'>");
                     //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
                     html.Append("Pregled");
@@ -515,7 +516,27 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
+                if ((string)Session["UserRole"] == "LocalAdmin")
+                {
+                    sqlgetAdmin = "Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards  WHERE SubOJDva = '" + (string)Session["SubOJDva"] + "'";
+                }
+                else if ((string)Session["UserRole"] == "Admin")
+                {
+                    sqlgetAdmin = "Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards  WHERE SubOJ = '" + (string)Session["SubOJ"] + "'";
+
+                }
+                else if ((string)Session["UserRole"] == "Manager")
+                {
+                    sqlgetAdmin = "Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards  WHERE OJ = '" + (string)Session["OJ"] + "'";
+
+                }
+                else
+                {
+                    sqlgetAdmin = "Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards";
+
+                }
+                //using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards  WHERE SubOJ = '" + (string)Session["SubOJ"] + "'"))
+                using (SqlCommand cmd = new SqlCommand(sqlgetAdmin))
                 //using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus FROM EStopCards"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
@@ -592,7 +613,7 @@ namespace CroscoStopCard
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager, UziIzbor FROM EStopCards WHERE UziIzbor = 'True'"))
+                using (SqlCommand cmd = new SqlCommand("Select  EStopCardID, OpisSukNesuk, KorektivneRadnje, CardStatus, NominacijeManager, UziIzbor FROM EStopCards WHERE UziIzbor = 'True' OR NominacijeManager= 'True'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

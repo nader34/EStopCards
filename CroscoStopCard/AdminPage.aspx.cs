@@ -33,12 +33,12 @@ namespace CroscoStopCard
                         
             if ((string)Session["UserRole"] == "Admin")
             {
-                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE OJ LIKE '" + (string)Session["OJ"] + "'";
+                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE SubOJ LIKE '" + (string)Session["SubOJ"] + "'";
                
             }
             else if ((string)Session["UserRole"] == "LocalAdmin")
             {
-                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE OJ LIKE '" + (string)Session["OJ"] + "'";
+                SqlDataSource1.SelectCommand = "SELECT * FROM Users WHERE SubOJDva LIKE '" + (string)Session["SubOJDva"] + "'";
                 
             }
             else if ((string)Session["UserRole"] == "Manager")

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Reports</title>
+    <title>STOP Reports</title>
     <link rel="shortcut icon" type="image/ico" href="Resources/Logo.png" />
     <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
     <%--<script src="Scripts/jquery-3.2.1.slim.min.js"></script>--%>

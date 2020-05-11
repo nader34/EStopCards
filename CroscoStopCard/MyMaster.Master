@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Crosco Stop Card</title>
+    <title>Crosco QHSE</title>
     <meta name="description" content="" />
     <link rel="shortcut icon" type="image/ico" href="Resources/Logo.png" />
     <meta charset="utf-8" />
@@ -152,8 +152,11 @@
                 <%--<li><a href="History.aspx" style="color: #f0ce11; font-size: x-large">Povijest</a></li>
                 <li><a href="StopCardPage.aspx" style="color: #f0ce11; font-size: x-large">Stop Card</a></li>--%>
                 <li><a href="StopQueryPage.aspx" target='_blank' style="color: #f0ce11; font-size: x-large">E STOP Card</a></li>
-                <li><a href="StopReports.aspx" target='_blank' style="color: #f0ce11; font-size: x-large">Reports</a></li>
                 <li><a href="HS.aspx" style="color: #f0ce11; font-size: x-large">HS</a></li>
+                <li><a href="StopReports.aspx" target='_blank' style="color: #f0ce11; font-size: x-large">STOP Reports</a></li>
+                <li><a href="HSReports.aspx" target='_blank' style="color: #f0ce11; font-size: x-large">HS Reports</a></li>
+                <li><a href="HSELiga.aspx" target='_blank' style="color: #f0ce11; font-size: x-large">HSE Liga</a></li>
+
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">CAR</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">ADR</a></li>
                 <li><a href="Home.aspx" style="color: #f0ce11; font-size: x-large">PTW</a></li>

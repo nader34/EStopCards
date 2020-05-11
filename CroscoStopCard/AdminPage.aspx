@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Panel ID="Panel1" runat="server" Width="80%" HorizontalAlign="Center">
-    <table>
+    <asp:Panel ID="Panel1" runat="server" Width="100%" HorizontalAlign="Center">
+    <table style="margin-left:50px;">
         <tr>
             <td>
                 <asp:GridView ID="GVUsers" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="UserID" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GVUsers_RowDataBound" OnRowUpdating="GVUsers_RowUpdating" CellSpacing="2" OnRowEditing="GVUsers_RowEditing" HorizontalAlign="Center">
@@ -101,7 +101,7 @@
             </td>
         </tr>
         <tr style="display: table-caption">
-            <td class="addUserID btn btn-info" onclick="pokazi()" style="width: 70%">Add user
+            <td class="addUserID btn btn-info" onclick="pokazi()">Add user
             </td>
             <td>
 
@@ -305,7 +305,7 @@
         </tr>
         
     </table>
-    <table>
+    <table style="margin-left:50px;">
         <tr>
             <td>
                 <asp:Panel ID="tablicaSTOP1" CssClass="container mb-5 mt-3" runat="server">
@@ -344,7 +344,7 @@
     
     <script>
         //$('#mytb1').DataTable();
-        $('.mydatatable').DataTable();
+        //$('.mydatatable').DataTable();
         
         //window.addEventListener('DOMContentLoaded', function () {
         //    $('#mytb1').DataTable();
@@ -375,6 +375,7 @@
                     a.addClass("btn-success");
                 }
             });
+            $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered UserTable");
             $('.mydatatable').DataTable();
             var AddUserDisplay = document.getElementById("ContentPlaceHolder1_DetailsView1").firstElementChild.firstElementChild.firstElementChild.firstElementChild;
             if (AddUserDisplay.innerText == "Insert") {
@@ -383,8 +384,8 @@
                document.getElementById("AddUserDivID").style.display = "none";
            }
 
-
-            $('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered UserTable");
+            $('#ContentPlaceHolder1_GVUsers').DataTable();
+            //$('#ContentPlaceHolder1_GVUsers').addClass("table table-striped table-bordered UserTable");
 
             //ne prepozna možda zbog depenedance
             //$('.mdb-select').materialSelect(); 
