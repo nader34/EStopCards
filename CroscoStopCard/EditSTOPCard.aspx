@@ -26,10 +26,14 @@
                         <tr>
                             <td>
                                 <div class="SPUP">
-                                    <input type="radio" id="UnSafe" runat="server" name="SafeUnsafePractice" value="UnsafePractice" onclick="UnsafeClick()" />
-                                    <label for="UnSafe">Unsafe practice</label>
-                                    <input type="radio" id="Safe" runat="server" name="SafeUnsafePractice" value="SafePractice" onclick="SafeClick()" />
-                                    <label for="Safe">Safe practice</label>
+                                    <label class="Radiocontainer">Unsafe practice
+                                        <input type="radio" id="UnSafe" runat="server" name="SafeUnsafePractice" value="UnsafePractice" onclick="UnsafeClick()" />
+                                        <span class="Radiocheckmark"></span>
+                                    </label>
+                                    <label class="Radiocontainer">Safe practice
+                                        <input type="radio" id="Safe" runat="server" name="SafeUnsafePractice" value="SafePractice" onclick="SafeClick()" />
+                                        <span class="Radiocheckmark"></span>
+                                    </label>
                                 </div>
                             </td>
                         </tr>

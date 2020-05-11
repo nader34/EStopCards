@@ -356,12 +356,12 @@ img#ReportList, img#StopCycl, #tablicaSTOP{
 
 /* Customize the label (the container) */
 .Radiocontainer {
-    display: block;
+    display: inline;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

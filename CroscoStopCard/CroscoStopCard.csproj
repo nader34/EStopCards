@@ -170,6 +170,7 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Resources\Instruction_hr.png" />
     <None Include="Resources\stop_bg.png" />
     <None Include="Resources\Instruction_hr1.png" />
