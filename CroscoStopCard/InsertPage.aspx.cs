@@ -130,7 +130,7 @@ namespace CroscoStopCard
                     html.Append("</th>");
                 }
                 html.Append("<th style='cursor:pointer'>");
-                html.Append("Otvori karticu");
+                html.Append("Pregled kartice");
                 html.Append("</th>");
                 //html.Append("<th style='cursor:pointer'>");
                 //html.Append("Edit");
@@ -156,7 +156,7 @@ namespace CroscoStopCard
                     //html.Append("</span>");
                     //html.Append("</td>");
 
-                    html.Append("<td Class='STOPCardbtn btn'>");
+                    html.Append("<td Class='STOPCardbtn btn-primary'>");
                     //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
                     html.Append("Pregled");
@@ -260,8 +260,9 @@ namespace CroscoStopCard
                 //var DateCreated1 = DateTime.Parse(DatumOtvaranja1).ToString("yyyy-MM-dd");
                 SqlCommand command;
                 string sql = null;
-                sql = ("UPDATE EStopCards SET Komentar = '" + Komentar.ToString() + "', " + "CardStatus = '" + Status.ToString() + "', " + "lastModifiedID = '" + UserID + "', " + "lastModifiedName = '" + FName + "', " + 
-                    "lastModifiedLastName = '" + LName + "' WHERE EStopCardID = " + Stopid1.ToString());
+                sql = ("UPDATE EStopCards SET Komentar = '" + Komentar.ToString() + "', " + "CardStatus = '" + Status.ToString() + "', " +
+                    "AnalizaUzorka = '" + AnalizaUzroka.ToString() + "', " + "RokZaRjes = '" + RokZaRijesavanja.ToString() + "', " + "OdgovornaOsoba = '" + OdgovornaOsoba.ToString() + 
+                    "', " + "lastModifiedID = '" + UserID + "', " + "lastModifiedName = '" + FName + "', " + "lastModifiedLastName = '" + LName + "' WHERE EStopCardID = " + Stopid1.ToString());
 
                 //sql = ("UPDATE EStopCards SET Komentar = ,CardStatus,lastModifiedID,lastModifiedName,lastModifiedLastName= '" + Komentar.ToString() +
                 //    "', '" + Status.ToString() + "', '" + UserID + "', '" + FName + "', '" + LName + "' WHERE EStopCardID = " + STOPID);

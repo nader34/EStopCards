@@ -187,20 +187,27 @@
                     STOPid= $(this).parent().children()[0].innerText;
                      //var idx = table3.cell(this).index().column;
                  
-                    if (idx >= 0 && idx < 8) {
+                    if ((idx >= 0 && idx < 8) || (idx==66)) {
 
 
                     }
-                    else if ((idx > 7 && idx < 11) || idx == 78) {
+                    else if (idx == 49 || idx == 53 || idx == 57) {
                         var html = $(this).text();
-                         var input = $('<input type="text" />');
-                         input.val(html);
-                         $(this).replaceWith(input);
-                         $('.mydatatable input').focus();
+                        var input = $('<input type="date" />');
+                        input.val(html);
+                        $(this).replaceWith(input);
+                        $('.mydatatable input').focus();
+                    }
+                    else if (idx == 65) {
+                        var html = $(this).text();
+                        var input = $('<input type="number" />');
+                        input.val(html);
+                        $(this).replaceWith(input);
+                        $('.mydatatable input').focus();
                     }
                     else {
                         var html = $(this).text();
-                        var input = $('<input type="number" />');
+                        var input = $('<input type="text" />');
                         input.val(html);
                         $(this).replaceWith(input);
                         $('.mydatatable input').focus();
@@ -227,7 +234,7 @@
                         xmlhttp.send(null);
                         redid = "";
                         //provjeriti zašto table2 ne 4
-                        table2
+                        table4
                             .row($(this).parents('tr'))
                             .remove()
                             .draw();

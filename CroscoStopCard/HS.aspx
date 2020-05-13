@@ -77,52 +77,52 @@
                         <input id="CroKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroSWA" class="classinput" type="number"/>
+                        <input id="CroSWA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroLSR" class="classinput" type="number"/>
+                        <input id="CroLSR" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroAlco" class="classinput" type="number"/>
+                        <input id="CroAlco" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroNII" class="classinput" type="number"/>
+                        <input id="CroNII" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroRTI" class="classinput" type="number"/>
+                        <input id="CroRTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroRTA" class="classinput" type="number"/>
+                        <input id="CroRTA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroLOPC" class="classinput" type="number"/>
+                        <input id="CroLOPC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroSpill" class="classinput" type="number"/>
+                        <input id="CroSpill" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroFire" class="classinput" type="number"/>
+                        <input id="CroFire" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroNM" class="classinput" type="number"/>
+                        <input id="CroNM" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroFAC" class="classinput" type="number"/>
+                        <input id="CroFAC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroMTC" class="classinput" type="number"/>
+                        <input id="CroMTC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroRWC" class="classinput" type="number"/>
+                        <input id="CroRWC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroLTI" class="classinput" type="number"/>
+                        <input id="CroLTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroFTL" class="classinput" type="number"/>
+                        <input id="CroFTL" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="CroTRI" class="classinput" type="number"/>
+                        <input id="CroTRI" class="classinput" type="number" value="0"/>
                     </td>
                 </tr>
                 <tr class="classtr">
@@ -139,52 +139,52 @@
                         <input id="SubKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubSWA" class="classinput" type="number"/>
+                        <input id="SubSWA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubLSR" class="classinput" type="number"/>
+                        <input id="SubLSR" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubAlco" class="classinput" type="number"/>
+                        <input id="SubAlco" class="classinput" type="number" value="0"/>
                     </td>
                     <td class="classtd">
-                        <input id="SubNII" class="classinput" type="number"/>
+                        <input id="SubNII" class="classinput" type="number" value="0"/>
                     </td>
                     <td class="classtd">
-                        <input id="SubRTI" class="classinput" type="number"/>
+                        <input id="SubRTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubRTA" class="classinput" type="number"/>
+                        <input id="SubRTA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubLOPC" class="classinput" type="number"/>
+                        <input id="SubLOPC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubSpill" class="classinput" type="number"/>
+                        <input id="SubSpill" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubFire" class="classinput" type="number"/>
+                        <input id="SubFire" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubNM" class="classinput" type="number"/>
+                        <input id="SubNM" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubFAC" class="classinput" type="number"/>
+                        <input id="SubFAC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubMTC" class="classinput" type="number"/>
+                        <input id="SubMTC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubRWC" class="classinput" type="number"/>
+                        <input id="SubRWC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubLTI" class="classinput" type="number"/>
+                        <input id="SubLTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubFTL" class="classinput" type="number"/>
+                        <input id="SubFTL" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="SubTRI" class="classinput" type="number"/>
+                        <input id="SubTRI" class="classinput" type="number" value="0"/>
                     </td>
                 </tr>
 				<tr class="classtr">
@@ -201,52 +201,52 @@
                         <input id="RdKm" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdSWA" class="classinput" type="number"/>
+                        <input id="RdSWA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdLSR" class="classinput" type="number"/>
+                        <input id="RdLSR" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdAlco" class="classinput" type="number"/>
+                        <input id="RdAlco" class="classinput" type="number" value="0"/>
                     </td>
                     <td class="classtd">
-                        <input id="RdNII" class="classinput" type="number"/>
+                        <input id="RdNII" class="classinput" type="number" value="0"/>
                     </td>
                     <td class="classtd">
-                        <input id="RdRTI" class="classinput" type="number"/>
+                        <input id="RdRTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdRTA" class="classinput" type="number"/>
+                        <input id="RdRTA" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdLOPC" class="classinput" type="number"/>
+                        <input id="RdLOPC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdSpill" class="classinput" type="number"/>
+                        <input id="RdSpill" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdFire" class="classinput" type="number"/>
+                        <input id="RdFire" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdNM" class="classinput" type="number"/>
+                        <input id="RdNM" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdFAC" class="classinput" type="number"/>
+                        <input id="RdFAC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdMTC" class="classinput" type="number"/>
+                        <input id="RdMTC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdRWC" class="classinput" type="number"/>
+                        <input id="RdRWC" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdLTI" class="classinput" type="number"/>
+                        <input id="RdLTI" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdFTL" class="classinput" type="number"/>
+                        <input id="RdFTL" class="classinput" type="number" value="0"/>
                     </td>
 					<td class="classtd">
-                        <input id="RdTRI" class="classinput" type="number"/>
+                        <input id="RdTRI" class="classinput" type="number" value="0"/>
                     </td>
                 </tr>
 				<tr class="classtr">
@@ -262,13 +262,13 @@
 					<th colspan="1" class="classth">Days without LTI</th>
 				</tr>
 				<tr class="classtr">
-					<td colspan="1" class="classtd"><input id="DrillH2S" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillEvac" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillBOP" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillFire" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillRescue" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillSpill" class="classinput" type="number"/></td>
-					<td colspan="1" class="classtd"><input id="DrillOther" class="classinput" type="number"/></td>
+					<td colspan="1" class="classtd"><input id="DrillH2S" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillEvac" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillBOP" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillFire" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillRescue" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillSpill" class="classinput" type="number" value="0"/></td>
+					<td colspan="1" class="classtd"><input id="DrillOther" class="classinput" type="number" value="0"/></td>
 					<td colspan="11" class="classtd"><input id="DrillComent" class="classinput" type="text"/></td>
 					<td colspan="1" class="classtd"><input id="DaysWout" class="classinput" type="number"/></td>
 				</tr>
@@ -851,11 +851,8 @@
              
             $(document).on('click', '.mydatatable td', function () {
                 var idx = $(this).index();
-
-                YName = HSDictionary(idx);
-                //alert(YName);
+                YName = HSDictionary(idx);              
                 HSid= $(this).parent().children()[0].innerText;
-                 //var idx = table3.cell(this).index().column;
                  
                 if (idx >= 0 && idx < 8) {
 
@@ -863,17 +860,17 @@
                 }
                 else if ((idx > 7 && idx < 11) || idx == 78) {
                     var html = $(this).text();
-                     var input = $('<input type="text" />');
-                     input.val(html);
-                     $(this).replaceWith(input);
-                     $('.mydatatable input').focus();
+                    var input = $('<input type="text" />');
+                    input.val(html);
+                    $(this).replaceWith(input);
+                    $('.mydatatable input').focus();
                 }
                 else {
                     var html = $(this).text();
-                     var input = $('<input type="number" />');
-                     input.val(html);
-                     $(this).replaceWith(input);
-                     $('.mydatatable input').focus();
+                    var input = $('<input type="number" />');
+                    input.val(html);
+                    $(this).replaceWith(input);
+                    $('.mydatatable input').focus();
                  }
             });
             //var table1 = $('.mydatatable').DataTable();

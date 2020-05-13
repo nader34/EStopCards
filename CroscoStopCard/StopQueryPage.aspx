@@ -463,7 +463,7 @@
     <script>
         $(document).ready(function () {
 
-           document.querySelector("#DatumOt").value = new Date()
+           //document.querySelector("#DatumOt").value = new Date()
            let today = new Date().toISOString().substr(0, 10);
            document.querySelector("#DatumOt").value = today;
            document.querySelector("#rokZaRijesavanja").value = today;

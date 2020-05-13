@@ -64,7 +64,7 @@ namespace CroscoStopCard
                     html.Append("</th>");
                 }
                 html.Append("<th style='cursor:pointer'>");
-                html.Append("Otvori karticu");
+                html.Append("Pregled kartice");
                 html.Append("</th>");
 
                 //html.Append("<th style='cursor:pointer'>");
@@ -93,10 +93,10 @@ namespace CroscoStopCard
                     //html.Append("</span>");
                     //html.Append("</td>");
 
-                    html.Append("<td Class='STOPCardbtn btn'>");
+                    html.Append("<td Class='STOPCardbtn btn-primary'>");
                     //html.Append("<a href='DoneSTOPCard.aspx' target='_blank'>Done Stop Card</a>");
                     html.Append("<span>");
-                    html.Append("Otvori");
+                    html.Append("Pregled");
                     html.Append("</span>");
                     html.Append("</td>");
                     html.Append("</tr>");
