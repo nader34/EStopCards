@@ -81,11 +81,10 @@ namespace CroscoStopCard
                 var d3 = DateTime.Parse(DatumZatvaranja).ToString("yyyy-MM-dd");
                 SqlCommand command;
                 string sql = null;
-                // comstrin = "Insert into CROSCO_CBC values ('" & Ime.ToString() & "','" & Prezime.ToString() & "')"
-                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,SubOJDva,DateCreated,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + SubOrgJedDva + "', '" + DateCreated + "', '" + 1 + "', '" +
-                    d1 + "', '" + opis.ToString() + "', '" + korekcija.ToString() + "', '" + AnalizaUzroka.ToString() +
-                    "', '" + OdgovornaOsoba.ToString() + "', '" + d2 + "', '" + Komentar.ToString() +
-                    "', '" + Status.ToString() + "', '" + d3 + "')");
+                
+                sql = ("Insert into EStopCards (UserID,FirstName,LastName,OJ,SubOJ,SubOJDva,DateCreated,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES (" + UserID + " ,'" + FName + "' ,'" + LName + "' ,'" + OrgJed + "', '" + SubOrgJed + "', '" + SubOrgJedDva + "', '" + DateCreated + "', '" + 1 + "', '2020-01-05', '" + opis.ToString() + "', '" + korekcija.ToString() + "', '" + AnalizaUzroka.ToString() +
+                    "', '" + OdgovornaOsoba.ToString() + "', '', '" + Komentar.ToString() +
+                    "', '" + Status.ToString() + "', '')");
                 //sql = ("Insert into EStopCards (UserID,SigNesigPostupak,DatumOtvaranja,OpisSukNesuk,KorektivneRadnje,AnalizaUzorka,OdgovornaOsoba,RokZaRjes,Komentar,CardStatus,DatumZatvaranja) VALUES ( 1, 1,'1/7/2019', 'das', 'kor', 'anal', 'OdgovornaOsoba', '7/7/2020', 'kome', 'closed','7/8/2020')");
                 SqlConnection con = new SqlConnection(constr);
                 SqlCommand cmd = new SqlCommand();

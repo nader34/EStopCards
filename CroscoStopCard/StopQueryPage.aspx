@@ -436,7 +436,7 @@
                         <td>
                             <div id="STOPSubmit">
                             <label>Podnesi karticu</label><br />
-                            <input type="submit" id="podnesi" name="UnosKartice" class="btn-success" style="width:80%" onclick="Provjera()" />
+                            <input runat="server" type="submit" id="podnesi" name="UnosKartice" class="btn-success" style="width:80%" onclick="Provjera()" />
                             </div>
                         </td>
                     </tr>
